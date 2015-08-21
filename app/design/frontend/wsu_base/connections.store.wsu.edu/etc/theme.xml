@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<theme>
+    <parent>wsu_base/default</parent>
+    <layout>
+        <updates>
+            <wsu_base>
+                <file>wsu_base_defaults.xml</file>
+            </wsu_base>
+            <connections_default>
+                <file>defaults.xml</file>
+            </connections_default>
+        </updates>
+    </layout>
+</theme>
+

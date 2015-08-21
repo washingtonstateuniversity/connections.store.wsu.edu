@@ -1,0 +1,29 @@
+<div id="localfooter">
+	<section class="row sidebar">
+        <div class="column one">
+            <article>
+				<?=$this->getChildHtml() ?> 
+                <address><?=$this->getCopyright() ?></address>
+                <a href="http://web.wsu.edu/">University Web Communications</a>, Washington State University, PO Box 645910, Pullman, WA, 99164-5910 USA 509-335-2700 <a href="mailto:web.support@wsu.edu">Contact Us</a>
+				
+				<div id="contact-details" itemscope itemtype="http://schema.org/Organization"> 
+					<span itemprop="department"  content="<?=Mage::getStoreConfig('general/store_information/department');?>"></span> 
+					<span itemprop="name" content="<?=Mage::getStoreConfig('general/store_information/name');?>"></span> 
+					<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+						<span itemprop="location" content="<?=Mage::getStoreConfig('general/store_information/location');?>"></span>
+						<span itemprop="streetAddress" content="<?=Mage::getStoreConfig('general/store_information/streetAddress');?>"></span>
+						<span itemprop="addressLocality" content="<?=Mage::getStoreConfig('general/store_information/addressLocality');?>"></span>
+						<span itemprop="addressRegion" content="<?=Mage::getStoreConfig('general/store_information/addressRegion');?>"></span>
+						<span itemprop="postalCode" content="<?=Mage::getStoreConfig('general/store_information/postalCode');?>"></span>
+					</div>
+					<span itemprop="telephone" content="<?=Mage::getStoreConfig('general/store_information/telephone');?>"></span>
+					<span itemprop="email" content="<?=Mage::getStoreConfig('general/store_information/email');?>"></span>
+					<span itemprop="contactPoint" content="<?=Mage::getStoreConfig('general/store_information/contactPoint');?>"></span>
+					<span itemprop="url" content="<?=Mage::getStoreConfig('general/store_information/url');?>"></span>
+				</div>
+				
+				
+            </article>
+        </div>
+    </section>
+</div>
