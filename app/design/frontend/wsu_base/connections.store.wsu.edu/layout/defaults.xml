@@ -8,4 +8,50 @@
 			<remove name="wishlist_link"/>
 		</reference>
 	</default>
+<!-- USER LOGGED IN/OUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+	<customer_logged_out>
+		<reference name="top.links">
+			<!--<action method="addLink" translate="label title">
+				<label><![CDATA[<span><i class="fa fa-sign-in"></i>  Sign Up </span>]]></label>
+				<url>customer/account/create</url>
+				<title>Sign Up</title>
+				<prepare>true</prepare>
+				<urlParams/>
+				<position>1</position>
+				<liParams>id="link-sign-up"</liParams>
+			</action>-->
+			<action method="removeLinkByUrl"><url helper="customer/getLoginUrl"/></action>
+			<action method="addLink" translate="label title" module="customer">
+				<label><![CDATA[ Log In ]]></label><!-- <i class="fa fa-sign-in"></i>   -->
+				<url helper="customer/getLoginUrl"/>
+				<title>Log In</title>
+				<prepare/>
+				<urlParams/>
+				<position>2</position>
+			</action>
+		</reference>
+		<!---<reference name="right">
+			<block type="customer/form_login" name="customer_form_mini_login" before="-" template="customer/form/mini.login.phtml"/>
+		</reference>-->
+		<!--<remove name="reorder"></remove>-->
+	</customer_logged_out>
+	<customer_logged_in>
+		<reference name="top.links">
+			<action method="addLink" translate="label title" module="customer">
+				<label><![CDATA[  Log Out ]]></label> <!-- <i class="fa fa-sign-out"></i> -->
+				<url helper="customer/getLogoutUrl"/><title>Log Out</title>
+				<prepare/>
+				<urlParams/>
+				<position>100</position>
+			</action>
+		</reference>
+			<action method="addLink" translate="label title" module="customer">
+				<label><![CDATA[  My Account ]]></label><!--<i class="fa fa-cogs"></i>-->
+				<url helper="customer/getAccountUrl"/>
+				<title>My Account</title>
+				<prepare/>
+				<urlParams/>
+				<position>10</position>
+			</action>
+	</customer_logged_in>
 </layout>
