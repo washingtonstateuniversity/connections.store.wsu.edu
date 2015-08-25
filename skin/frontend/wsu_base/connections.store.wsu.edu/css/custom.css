@@ -6,7 +6,19 @@ body{
 	line-height:1.6;
 	background:url(/media/store-media/connections.store.wsu.edu/skin/background.jpg) repeat-x center top !important;
 }
-
+main{
+	background: url(/media/store-media/connections.store.wsu.edu/skin/home-main-background.jpg);
+	background-color:#fff;
+	background-repeat: no-repeat;
+	background-position:center bottom;
+    background-size: 100% auto;
+}
+#spine.darkest #glue:before{
+	background:url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;
+}
+.quick-access{
+	background:none;
+}
 .quick-access .links{
 	padding:0px;
 }
