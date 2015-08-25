@@ -301,6 +301,7 @@ main footer{
 	position: relative;
     width: calc( 100% - 120px );
     margin: 50px;
+	margin-bottom:25px;
     border: 10px solid #fff;
 }
 #homepage_banners{
@@ -349,4 +350,25 @@ main footer{
 }
 #banner-pager span:hover,#banner-pager span.cycle-pager-active{
 	color:#38424a;
+}
+
+/*%%--home_page_cats--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+#home_page_cats{
+	margin: 0px 50px;
+	margin-bottom:25px;
+}
+#home_page_cats li{
+	
+}
+#home_page_cats li a{
+	box-sizing:border-box;
+	border:10px solid #fff;
+	padding: 0px;
+	display: inline-block;
+}
+#home_page_cats li:first-of-type {
+	
+}
+#home_page_cats li img{
+	width:100%;
 }
