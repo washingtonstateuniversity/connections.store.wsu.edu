@@ -8,6 +8,12 @@
 			<remove name="wishlist_link"/>
 		</reference>
 	</default>
+<!-- HOME PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+	<cms_index_index>
+	  <reference name="content">
+		<block type="core/template" name="cms_index_index" template="hompages/default.phtml"/>
+	  </reference>
+	</cms_index_index>
 <!-- USER LOGGED IN/OUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	<customer_logged_out>
 		<reference name="top.links">
