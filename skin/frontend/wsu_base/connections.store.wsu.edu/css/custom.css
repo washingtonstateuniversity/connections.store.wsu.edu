@@ -4,7 +4,7 @@ body{
 	font-style:normal;
 	font-size:100%;
 	line-height:1.6;
-	background:url(/media/store-media/connections.store.wsu.edu/skin/background.jpg) no-repeat 100% 50% !important;
+	background:url(/media/store-media/connections.store.wsu.edu/skin/background.jpg) repeat-x center top !important;
 }
 
 .quick-access .links{
