@@ -347,6 +347,6 @@ main footer{
 	color:#fff;
 	cursor:pointer;
 }
-#banner-pager span:hover{
+#banner-pager span:hover,#banner-pager span.cycle-pager-active{
 	color:#38424a;
 }
