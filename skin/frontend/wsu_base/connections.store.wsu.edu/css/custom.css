@@ -4,7 +4,16 @@ body{
 	font-style:normal;
 	font-size:100%;
 	line-height:1.6;
-	background:url(/media/store-media/connections.store.wsu.edu/skin/background.jpg) repeat-x center top !important;
+
+	background:none !important;
+  background-image   : url(/media/store-media/connections.store.wsu.edu/skin/background-strip.png),
+                       url(/media/store-media/connections.store.wsu.edu/skin/background.jpg) !important;
+
+  background-repeat  : no-repeat,
+                       repeat-x;
+
+  background-position: 100% top,
+                       center top;
 }
 main{
 	background: url(/media/store-media/connections.store.wsu.edu/skin/home-main-background.jpg);
@@ -13,11 +22,26 @@ main{
 	background-position:center bottom;
     background-size: 100% auto;
 }
+section#siteID{
+	/*background:none !important;*/
+	background-image : url(/media/store-media/connections.store.wsu.edu/skin/header-bk.jpg);
+	background-color:#38424a;
+	background-repeat: no-repeat;
+	background-position:left top;
+    background-size: 100% auto;
+	box-sizing:border-box;
+	border:2px solid #da1a33;
+	border-top:none;
+}
 #spine.darkest #glue:before{
 	background:url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;
 }
 .quick-access{
 	background:none;
+    position: absolute;
+    width: 100%;
+    right: 31px;
+    top: 54px;
 }
 .quick-access .links{
 	padding:0px;
