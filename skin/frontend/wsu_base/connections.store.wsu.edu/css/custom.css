@@ -147,10 +147,36 @@ main footer{
 #site-global-footer{
 	background: url(/media/store-media/connections.store.wsu.edu/skin/footer-bk.jpg);
 }
-#site-global-footer ul{}
-#site-global-footer ul li{display:inline-block;}
-#site-global-footer ul li a{ color:#fff;}
-#site-global-footer ul li a:hover{}
+#site-global-footer ul{
+	padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+#site-global-footer ul li{
+  width: 20%;
+  height: 36px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+}
+#site-global-footer ul li a{
+	color:#fff;
+    width: 100%;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+}
+#site-global-footer ul li a:hover{
+	background:url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;
+}
 
 
 
