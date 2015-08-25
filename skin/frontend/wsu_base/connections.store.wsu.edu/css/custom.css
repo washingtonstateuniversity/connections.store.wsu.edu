@@ -21,6 +21,7 @@ main{
 	background-repeat: no-repeat;
 	background-position:center bottom;
     background-size: 100% auto;
+	position: relative;
 }
 section#siteID{
 	/*background:none !important;*/
@@ -133,7 +134,23 @@ li{
 	content: "\f07a";
 }
 
-
+/*%%%-FOOTER-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+main footer{
+	padding:0px !important;
+	position:absolute;
+	bottom:0px;
+	width:100%;
+	height:36px;
+	background:#d5151f;
+	
+}
+#site-global-footer{
+	background: url(/media/store-media/connections.store.wsu.edu/skin/footer-bk.jpg);
+}
+#site-global-footer ul{}
+#site-global-footer ul li{display:inline-block;}
+#site-global-footer ul li a{ color:#fff;}
+#site-global-footer ul li a:hover{}
 
 
 
