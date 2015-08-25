@@ -33,6 +33,7 @@ section#siteID{
 	box-sizing:border-box;
 	border:2px solid #da1a33;
 	border-top:none;
+    z-index: 100;
 }
 #spine.darkest #glue:before{
 	background:url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;
@@ -43,6 +44,7 @@ section#siteID{
     width: 100%;
     right: 31px;
     top: 54px;
+	z-index:100;
 }
 .quick-access .links{
 	padding:0px;
@@ -294,5 +296,55 @@ main footer{
 #mass_products{position:relative;}
 
 
-
-
+/*%%%-homepage-banners-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+#banner_area{
+	position: relative;
+	width:100%;
+}
+#homepage_banners{
+	z-index:1;
+}
+#homepage_banners img{
+	width:100%;
+}
+#banner-pager{
+	position:absolute;
+	right:0px;
+	bottom:0px;
+	z-index:2;
+}
+#banner-pager:before{
+	display:block;
+	width: 0; 
+	height: 0; 
+	border-bottom: 110px solid #fff; 
+	border-left: 110px solid transparent; 	
+	position:absolute;
+	right:0px;
+	bottom:0px;
+	z-index:1;
+	content:"";
+}
+#banner-pager:after{
+	display:block;
+	width: 0; 
+	height: 0; 
+	border-bottom: 100px solid #da1a32; 
+	border-left: 100px solid transparent; 	
+	position:absolute;
+	right:0px;
+	bottom:0px;
+	z-index:1;
+	content:"";
+}
+#banner-pager span{
+    z-index: 2;
+    position: relative;
+    font-size: 41px;
+    padding-top: 24px;
+	color:#fff;
+	cursor:pointer;
+}
+#banner-pager span:hover{
+	color:#38424a;
+}
