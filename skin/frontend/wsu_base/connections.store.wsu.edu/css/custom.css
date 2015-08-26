@@ -10,10 +10,10 @@ body{
                        url(/media/store-media/connections.store.wsu.edu/skin/background.jpg) !important;
 
   background-repeat  : no-repeat,
-                       repeat-x;
+                       repeat-x !important;
 
   background-position: 100% top,
-                       center top;
+                       center top !important;
 }
 main{
 	background: url(/media/store-media/connections.store.wsu.edu/skin/home-main-background.jpg);
