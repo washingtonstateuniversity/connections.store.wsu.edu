@@ -17,6 +17,7 @@ body{
 }
 main{
 	background-color:#fff;
+	position: relative;
 }
 .home main{
 	background: url(/media/store-media/connections.store.wsu.edu/skin/home-main-background.jpg);
@@ -24,7 +25,7 @@ main{
 	background-repeat: no-repeat;
 	background-position:center bottom;
     background-size: 100% auto;
-	position: relative;
+	
 }
 section#siteID{
 	/*background:none !important;*/
@@ -60,7 +61,7 @@ li{
 	padding-left:10px;
 }
 
-/*--global--*/
+/*%--global--%*/
 .quick-access{
 	background:none;
     position: absolute;
@@ -130,7 +131,7 @@ li{
 	z-index:1;
 }
 
-/*--home--*/
+/*%--home--%*/
 .home .quick-access{
 	background:none;
     position: absolute;
@@ -205,7 +206,7 @@ li{
 }
 
 
-/*--icons--*/
+/*%--icons--%*/
 .quick-access .links a:hover span:before{
 	color:#fff;
 }
