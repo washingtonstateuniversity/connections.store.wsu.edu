@@ -307,7 +307,7 @@ main footer{
 #homepage_banners{
 	z-index:1;
 }
-#homepage_banners img{
+#homepage_banners a,#homepage_banners a img{
 	width:100%;
 }
 #banner-pager{
@@ -358,17 +358,20 @@ main footer{
 	margin-bottom:25px;
 }
 #home_page_cats li{
-	
+	padding: 0px;
+	border-left: transparent 15px solid;
 }
 #home_page_cats li a{
 	box-sizing:border-box;
 	border:10px solid #fff;
 	padding: 0px;
 	display: inline-block;
+	width:100%;
 }
 #home_page_cats li:first-of-type {
-	
+	border-left: transparent 0px solid;
 }
 #home_page_cats li img{
 	width:100%;
+	
 }
