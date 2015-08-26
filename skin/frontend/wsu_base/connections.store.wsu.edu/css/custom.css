@@ -42,8 +42,6 @@ section#siteID{
 	background:none;
     position: absolute;
     width: 100%;
-    right: 31px;
-    top: 54px;
 	z-index:100;
 }
 .quick-access .links{
@@ -56,8 +54,89 @@ section#siteID{
 .quick-access .links
 li{
 	padding:0 0px 0 1px;
+	padding-left:10px;
 }
+
+/*--global--*/
+.quick-access{
+	background:none;
+    position: absolute;
+    width: 100%;
+    right: -4px;
+    top: 87px;
+	z-index:100;
+}
+
 .quick-access .links a{
+	color:#ddd;
+	background:none;
+    position: relative;
+	height:32px;
+	color:#FFFFFF;
+	display:inline-block;
+	content:"";
+}
+.quick-access .links a span{
+	width:100%;
+	height:100%;
+	position: relative;
+	top: calc( 50% - 8px );
+    left: 0;
+    z-index: 1;
+	height:32px;
+    text-align: center;
+    font-size: 15px;
+	padding:0px 5px;
+}
+.quick-access .links a:before{
+    transform: skew(20deg);
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -ms-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    background-color: #da1a33;
+	
+	border:2px solid #da1a33;
+	position:absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    width: 100%;
+    height: 32px;
+	content:"";
+}
+.quick-access .links a:hover:before{
+    background-color:#39424b;
+}
+
+.quick-access .links a{
+	padding:0 7px 0 0;
+	/*background:url(http://store.wsu.dev/skin/frontend/wsu_base/default/images/bkg_pipe1.gif) no-repeat 100% 50%*/
+}
+.quick-access .links li.last a{padding:0;background:none}
+.quick-access .links a span:before{
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 20px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);	
+	
+	color:#39424b;
+	z-index:1;
+}
+
+/*--home--*/
+.home .quick-access{
+	background:none;
+    position: absolute;
+    width: 100%;
+    right: 31px;
+    top: 54px;
+	z-index:100;
+}
+.home .quick-access .links a{
 	color:#ddd;
 	background:none;
     position: relative;
@@ -67,7 +146,7 @@ li{
 	display:inline-block;
 	content:"";
 }
-.quick-access .links a span{
+.home .quick-access .links a span{
 	width:100%;
 	height:100%;
 	position:absolute;
@@ -77,8 +156,9 @@ li{
     width: 82px;
     text-align: center;
     font-size: 15px;
+	padding:0px;
 }
-.quick-access .links a:before{
+.home .quick-access .links a:before{
     transform: skew(20deg);
     -webkit-transform: skew(20deg);
     -moz-transform: skew(20deg);
@@ -95,16 +175,16 @@ li{
     height: 75px;
 	content:"";
 }
-.quick-access .links a:hover:before{
+.home .quick-access .links a:hover:before{
     background-color:#39424b;
 }
 
-.quick-access .links a{
+.home .quick-access .links a{
 	padding:0 7px 0 0;
 	/*background:url(http://store.wsu.dev/skin/frontend/wsu_base/default/images/bkg_pipe1.gif) no-repeat 100% 50%*/
 }
-.quick-access .links li.last a{padding:0;background:none}
-.quick-access .links a span:before{
+.home .quick-access .links li.last a{padding:0;background:none}
+.home .quick-access .links a span:before{
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesome;
 	font-size: inherit;
@@ -120,6 +200,9 @@ li{
     font-size: 50px;
 	z-index:1;
 }
+
+
+/*--icons--*/
 .quick-access .links a:hover span:before{
 	color:#fff;
 }
