@@ -6,29 +6,14 @@
  */
 ?>
 
-
-
-<form action="#" id="mass_products">
 <?php
-	date_default_timezone_set('America/Los_Angeles');//quick test of a date issue
 	$_productCollection=$this->getLoadedProductCollection();
 	$_collectionSize = $_productCollection->count();
-	
-	
-	if(!function_exists('tooltip_block')){ // will be moved to the SU ext
-		function tooltip_block ($message){
-			$html = '<span class="fa-stack fa-lg tooltip"  style="font-size:.75em;">
-			  <i class="fa fa-square fa-stack-2x"></i>
-			  <i class="fa fa-question fa-stack-1x fa-inverse" title="%s"></i>
-			</span>';
-			$html=sprintf($html,$message);
-			return $html;
-		}
-	}
-	
-	
-	
 ?>
+
+<?php if ($_collectionSize && $tmpHtml = $this->getChildHtml('block_category_above_collection')): ?>
+	<div class="block_category_above_collection std"><?php echo $tmpHtml; ?></div>
+<?php endif; ?>
 
 <?php if(!$_collectionSize): ?><?php
 	 if ($tmpHtml = $this->getChildHtml('block_category_above_empty_collection')) {
@@ -46,21 +31,26 @@
 	$helpImg = $this->helper('wsu_wsu/image');
 	
 	//Default image size
-	$imgWidth = 340;
-	$imgHeight = 0;
+	$imgWidth = 295;
+	$imgHeight = 295;
 	
 	//Aspect ratio settings
 	if ($theme->getCfg('category/aspect_ratio')) {
 		$imgHeight = 0; //Height will be computed automatically (based on width) to keep the aspect ratio
 	}
 	//Hide toolbar
-	$hideToolbar = true;
+	$hideToolbar = false;
 	if ($this->getHideToolbar()) {
 		$hideToolbar = true;
 	}
 ?>
 
 <div class="category-products">
+	<?php if (!$hideToolbar): ?>
+		<?php echo $this->getToolbarHtml() ?>
+	<?php endif; ?>
+	<?php if($this->getMode()!='grid'): //List mode ?>
+<!-- Lists -->
 	<?php
 		//Get list configuration array
 		$lc = $theme->getCfgGroup('category_list');
@@ -78,305 +68,230 @@
 	<?php foreach ($_productCollection as $_product): ?>
 			<?php 
 				$productType=$_product->getTypeID();
-				$pID=$_product->getId();
-				$product = Mage::getModel('catalog/product');
-				$product = Mage::getModel("catalog/product")->load($pID);
-
-				$FoodOptions = $product->getFoodOptions();
-				$RequestSeating=$product->getRequestSeating();
-				$HasAccessValidation = $product->getHasAccessValidation();
-				$AccessCode = $product->getAccessCode();
-				$Location = $product->getLocation();
-				
-				
-				//this would be a block with in the event ext
-				$eventStart = Mage::getModel('core/date')->timestamp($product->getEventStartDateTime());
-				$eventEnd = Mage::getModel('core/date')->timestamp($product->getEventEndDateTime());
-
-
-				$relative_starttime = $product->getRelativeStarttime();
-				$relative_endtime = $product->getRelativeEndtime();
-
-
-
-				$eventStart_date = date('l, F jS, Y',$eventStart);
-				$eventEnd_date = date('l, F jS, Y',$eventEnd);
-
-				$eventStart_time = date('g:i a',$eventStart);
-				$eventEnd_time = date('g:i a',$eventEnd);		
-				
-				$dateStr="";
-				$timeStr="";
-				$current_time = date("Y-m-d H:i:s");
-				
-				if($eventStart_date==$eventEnd_date){
-					$dateStr="<b>Date:</b> <i>$eventStart_date</i><br/>";
-					
-					
-					$timeStr= ($relative_starttime!="") ? $relative_starttime : $eventStart_time;
-					if($eventStart_time!=$eventEnd_time){
-						$timeStr .= " to ";
-						$timeStr .= ($relative_endtime!="") ? $relative_endtime : $eventEnd_time;
-					}
-					$timeStr= "<b>Time:</b> <i>$timeStr</i><br/>";
-					$dateTimeHtml=$dateStr.$timeStr;
-				}
-
-				if($eventStart_date!=$eventEnd_date){
-					$dateStr="<b>Date:</b> <i>$eventStart_date</i><br/>";
-					$timeStr= ($relative_starttime!="") ? $relative_starttime : $eventStart_time;
-					
-					$timeStr= "<b>Time:</b> <i>$timeStr</i><br/>";
-					$dateTimeHtml=$dateStr.$timeStr;
-					
-					$dateStr="<b>Date:</b> <i>$eventEnd_date</i><br/>";
-					$timeStr= ($relative_endtime!="") ? $relative_endtime : $eventEnd_time;
-					
-					$timeStr= "<b>Time:</b> <i>$timeStr</i><br/>";
-					
-					$dateTimeHtml=$dateTimeHtml.$dateStr.$timeStr;
-					
-				}
-
-				
-				
-				
-				
-				
-				$cusOpts = $product->getOptions();
-				
+				$product=Mage::getModel('catalog/product')->load($_product->getId());
+				$eventStart = $product->getEventstartdate();
 			?>
 	
-		<li class="mass_item item row margin-left <?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>" data-product_id="<?=$pID?>">
-			<input type="hidden" value="<?=$pID?>" name="products[]"/>
-			<input type="checkbox" name="goingToEvent"/>
-			
-			<?php if($HasAccessValidation): ?>
-				<div class="validation_overlay">
-					<div class="access_form">Enter Access Code<br/>
-						<input type="text" class="full" data-valid="<?=$AccessCode?>"/>
-					</div>
-				</div>
+		<li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
+			<?php if ($tmpHtml = $this->getChildHtml('block_category_above_product')): ?>
+				<div class="block_category_above_product std"><?php echo $tmpHtml; ?></div>
 			<?php endif; ?>
-
-		
-		
-			
 			<?php //Product Image ?>
-			<div class="product-image-wrapper column one">
+			<div class="product-image-wrapper grid12-4 mobile-grid-half">
 				<?php 
 					$imgLable = $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true); 
 				?>
-				<img src="<?=$helpImg->getImg($_product, $imgWidth, $imgHeight, 'small_image');?>" alt="<?=$imgLable?>" width="100%"/>
-			</div> <!-- end: product-image-wrapper -->
-			
-			<div class="product-data column two padded-left narrow">
-				<?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
-				<h2 class="product-name">
-					<?=$_helper->productAttribute($_product, $_product->getName() , 'name')?>
-				</h2>
-				<div class="row halves">
-					<div class="column" date-current_time="<?=$current_time?>">
-						<?=$dateTimeHtml;?>
-						<?php if($Location!=""):?>
-							<b>Location:</b> <i><?=$Location;?></i>
-						<?php endif; ?>
-					</div>
-					<div class="column padded-left narrow cart_action_area">
-					
-						<?php echo $this->getPriceHtml($_product, true) ?>
-						
-						<?php if($_product->isSaleable()): ?>
-							<p><button type="button" title="<?=$this->__('Attend') ?>" class="button btn-cart"><span><span><?=$this->__('Attend') ?></span></span></button></p>
-						<?php else: ?>
-							<p class="availability out-of-stock"><span><?=$this->__('Sorry, event is filled.') ?></span></p>
-						<?php endif; ?>
-					
-					</div>
-				</div>
-			
-				<?php //Product description ?>
-				<div class="desc std">
-					<?=$product->getDescription()?>
-					<!--<a href="<?php echo $_product->getProductUrl() ?>" title="<?=$_productNameStripped ?>" class="link-learn"><?=$this->__('Learn More') ?></a>-->
-				</div>					
-					
-				<input type="hidden" value="1" name="product[<?=$pID?>][qty]">
-				
-			</div>
-				<div class="row halves attendence_block">
-					<div class="column">
-						<h4>Your Event Options:</h4>
-						<?php if($FoodOptions>0): ?>
-							<span>Meal Choice:</span><br/>
-							<select name="product[<?=$pID?>][options][meal]">
-								<option>Beef</option>
-								<option>Fish</option>
-								<option>Vegetarian</option>
-							</select><br/>
-							<span>Dietary Requests:</span><?=tooltip_block($this->__("Please note any food allergies or needs. (i.e. vegetarian, gluten-free, etc.)"))?><br/>
-							<input type="text"  name="product[<?=$pID?>][options][dietary]" class="full"/>
-							<br/>
-						<?php endif; ?>
-						<span>Mobility Requests:</span><br>
-						<input type="text"  name="product[<?=$pID?>][options][mobility]" class="full"/><br/>
-						
-						<?php if($RequestSeating>0): ?>
-							<span>Seating Requests:</span><br/>
-							<input type="text"  name="product[<?=$pID?>][options][requested_seating]" class="full"/>
-							<br/>
-						<?php endif; ?>
-						
-						
-						
-						<br/>
-					</div>
-					<div class="column padded-left narrow">
-					<?php		
-						
-						$AllowGuest = $product->getAllowGuests();
-						$GuestInfo = $product->getGuestInfo();
-						$MenuAgePriceRange = $product->getMenuAgePriceRange();//opps
-
-						if($AllowGuest>0){
-							$GuestQty = $product->getGuestCost();
-							//$GuestLimit = $product->getGuestLimit();
-							$GuestLimit = $product->getAttributeText("guest_limit");
-							?>
-							
-							<?php if($MenuAgePriceRange>0): ?>
-                            <?php
-
-							
-							$child_6_12_id=0;
-							$under_5_id=0;
-								foreach($cusOpts as $optionKey => $option) {
-									$field=$option->getData();
-									if($field['type']=="field"){
-										$sku=$option->getSku();
-										if($sku == "child_6_12"){
-											$child_6_12_id=$option->getId();
-										}
-										if($sku == "under_5"){
-											$under_5_id=$option->getId();
-										}
-									}
-								}                            
-                           ?>  
-							<input type='hidden' name='product[<?=$pID?>][options][<?=$child_6_12_id?>]' data-cusop="child_6_12"/><!--//under_5-->
-							<input type='hidden' name='product[<?=$pID?>][options][<?=$under_5_id?>]' data-cusop="under_5"/><!--//child_6_12-->
-							<?php endif; ?>
-							
-							<ul class="guest_blocks" data-limit="<?=$GuestLimit?>">
-							
-							<?php if($GuestInfo>0): ?>
-							
-
-								<li><a href="#" class="add_guest  spine-button"><i class="fa fa-plus"></i> Add Guest</a><a href="#" class="copy_guest  spine-button"><i class="fa fa-clipboard" title="Copy guests from another event."></i></a></li>
-								<li class="guest_block template">
-									<a href="#" class="remove_guest spine-button"><span class="fa-stack fa-sm">
-									  <i class="fa fa-circle fa-stack-2x"></i>
-									  <i class="fa fa-times fa-stack-1x fa-inverse"></i>
-									</span></a>
-									<span class="blockHeader">Guest <i class="count">{%d%}</i></span><br/>
-									<div class="row halves padded-bottom short">
-										<div class="column">
-											<span>First Name:</span><input type="text" name="product[<?=$pID?>][options][guest][{%d%}][firstName]" class="full"/>
-										</div>
-										<div class="column padded-left narrow">
-											<span>Last Name:</span><input type="text"  name="product[<?=$pID?>][options][guest][{%d%}][lastName]" class="full"/>
-										</div>
-
-										
-									</div>
-									
-									<?php if($MenuAgePriceRange>0): ?>
-										<div class="row single padded-bottom short">
-											<div class="column" style="width:100%;">
-												<input type="radio" name="person_type[guest][{%d%}][]" data-ptype="adult" checked/>Adult 
-												<input type="radio" name="person_type[guest][{%d%}][]" data-ptype="child_6_12"/>child ages 6-12 
-												<input type="radio" name="person_type[guest][{%d%}][]" data-ptype="under_5"/>child 5 and under 
-											</div>
-										</div>
-									<?php endif; ?>
-									
-									<?php if($FoodOptions>0): ?>
-									<div class="row side-left padded-bottom short">
-										<div class="column">
-											<span>Meal Choice:</span><br/>
-											<select name="product[<?=$pID?>][options][guest][{%d%}][meal]">
-												<option>Beef</option>
-												<option>Fish</option>
-												<option>Vegetarian</option>
-											</select>
-										</div>
-										<div class="column padded-left narrow">
-											<span>Dietary Requests:</span><input type="text"  name="product[<?=$pID?>][options][guest][{%d%}][dietary]" class="full"/>
-										</div>
-									</div>
-									<?php endif; ?>
-									
-									<a href="#" class="add_guest  spine-button"><i class="fa fa-plus"></i> Add Guest </a>
-								</li>
-							<?php else: ?>
-								<li>How many guests? <input type="text" class="spinner"/></li>
-							
-							<?php endif; ?>
-							
-							</ul>
-							
-							
-							<?php
-						}
-						 
-					?>
-						 <!--
+				<a href="<?=$_product->getProductUrl()?>" title="<?=$imgLable?>" class="product-image" style="max-width:<?php echo $imgWidth; ?>px;">
+					<img src="<?php echo $helpImg->getImg($_product, $imgWidth, $imgHeight, 'small_image'); ?>" alt="<?=$imgLable?>" />
 					<?php
-						$attVal = $product->getOptions();
-						 
-						$optStr = "";
-						
-						//var_dump($attVal);
-						// loop through the options
-						$i=0;
-						foreach($attVal as $optionKey => $option) {
-							$field=$option->getData();
-							if($field['type']=="field"){
-								if($i<1){
-								$optStr .= "<a href='#' class='button add_guest' ><i class='fa fa-plus'></i>Additional Guest ($".money_format ( $option->getPrice() , 2 ).") </a>";
-								}
-								$optStr .= "<div class='guest_block' style='display:none;>";
-								$optStr .= $option->getTitle().": ";
-								$optStr .= "<input type='text' name='options[".$option->getId()."]' />";
-								if($i>0 && $i < (count($attVal)-1)){
-									$optStr .= "</br><a href='#' class='button add_guest' ><i class='fa fa-plus'></i>Add another Guest for an additional ".money_format ( $option->getPrice() , 2 )." </a>";
-								}
-								$optStr .= "</div>";
-								$i++;
-							}else{
-								//$optStr .= "<br/>";
-								 
-								//$optStr .= $optionVal->getTitle().": ";
-								 
-								$optStr .= "<select style='display:block; clear:both;' name='options[".$option->getId()."]'>";
-								 
-								foreach($option->getValues() as $valuesKey => $valuesVal) {
-									$optStr .= "<option value='".$valuesVal->getId()."'>".$valuesVal->getTitle()."</option>";
-								}
-								$optStr .= "</select>";
-							}
+						if ($theme->getCfg('category/alt_image')) { 
+							echo $theme->getAltImgHtml($_product, $imgWidth, $imgHeight);
 						}
-						 
-						echo($optStr );
-						
-					?>-->
+						echo $helpLabels->getLabels($_product); //Product labels
+					?>
+				</a>
+			</div> <!-- end: product-image-wrapper -->
+
+			<?php //Product description ?>
+			<div class="product-shop grid12-5 mobile-grid-half">
+				<div class="product-shop-inner">
+					<?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+					<h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></a></h2>
+					<?php if($_product->getRatingSummary()): ?>
+						<?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+					<?php endif; ?>
+					
+					<div class="desc std">
+						<?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+						<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('Learn More') ?></a>
 					</div>
 				</div>
+			</div>
+				
+			<div class="right-column grid12-3 mobile-grid-half">
+				<?php echo $this->getPriceHtml($_product, true) ?>
+				<?php if($_product->isSaleable()): ?>
+					<p><button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
+				<?php else: ?>
+					<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+				<?php endif; ?>
+				
+				<?php
+				if ($lc['addtolinks_simple']) {
+					echo $helpTemplate->getCategoryAddtoLinks($_product, $this->getAddToCompareUrl($_product), 'addto-gaps-right');
+				} else {
+					if($productType != 'event' && $_compareUrl=$this->getAddToCompareUrl($_product)){ 
+						?> <!-- <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li> --> <?php
+					} 
+					echo $helpTemplate->getCategoryAddtoLinksComplex($_product, $this->getAddToCompareUrl($_product), 'addto-gaps-right');
+				}
+				?>
+			</div>
+			<?php if ($tmpHtml = $this->getChildHtml('block_category_below_product')): ?>
+				<div class="block_category_below_product std"><?php echo $tmpHtml; ?></div>
+			<?php endif; ?>
 		</li>
 	<?php endforeach; ?>
 	</ul>
-	<span id="addContainer"><a href="#" id="check_out_products" class="spine-button"><i class="fa fa-shopping-cart "></i>Add Events to Cart</a></span>
+	<script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
+
+	<?php else: //Grid mode ?>
+<!-- Grinds -->
+	<?php
+		//Get grid configuration array
+		$gc = $theme->getCfgGroup('category_grid');
+		
+		//Get number of columns (from parameter or from theme config)
+		$columnCount = 3;
+		if ($this->getGridColumnCount()) {
+			$columnCount = $this->getGridColumnCount();
+		} else {
+			$columnCount = $gc['column_count'];
+		}
+
+		//Grid classes
+		$gridClasses = '';
+		if ($gc['display_name'] == 2 && $gc['display_name_single_line'] == true) {
+			$gridClasses .= ' single-line-name';
+		}
+		if ($gc['centered']) {
+			$gridClasses .= ' centered';
+		}
+		if ($gc['hover_effect']) {
+			$gridClasses .= ' hover-effect';
+		}
+		if ($gc['equal_height']) {
+			$gridClasses .= ' equal-height';
+		}
+
+		//Size of grid elements
+		if ($gc['elements_size']) {
+			$gridClasses .= ' size-' . $gc['elements_size'];
+		} else {
+			//Calculate size based on number of columns
+			if ($columnCount >= 6) {
+				$gridClasses .= ' size-xs';
+			} elseif ($columnCount >= 4) {
+				$gridClasses .= ' size-s';
+			}
+		}
+
+		//Container "actions" at the bottom of the grid item stores button and add-to links
+		//If at least one of those elements was set as "Display on hover" but no element was set as "Display":
+		//apply appropriate classes to the container.
+		$actionsClasses = '';
+		if ($gc['display_addtocart'] == 1 || ($gc['display_addtolinks'] == 1 && !$gc['addtolinks_simple'])) {
+			$actionsClasses = ' display-onhover';
+		}
+		if ($gc['display_addtocart'] == 2 || ($gc['display_addtolinks'] == 2 && !$gc['addtolinks_simple'])) {
+			$actionsClasses = '';
+		}
+	?>
+	
+	<ul class="products-grid category-products-grid itemgrid itemgrid-adaptive itemgrid-<?php echo $columnCount; ?>col<?php if($gridClasses) echo $gridClasses; ?>">
+		<?php foreach ($_productCollection as $_product): ?>
+			<?php 
+				$productType=$_product->getTypeID();
+				$product=Mage::getModel('catalog/product')->load($_product->getId());
+				$eventStart = $product->getEventstartdate();
+			?>
+		
+			<li class="item">
+				<?php if ($tmpHtml = $this->getChildHtml('block_category_above_product')): ?>
+					<div class="block_category_above_product std"><?php echo $tmpHtml; ?></div>
+				<?php endif; ?>
+
+				    
+				<div class="product-image-wrapper" style="max-width:<?php echo $imgWidth; ?>px;">
+					<?php 
+						$imgLable = $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true); 
+					?>
+					<a href="<?=$_product->getProductUrl()?>" title="<?=$imgLable?>" class="product-image">
+						<img src="<?php echo $helpImg->getImg($_product, $imgWidth, $imgHeight, 'small_image'); ?>" alt="<?=$imgLable?>" />
+						<?php
+							if ($theme->getCfg('category/alt_image')) {
+								echo $theme->getAltImgHtml($_product, $imgWidth, $imgHeight);
+							}
+							echo $helpLabels->getLabels($_product); //Product labels 
+						?>
+					</a>
+				
+					<?php //Add-to links
+						if ($gc['display_addtolinks'] != 0 && $gc['addtolinks_simple']) {
+							
+							if($productType != 'event' && $_compareUrl=$this->getAddToCompareUrl($_product)) { 
+								?><!--<li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li> --><?php 
+							} 
+							
+							if ($gc['display_addtolinks'] == 1) { //Display on hover
+								echo $helpTemplate->getCategoryAddtoLinksComplex_2($_product, $this->getAddToCompareUrl($_product), 'addto-links-icons addto-onimage display-onhover');
+							} else { //Always display
+								echo $helpTemplate->getCategoryAddtoLinksComplex_2($_product, $this->getAddToCompareUrl($_product), 'addto-links-icons addto-onimage');
+							}
+						}
+					?>
+				</div> <!-- end: product-image-wrapper -->
+				
+				<h2 class="product-name">
+					<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
+						<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
+					</a>
+				</h2>
+				<?php
+				 	if($_product->getRatingSummary()) {
+						if ($gc['display_rating'] == 1){ //Display on hover 
+							?><div class="display-onhover"><?php echo $this->getReviewsSummaryHtml($_product, 'short') ?></div><?php
+						}elseif ($gc['display_rating'] == 2){ //Always display 
+							echo $this->getReviewsSummaryHtml($_product, 'short');
+						}
+					}
+					if ($gc['display_price'] == 1) { echo '<div class="display-onhover">'; }
+					echo $this->getPriceHtml($_product, true);
+					if ($gc['display_price'] == 1){ echo '</div>'; }
+
+					//If at least one element was set as "Display on hover" but no element was set as "Display":
+					//aggregate classes from those elements and apply them to the "actions" container.
+					$actionsClasses = '';
+					if ($gc['display_addtocart'] == 1 || ($gc['display_addtolinks'] == 1 && !$gc['addtolinks_simple'])) {
+						$actionsClasses = ' display-onhover';
+					}
+					if ($gc['display_addtocart'] == 2 || ($gc['display_addtolinks'] == 2 && !$gc['addtolinks_simple']))  {
+						$actionsClasses = '';
+					}
+				?>
+				
+				<div class="actions clearer<?php echo $actionsClasses; ?>">
+					<?php //Cart button ?>
+					<?php if ($gc['display_addtocart'] != 0): ?>
+						<?php if ($_product->isSaleable()): ?>
+							<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+						<?php else: ?>
+							<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+						<?php endif; ?>
+					<?php endif; ?>
+					
+					<?php //Add-to links
+						if ($gc['display_addtolinks'] != 0 && !$gc['addtolinks_simple'])  {
+							echo $helpTemplate->getCategoryAddtoLinks($_product, $this->getAddToCompareUrl($_product), 'addto-gaps-right addto-texticons');
+						}
+					?>
+				</div> <!-- end: actions -->
+				<?php if ($tmpHtml = $this->getChildHtml('block_category_below_product')): ?>
+					<div class="block_category_below_product std"><?php echo $tmpHtml; ?></div>
+				<?php endif; ?>
+			</li>
+		<?php endforeach; ?>    
+	</ul>
+	<?php endif; //end: if grid mode ?>
+
+	<?php if (!$hideToolbar): ?>
+		<div class="toolbar-bottom">
+			<?php echo $this->getToolbarHtml() ?>
+		</div>
+	<?php endif; ?>
 </div>
 <?php endif; ?>
-</form>
 
+<?php if ($_collectionSize && $tmpHtml = $this->getChildHtml('block_category_below_collection')): ?>
+	<div class="block_category_below_collection std"><?php echo $tmpHtml; ?></div>
+<?php endif; ?>

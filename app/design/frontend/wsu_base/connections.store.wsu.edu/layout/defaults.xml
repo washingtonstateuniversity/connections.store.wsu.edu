@@ -66,4 +66,57 @@
 				<position>10</position>
 			</action>
 	</customer_logged_in>
+	
+<!-- CATEGORY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+	<!-- Default category (without layered navigation) -->
+	<catalog_category_default>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+		<reference name="product_list">
+			<!-- HOWTO: Change review summary template
+			<action method="addReviewSummaryTemplate"><type>short</type><template>review/helper/summary_short_nolinks.phtml</template></action> -->
+			<!-- Custom static blocks -->
+			<block type="cms/block" name="block_category_above_collection">
+				<action method="setBlockId"><block_id>block_category_above_collection</block_id></action>
+			</block>
+			<block type="cms/block" name="block_category_above_empty_collection">
+				<action method="setBlockId"><block_id>block_category_above_empty_collection</block_id></action>
+			</block>
+			<block type="catalog/product_list_aboveproduct" name="block_category_above_product" as="block_category_above_product" />
+			<block type="catalog/product_links_belowproduct" name="block_category_below_product" as="block_category_below_product" />
+			<block type="cms/block" name="block_category_below_collection">
+				<action method="setBlockId"><block_id>block_category_below_collection</block_id></action>
+			</block>
+		</reference>
+		<!-- Remove currency switcher from sidebar -->
+		<reference name="left">
+			<action method="unsetChild"><name>currency</name></action>
+		</reference>
+	</catalog_category_default>
+
+	<!-- Category with layered navigation -->
+	<catalog_category_layered>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+		<reference name="left">
+			<!-- Remove currency switcher from sidebar -->
+			<action method="unsetChild"><name>currency</name></action>			
+		</reference>
+		<reference name="product_list">
+			<!-- Custom static blocks -->
+			<block type="cms/block" name="block_category_above_collection">
+				<action method="setBlockId"><block_id>block_category_above_collection</block_id></action>
+			</block>
+			<block type="cms/block" name="block_category_above_empty_collection">
+				<action method="setBlockId"><block_id>block_category_above_empty_collection</block_id></action>
+			</block>
+			<block type="cms/block" name="block_category_below_collection">
+				<action method="setBlockId"><block_id>block_category_below_collection</block_id></action>
+			</block>
+		</reference>
+	</catalog_category_layered>
+	
+	
 </layout>
