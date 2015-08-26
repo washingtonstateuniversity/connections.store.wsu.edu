@@ -16,6 +16,9 @@ body{
                        center top !important;
 }
 main{
+	background-color:#fff;
+}
+.home main{
 	background: url(/media/store-media/connections.store.wsu.edu/skin/home-main-background.jpg);
 	background-color:#fff;
 	background-repeat: no-repeat;
