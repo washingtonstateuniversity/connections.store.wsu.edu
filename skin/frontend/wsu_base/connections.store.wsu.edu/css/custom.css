@@ -337,7 +337,10 @@ main footer{
 	  z-index: 11;
 	}
 
-/* CART */
+/*%%%--CART--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+th.col-img{
+	background:#fff;
+}
 .cart .totals {
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
   padding: 0;

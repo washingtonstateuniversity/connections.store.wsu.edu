@@ -231,12 +231,7 @@ $editUrl = $this->getConfigureUrl();
         <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
         <td class="col-unit-price a-right">
         
-        	<span class="cell-label">
-            	<?=$this->__('Unit Price') ?>
-            	<?php if ($this->helper('tax')->displayCartBothPrices()): ?>
-                	<?=$this->helper('tax')->getIncExcTaxLabel(false) ?>
-                <?php endif; ?>
-        	</span>
+        	
         
             <?php if (Mage::helper('weee')->typeOfDisplay($_item, array(1, 4), 'sales') && $_item->getWeeeTaxAppliedAmount()): ?>
                 <span class="cart-tax-total" onclick="taxToggle('eunit-item-tax-details<?=$_item->getId(); ?>', this, 'cart-tax-total-expanded');">
@@ -276,17 +271,18 @@ $editUrl = $this->getConfigureUrl();
                     </div>
                 <?php endif; ?>
             <?php endif; ?>
+			<span class="cell-label">
+            	<!--<?=$this->__('Unit Price') ?>-->
+            	<?php if ($this->helper('tax')->displayCartBothPrices()): ?>
+                	<?=$this->helper('tax')->getIncExcTaxLabel(false) ?>
+                <?php endif; ?>
+        	</span>
         </td>
         <?php endif; ?>
         <?php if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
         <td class="col-unit-price">
         
-        	<span class="cell-label">
-            	<?=$this->__('Unit Price') ?>
-            	<?php if ($this->helper('tax')->displayCartBothPrices()): ?>
-                	<?=$this->helper('tax')->getIncExcTaxLabel(true) ?>
-                <?php endif; ?>
-        	</span>
+
         
             <?php $_incl = $checkout->getPriceInclTax($_item); ?>
             <?php if (Mage::helper('weee')->typeOfDisplay($_item, array(1, 4), 'sales') && $_item->getWeeeTaxAppliedAmount()): ?>
@@ -326,12 +322,18 @@ $editUrl = $this->getConfigureUrl();
                     </div>
                 <?php endif; ?>
             <?php endif; ?>
+			<span class="cell-label">
+            	<!--<?=$this->__('Unit Price') ?>-->
+            	<?php if ($this->helper('tax')->displayCartBothPrices()): ?>
+                	<?=$this->helper('tax')->getIncExcTaxLabel(true) ?>
+                <?php endif; ?>
+        	</span>
         </td>
         <?php endif; ?>
     <?php endif; ?>
     <td class="a-center">
     	
-        <span class="cell-label"><?=$this->__('Qty') ?></span>
+        <!-- <span class="cell-label"><?=$this->__('Qty') ?></span>-->
     
         <input name="cart[<?=$_item->getId() ?>][qty]" value="<?=$this->getQty() ?>" size="4" title="<?=$this->__('Qty') ?>" class="input-text qty" maxlength="12" />
     </td>
@@ -339,7 +341,7 @@ $editUrl = $this->getConfigureUrl();
     <td class="<?php if($this->helper('tax')->displayCartBothPrices()) echo 'col-total-excl'; else echo 'col-total'; ?> a-right">
     
         <span class="cell-label">
-			<?=$this->__('Subtotal') ?>
+			<!--<?=$this->__('Subtotal') ?>-->
             <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
                 <?=$this->helper('tax')->getIncExcTaxLabel(false) ?>
             <?php endif; ?>
