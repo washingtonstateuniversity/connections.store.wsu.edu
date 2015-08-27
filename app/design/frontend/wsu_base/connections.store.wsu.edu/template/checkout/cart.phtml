@@ -28,7 +28,7 @@
     </div>
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <?php echo $this->getChildHtml('form_before') ?>
-    <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post" class="the-cart-form padded">
+    <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post" class="the-cart-form padded narrow">
         <?php echo $this->getBlockHtml('formkey'); ?>
         <fieldset>
         <div class="cart-table-wrapper">
@@ -85,9 +85,9 @@
             </table>
 			<div id="cart_function_area">
 				<?php if($this->getContinueShoppingUrl()): ?>
-					<button type="button" title="<?php echo $this->__('Continue Shopping') ?>" class="button btn-continue btn-inline" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><?php echo $this->__('Continue Shopping') ?></button>
+					<button type="button" title="<?php echo $this->__('Continue Shopping') ?>" class="button btn-continue btn-inline" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><span><?php echo $this->__('Continue Shopping') ?></span></button>
 				<?php endif; ?>
-					<button type="submit" name="update_cart_action" value="update_qty" title="<?php echo $this->__('Update Shopping Cart'); ?>" class="button btn-update btn-inline"><?php echo $this->__('Update Shopping Cart'); ?></button>
+					<button type="submit" name="update_cart_action" value="update_qty" title="<?php echo $this->__('Update Shopping Cart'); ?>" class="button btn-update btn-inline"><span><?php echo $this->__('Update Shopping Cart'); ?></span></button>
 	
 				<?php /*?>
 				<a id="link-cart-update" href="#">Test submit</a>
