@@ -341,10 +341,33 @@ main footer{
 .data-table thead, .data-table thead tr{
 	background:#da1a32;
 	color: #fff;
+	height:31px;
+	line-height:31px;
 }
-.cart .totals {
-  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-  padding: 0;
+.data-table tbody{
+	border-left:none;
+	border-right:none;
+}
+.data-table tbody tr,.data-table tbody td{
+	border-left:none;
+	border-right:none;
+	border-bottom:1px solid #790000;	
+}
+.data-table tbody tr.last,.data-table tbody tr.last td{
+	border-bottom:none;	
+}
+.data-table tbody td{
+	color:#4d565d !important;
+	font-weight:bold;
+}
+.cart-table h2.product-name{
+	color:#da1b33 !important;
+	font-size:1em;
+}
+.input-text.qty{
+	border:1px solid #da1a32;
+	text-align:center;
+	color:#4d565d;
 }
 #cart_function_area{ 
 	background:#eff0f1;
@@ -399,6 +422,61 @@ main footer{
 	content:"";
 }
 #cart_function_area .button:hover:before{background-color: #a5abb2;}
+
+.cart .totals {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  padding: 0;
+}
+#shopping-cart-totals-table{
+}
+#shopping-cart-totals-table tr,#shopping-cart-totals-table tr td{
+	border-top:1px solid #c9ccce;
+}
+
+
+
+.checkout-types .btn-proceed-checkout.button{ 
+	position: relative;
+	/*background:#747f8b;*/
+	border:none;
+	color:#fff;
+	height:43px;
+	border-radius:0px;
+	background:none;
+	color:#FFFFFF;
+	display:inline-block;
+    margin-right: 80px;
+	
+}
+.checkout-types .btn-proceed-checkout.button span{
+	width:100%;
+	height:100%;
+	position: relative;
+	line-height: 29px;
+    z-index: 1;
+    text-align: center;
+    font-size: 18px;
+	font-weight:bold;
+	padding:0px;
+}
+.checkout-types .btn-proceed-checkout.button:before{
+    transform: skew(20deg);
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -ms-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    background-color: #747f8b;
+	
+	border:2px solid #747f8b;
+	position:absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+	width:100%;
+    height: 39px;
+	content:"";
+}
+.checkout-types .btn-proceed-checkout.button:hover:before{background-color: #a5abb2;}
 
 /*%%%--CHECKOUT--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 /* for the moment REMEBER to remove */
