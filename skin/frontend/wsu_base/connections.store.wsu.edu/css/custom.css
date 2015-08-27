@@ -446,6 +446,7 @@ main footer{
 	color:#FFFFFF;
 	display:inline-block;
     margin-right: 80px;
+	text-shadow:2px 2px 1px #393939;
 	
 }
 .checkout-types .btn-proceed-checkout.button span{
