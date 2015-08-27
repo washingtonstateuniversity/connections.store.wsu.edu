@@ -338,8 +338,9 @@ main footer{
 	}
 
 /*%%%--CART--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-th.col-img{
-	background:#fff;
+.data-table thead, .data-table thead tr{
+	background:#da1a32;
+	color: #fff;
 }
 .cart .totals {
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
@@ -348,7 +349,7 @@ th.col-img{
 
 
 
-
+/*%%%--CHECKOUT--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 /* for the moment REMEBER to remove */
 .opc-wrapper-opc .buttons-set .button span,
 .opc-wrapper-opc .discount-block .buttons-set .button span {

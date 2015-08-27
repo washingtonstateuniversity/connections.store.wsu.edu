@@ -339,14 +339,6 @@ $editUrl = $this->getConfigureUrl();
     </td>
     <?php if (($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()) && !$_item->getNoSubtotal()): ?>
     <td class="<?php if($this->helper('tax')->displayCartBothPrices()) echo 'col-total-excl'; else echo 'col-total'; ?> a-right">
-    
-        <span class="cell-label">
-			<!--<?=$this->__('Subtotal') ?>-->
-            <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
-                <?=$this->helper('tax')->getIncExcTaxLabel(false) ?>
-            <?php endif; ?>
-        </span>
-    
         <?php if (Mage::helper('weee')->typeOfDisplay($_item, array(1, 4), 'sales') && $_item->getWeeeTaxAppliedAmount()): ?>
             <span class="cart-tax-total" onclick="taxToggle('esubtotal-item-tax-details<?=$_item->getId(); ?>', this, 'cart-tax-total-expanded');">
         <?php else: ?>
@@ -388,17 +380,18 @@ $editUrl = $this->getConfigureUrl();
                 </div>
             <?php endif; ?>
         <?php endif; ?>
+		<span class="cell-label">
+			<!--<?=$this->__('Subtotal') ?>-->
+            <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
+                <?=$this->helper('tax')->getIncExcTaxLabel(false) ?>
+            <?php endif; ?>
+        </span>
     </td>
     <?php endif; ?>
     <?php if (($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()) && !$_item->getNoSubtotal()): ?>
     <td class="<?php if($this->helper('tax')->displayCartBothPrices()) echo 'col-total-incl'; else echo 'col-total'; ?>">
     
-        <span class="cell-label">
-			<?=$this->__('Subtotal') ?>
-            <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
-                <?=$this->helper('tax')->getIncExcTaxLabel(true) ?>
-            <?php endif; ?>
-        </span>
+
     
         <?php $_incl = $checkout->getSubtotalInclTax($_item); ?>
         <?php if (Mage::helper('weee')->typeOfDisplay($_item, array(1, 4), 'sales') && $_item->getWeeeTaxAppliedAmount()): ?>
@@ -444,6 +437,12 @@ $editUrl = $this->getConfigureUrl();
                 </div>
             <?php endif; ?>
         <?php endif; ?>
+		<span class="cell-label">
+			<!--<?=$this->__('Subtotal') ?>-->
+            <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
+                <?=$this->helper('tax')->getIncExcTaxLabel(true) ?>
+            <?php endif; ?>
+        </span>
     </td>
     <?php endif; ?>
     <td class="col-delete a-center">
