@@ -39,8 +39,8 @@ section#siteID{
 	border-top:none;
     z-index: 100;
 }
-#spine.darkest #glue:before{
-	background:url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;
+#spine #glue:before{
+	background:transparent url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;
 }
 .quick-access{
 	background:none;
@@ -222,6 +222,10 @@ li{
 .quick-access .links a[href*="checkout/cart"] span:before{
 	content: "\f07a";
 }
+.quick-access .links a[href*="wishlist"] span:before{
+	content: "\f005";
+}
+
 
 /*%%%-FOOTER-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 main footer{
