@@ -14,21 +14,7 @@
 			<action method="addItem"><type>skin_js</type><name>js/custom.js</name></action>
 		</reference>
 
-		<reference name="top.links">
-			<!--<remove name="wishlist_link"/>
-			<block type="wishlist/links" name="wishlist_link" >
-				<action method="addLinkBlock"><position>10</position></action>
-			</block>-->
-			<!-- Removes 'My Cart' AND 'Checkout' links
-			Default position: 40 and 50 respectively -->
-			<remove name="checkout_cart_link"/>
-
-			<!-- To re-add 'My Cart' or 'Checkout' after removing both -->
-			<block type="checkout/links" name="checkout_cart_link_custom">
-				<action method="addCartLink"><position>10</position></action>
-				<action method="addCheckoutLink"><position>11</position></action>
-			</block>
-		</reference>
+		
 		<!--
 		<reference name="top.links">
 			<remove name="wishlist_link"/>
