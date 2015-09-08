@@ -42,6 +42,27 @@ section#siteID{
 #spine #glue:before{
 	background:transparent url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;
 }
+#siteID{
+	height:60px;
+}
+#siteID article h2{
+	display:none;
+}
+#siteID article h1{
+	background:transparent url(/media/store-media/connections.store.wsu.edu/skin/connections-logo-no-marketplace.svg) no-repeat center top !important;
+	text-indent: -999em;
+    width: 250px;
+    height: 85px;
+    position: absolute;
+    top: 11px;
+    z-index: 150;
+}
+
+
+
+
+
+
 .quick-access{
 	background:none;
     position: absolute;
@@ -71,8 +92,9 @@ li{
     top: 87px;
 	z-index:100;
 }
+body:not(.home) .quick-access{    top: 53px; }
 body:not(.home) .quick-access:before{
-    width: 0;
+    width: 10px;
     height: 0;
     border-top: 36px solid #da1a33;
     border-left: 100px solid transparent;
@@ -89,7 +111,7 @@ body:not(.home) .quick-access .links:first-of-type:after{
     -ms-transform: skew(20deg);
     -o-transform: skew(20deg);
     background-color: #eff0f1;
-position: absolute;
+	position: absolute;
     top: 1px;
     right: 100%;
     z-index: 0;
@@ -270,6 +292,20 @@ body:not(.home) .quick-access .links a span:before{
 .quick-access .links a[href*="wishlist"] span:before{
 	content: "\f005";
 }
+
+
+.page-title{
+	margin-top: 25px;
+    padding: 0px;
+    border-bottom: 1px solid #38424a;
+}
+.page-title h1{
+	font-size:15px;
+	color:#4a535a;
+}
+
+
+
 
 
 /*%%%-FOOTER-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
@@ -699,8 +735,6 @@ main footer{
 	z-index: 0;
 	width: 0; 
 	height: 0; 
-	border-top: 30px solid #ff361e; 
-	border-right: 30px solid transparent;
 	content:"";
 }
 .products-grid li.item .sticker-wrapper .sticker{
@@ -724,8 +758,25 @@ main footer{
 }
 .products-grid li.item .sticker-wrapper.top-right{
 	top:0px;
-	right:0px;
+	right:30px;
 }
+.products-grid li.item .sticker-wrapper.top-left:before{
+	border-top: 30px solid #ff361e; 
+	border-right: 30px solid transparent;
+}
+.products-grid li.item .sticker-wrapper.top-right:before{
+	border-top: 30px solid #ff361e; 
+	border-left: 30px solid transparent;
+}
+.products-grid li.item .sticker-wrapper.top-right .sticker{
+	top: -4px;
+    left: 20px;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+}
+ 
+ 
  
 .products-grid .product-name{
 	border-bottom: 1px solid;
