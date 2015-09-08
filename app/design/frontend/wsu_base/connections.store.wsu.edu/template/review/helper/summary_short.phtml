@@ -1,0 +1,17 @@
+<?php
+/**
+ * - Removed links to review page and review form
+ */
+?>
+ <div class="ratings">
+	<div class="rating-box">
+	<?php if ($this->getReviewsCount()): ?>
+		<?php if ($this->getRatingSummary()):?>
+			<div class="rating" style="width:<?php echo $this->getRatingSummary() ?>%"></div>
+		<?php endif;?>
+		<span class="amount"><?php echo $this->__('%d Review(s)', $this->getReviewsCount()) ?></span>
+		<?php elseif ($this->getDisplayIfEmpty()): ?>
+			<p class="no-rating"><?php echo $this->__('Be the first to review this product') ?></p>
+		<?php endif; ?>
+	</div>
+</div>

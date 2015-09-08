@@ -1,0 +1,26 @@
+<?php
+/**
+ * Modification of /template/review/helper/summary.phtml
+ * - Changed path of the link to reviews list
+ * - Added id="goto-reviews" to identify this link in product view
+ * - Changed path of the link to review form
+ * - Added id="goto-reviews-form" to identify this link in product view
+ * - Same changes for the link displayed when there are no ratings
+ */
+?>
+<?php if ($this->getReviewsCount()): ?>
+    <div class="ratings">
+        <?php if ($this->getRatingSummary()):?>
+            <div class="rating-box">
+                <div class="rating" style="width:<?php echo $this->getRatingSummary() ?>%"></div>
+            </div>
+        <?php endif;?>
+        <p class="rating-links">
+            <a id="goto-reviews" href="#product-tabs"><?php echo $this->__('%d Review(s)', $this->getReviewsCount()) ?></a>
+            <span class="separator">|</span>
+            <a id="goto-reviews-form" href="#review-form"><?php echo $this->__('Add Your Review') ?></a>
+        </p>
+    </div>
+<?php elseif ($this->getDisplayIfEmpty()): ?>
+    <p class="no-rating"><a id="goto-reviews-form" href="#review-form"><?php echo $this->__('Be the first to review this product') ?></a></p>
+<?php endif; ?>
