@@ -645,3 +645,16 @@ main footer{
 	width:100%;
 	
 }
+
+/*--CATEGORIES--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+.category-title{
+    margin-top: 25px;
+    padding: 0px;
+    border-bottom: 1px solid #38424a;
+}
+.category-title h1{
+	font-size:15px;
+	color:#4a535a;
+}
+
+
