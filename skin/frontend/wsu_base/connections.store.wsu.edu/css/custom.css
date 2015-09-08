@@ -58,7 +58,21 @@ section#siteID{
     z-index: 150;
 }
 
-
+.home #siteID{
+	height:104px;
+}
+.home #siteID article h2{
+	display:none;
+}
+.home #siteID article h1{
+	background:transparent url(/media/store-media/connections.store.wsu.edu/skin/connections-logo-no-marketplace.svg) no-repeat center top !important;
+	background-size:contain;
+    width:415px;
+    height:135px;
+    position: absolute;
+    top: 23px;
+    z-index: 150;
+}
 
 
 
@@ -206,6 +220,9 @@ body:not(.home) .quick-access .links a span:before{
     right: 31px;
     top: 54px;
 	z-index:100;
+}
+.home .quick-access .links li{
+	padding-left:0px;
 }
 .home .quick-access .links a{
 	color:#ddd;
