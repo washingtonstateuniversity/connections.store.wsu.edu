@@ -19,4 +19,10 @@
 			<padding_ends>short</padding_ends>
 		</content_area>
 	</wsu_themecontrol_layout>
+	<wsu_themecontrol_design>
+		<spine>
+			<spine_color>darkest</spine_color>
+			<spine_bleed>1</spine_bleed>
+		</spine>
+	</wsu_themecontrol_design>
 </wsu_spine>
