@@ -686,6 +686,9 @@ main footer{
 .products-grid li.item .product-image-wrapper img{
 	margin: 0px;
 }
+.products-grid li.item:hover .product-image-wrapper{
+	background-color:#da1a32 !important;
+}
 .products-grid li.item .sticker-wrapper{
 	position:absolute;
 }
@@ -694,11 +697,11 @@ main footer{
 	top:0px;
 	left:0px;
 	z-index: 0;
-   width: 0; 
-   height: 0; 
-   border-top: 30px solid #ff361e; 
-   border-right: 30px solid transparent;
-   content:"";
+	width: 0; 
+	height: 0; 
+	border-top: 30px solid #ff361e; 
+	border-right: 30px solid transparent;
+	content:"";
 }
 .products-grid li.item .sticker-wrapper .sticker{
 	width: 100%;
@@ -710,6 +713,8 @@ main footer{
     text-align: center;
     font-size: 10px;
     padding: 0px;
+    -ms-transform: rotate(-45deg); /* IE 9 */
+    -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
     transform: rotate(-45deg);
     color: #fff;
 }
