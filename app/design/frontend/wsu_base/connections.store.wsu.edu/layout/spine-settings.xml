@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsu_spine>
+	<wsu_themecontrol_layout>
+		<responsive>
+			<fluid_width>fluid</fluid_width>
+			<max_width>custom</max_width>
+			<max_width_custom>1215</max_width_custom>
+		</responsive>
+		<product_view>
+			<row_type>side-left</row_type>
+			<padding>pad</padding>
+			<padding_flanks>narrow</padding_flanks>
+			<padding_ends>short</padding_ends>
+		</product_view>
+		<content_area>
+			<row_type>single</row_type>
+			<padding>padded</padding>
+			<padding_flanks>narrow</padding_flanks>
+			<padding_ends>short</padding_ends>
+		</content_area>
+	</wsu_themecontrol_layout>
+</wsu_spine>

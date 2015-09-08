@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout>
-	<wsu_spine>
-		<layout>
-			<responsive>
-				<max_width_custom>1024</max_width_custom>
-			</responsive>
-		</layout>
-	</wsu_spine>
 	<default>
 		<reference name="head">
 			<action method="addItem"><type>skin_css</type><name>css/custom.css</name></action>
