@@ -238,13 +238,7 @@
 					</a>
 				</h2>
 				<?php
-				 	if($_product->getRatingSummary()) {
-						if ($gc['display_rating'] == 1){ //Display on hover 
-							?><div class="display-onhover"><?php echo $this->getReviewsSummaryHtml($_product, 'short') ?></div><?php
-						}elseif ($gc['display_rating'] == 2){ //Always display 
-							echo $this->getReviewsSummaryHtml($_product, 'short');
-						}
-					}
+				 	
 					if ($gc['display_price'] == 1) { echo '<div class="display-onhover">'; }
 					echo $this->getPriceHtml($_product, true);
 					if ($gc['display_price'] == 1){ echo '</div>'; }
@@ -261,6 +255,19 @@
 				?>
 				
 				<div class="actions clearer<?php echo $actionsClasses; ?>">
+					<?php 
+					
+					if($_product->getRatingSummary()) {
+						if ($gc['display_rating'] == 1){ //Display on hover 
+							?><div class="display-onhover"><?php echo $this->getReviewsSummaryHtml($_product, 'short') ?></div><?php
+						}elseif ($gc['display_rating'] == 2){ //Always display 
+							echo $this->getReviewsSummaryHtml($_product, 'short');
+						}
+					}
+					
+					?>
+					
+					
 					<?php //Cart button ?>
 					<?php if ($gc['display_addtocart'] != 0): ?>
 						<?php if ($_product->isSaleable()): ?>

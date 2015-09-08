@@ -664,9 +664,13 @@ main footer{
 	margin-top:25px;
 }
 .display-onhover{
+	display: inline-block;
+    float: right;
+	position:relative;
 }
 .display-onhover [class*="-box"]{
 	display:none;
+	position:absolute;
 }
 .display-onhover .ratings:before{
 	display: inline-block;
@@ -726,4 +730,31 @@ main footer{
 	font-size:18px;
 	color:#38424a;
     line-height: 15px;
+}
+.products-grid .price-box {
+    margin: 5px 0;
+    display: inline-block;
+    float: left;
+}
+.products-grid .price-box .regular-price .price{
+	color:#da1a32;
+}
+.button.btn-cart{
+	background: none;
+    border: none;
+	float: right;
+}
+.button.btn-cart span{
+	display: none;
+}
+.button.btn-cart:before{
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 20px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);	
+	content:"\f07a";
+	color:#da1a33;
 }
