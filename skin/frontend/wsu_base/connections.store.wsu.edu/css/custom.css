@@ -64,7 +64,48 @@ main .button:not(.bare):before, main .spine-button:not(.bare):before, main butto
 
 main .button:not(.bare):hover:before, main .spine-button:not(.bare):hover:before, main button:not(.bare):hover:before, main input[type=submit]:not(.bare):hover:before, main input[type=reset]:not(.bare):hover:before, main input[type=button]:not(.bare):hover:before {background-color: #a5abb2;}
 
+/*--messages--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+ul.messages li[class$=-msg]:before{
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 20px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);	
+	
+	color:#39424b;
+	z-index:1;
+	
+	float: left;
+    margin-right: 7px;
+    margin-top: -3px;
 
+}
+.error-msg{
+    border-color: #da1a32;
+    background-color: #da6674;
+    color: #ffdfe3;
+}
+.error-msg:before{
+	content: "\f06a";
+}
+.warn-msg{
+    border-color: #f47900;
+    background-color: #fed697;
+    color: #f48e2b;
+}
+.warn-msg:before{
+	content:"\f071";
+}
+.success-msg{
+    border-color: #1d3c08;
+    background-color: #8ebe71;
+    color: #1e660d;
+}
+.success-msg:before{
+	content: "\f05d";
+}
 
 /*--Content--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 
@@ -379,7 +420,7 @@ body:not(.home) .quick-access .links a span:before{
 
 
 
-/*%%%-FOOTER-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+/*--FOOTER--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 main footer{
 	padding:0px !important;
 	position:absolute;
@@ -493,7 +534,7 @@ main footer{
 	  z-index: 11;
 	}
 
-/*%%%--CART--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+/*--CART--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .data-table thead, .data-table thead tr{
 	background:#da1a32;
 	color: #fff;
@@ -635,7 +676,7 @@ main footer{
 }
 .checkout-types .btn-proceed-checkout.button:hover:before{background-color: #a5abb2;}
 
-/*%%%--CHECKOUT--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+/*--CHECKOUT--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 /* for the moment REMEBER to remove */
 .opc-wrapper-opc .buttons-set .button span,
 .opc-wrapper-opc .discount-block .buttons-set .button span {
@@ -673,7 +714,7 @@ main footer{
 #mass_products{position:relative;}
 
 
-/*%%%-homepage-banners-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+/*--homepage-banners--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 #banner_area{
 	position: relative;
     width: calc( 100% - 120px );
@@ -729,7 +770,7 @@ main footer{
 	color:#38424a;
 }
 
-/*%%--home_page_cats--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+/*--home_page_cats--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 #home_page_cats{
 	margin: 0px 50px;
 	margin-bottom:25px;
@@ -753,7 +794,7 @@ main footer{
 	
 }
 
-/*--CATEGORIES--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+/*--CATEGORIES--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .category-title{
     margin-top: 25px;
     padding: 0px;
@@ -764,7 +805,7 @@ main footer{
 	color:#4a535a;
 }
 
-/*--PRODUCT_LISTS--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+/*--PRODUCT_LISTS--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .products-grid li.item{
 	position:relative;
 	margin-right:25px;
@@ -887,7 +928,7 @@ main footer{
 }
 
 
-/*--PRODUCT_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+/*--PRODUCT_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .product-view .box-tags .form-add button.button span{
 	background:none;
 }
