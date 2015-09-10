@@ -16,6 +16,12 @@ body{
                        center top !important;
 }
 
+/*--Spine-Overrides--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+#spine.darkest .spine-actions button, #spine.darkest .spine-footer small a, #spine.darkest .spine-social-channels a {
+    color: #e2e2e2;
+}
+
+
 /*--Form-parts--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 main .button:not(.bare), main .spine-button:not(.bare), main button:not(.bare), main input[type=submit]:not(.bare), main input[type=reset]:not(.bare), main input[type=button]:not(.bare) {
 	position: relative;
@@ -400,6 +406,9 @@ body:not(.home) .quick-access .links a span:before{
 }
 .quick-access .links a[href*="checkout/cart"] span:before{
 	content: "\f07a";
+}
+.quick-access .links a.with-items[href*="checkout/cart"] span:before{
+	content: "\f217";
 }
 .quick-access .links a[href*="wishlist"] span:before{
 	content: "\f005";
