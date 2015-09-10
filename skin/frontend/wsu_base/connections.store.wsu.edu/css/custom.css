@@ -17,12 +17,12 @@ body{
 }
 
 /*--Form-parts--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-main .button, main .spine-button, main button, main input[type=submit], main input[type=reset], main input[type=button] {
+main .button:not(.bare), main .spine-button:not(.bare), main button:not(.bare), main input[type=submit]:not(.bare), main input[type=reset]:not(.bare), main input[type=button]:not(.bare) {
 	position: relative;
 	/*background:#747f8b;*/
 	border:none;
 	color:#fff;
-	height:43px;
+	height:30px;
 	border-radius:0px;
 	background:none;
 	color:#FFFFFF;
@@ -31,19 +31,19 @@ main .button, main .spine-button, main button, main input[type=submit], main inp
 	text-shadow:2px 2px 1px #393939;
 	
 }
-main .button span, main .spine-button span, main button span, main input[type=submit] span, main input[type=reset] span, main input[type=button] span
+main .button:not(.bare) span, main .spine-button:not(.bare) span, main button:not(.bare) span, main input[type=submit]:not(.bare) span, main input[type=reset]:not(.bare) span, main input[type=button]:not(.bare) span
 {
 	width:100%;
 	height:100%;
 	position: relative;
-	line-height: 29px;
+	line-height: 22px;
     z-index: 1;
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
 	font-weight:bold;
 	padding:0px;
 }
-main .button:before, main .spine-button:before, main button:before, main input[type=submit]:before, main input[type=reset]:before, main input[type=button]:before
+main .button:not(.bare):before, main .spine-button:not(.bare):before, main button:not(.bare):before, main input[type=submit]:not(.bare):before, main input[type=reset]:not(.bare):before, main input[type=button]:not(.bare):before
 {
     transform: skew(20deg);
     -webkit-transform: skew(20deg);
@@ -58,11 +58,11 @@ main .button:before, main .spine-button:before, main button:before, main input[t
     left: 0px;
     z-index: 0;
 	width:100%;
-    height: 39px;
+    height: 30px;
 	content:"";
 }
 
-main .button:hover:before, main .spine-button:hover:before, main button:hover:before, main input[type=submit]:hover:before, main input[type=reset]:hover:before, main input[type=button]:hover:before {background-color: #a5abb2;}
+main .button:not(.bare):hover:before, main .spine-button:not(.bare):hover:before, main button:not(.bare):hover:before, main input[type=submit]:not(.bare):hover:before, main input[type=reset]:not(.bare):hover:before, main input[type=button]:not(.bare):hover:before {background-color: #a5abb2;}
 
 
 
@@ -847,8 +847,7 @@ main footer{
     transform: rotate(45deg);
 }
  
- 
- 
+
 .products-grid .product-name{
 	border-bottom: 1px solid;
 }
@@ -866,15 +865,16 @@ main footer{
 .products-grid .price-box .regular-price .price{
 	color:#da1a32;
 }
-.button.btn-cart{
+
+.catalog-category-view .button.btn-cart{
 	background: none;
     border: none;
 	float: right;
 }
-.button.btn-cart span{
+.catalog-category-view .button.btn-cart span{
 	display: none;
 }
-.button.btn-cart:before{
+.catalog-category-view .button.btn-cart:before{
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesome;
 	font-size: 20px;
@@ -886,3 +886,8 @@ main footer{
 	color:#da1a33;
 }
 
+
+/*--PRODUCT_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+.product-view .box-tags .form-add button.button span{
+	background:none;
+}
