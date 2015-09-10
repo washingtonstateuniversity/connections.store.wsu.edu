@@ -13,6 +13,22 @@
 			<remove name="wishlist_link"/>
 		</reference>
 		-->
+		<reference name="top.links">
+			<!-- Removes 'My Cart' AND 'Checkout' links
+			Default position: 40 and 50 respectively -->
+			<remove name="checkout_cart_link"/>
+			<remove name="checkout_cart_link_custom"/>
+			<!-- To re-add 'My Cart' or 'Checkout' after removing both -->
+			<block type="checkout/links" name="checkout_cart_link_themed">
+				<action method="setData"><name>cart_label</name><value>Cart</value></action>
+				<action method="setData"><name>cart_label_signle</name><value>Cart (%s item)</value></action>
+				<action method="setData"><name>cart_label_full</name><value>Cart (%s items)</value></action>
+				<action method="addCartLink"><position>10</position></action>
+				<action method="addCheckoutLink"><position>11</position></action>
+			</block>
+		</reference>
+		
+		
 	</default>
 <!-- HOME PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	<cms_index_index>
@@ -23,6 +39,16 @@
 	  <reference name="content">
 		<block type="core/template" name="cms_index_index" template="hompages/default.phtml"/>
 	  </reference>
+		<reference name="top.links">
+			<!-- To re-add 'My Cart' or 'Checkout' after removing both -->
+			<block type="checkout/links" name="checkout_cart_link_themed">
+				<action method="setData"><name>cart_label</name><value>Cart</value></action>
+				<action method="setData"><name>cart_label_signle</name><value>Cart (%s)</value></action>
+				<action method="setData"><name>cart_label_full</name><value>Cart (%s)</value></action>
+				<action method="addCartLink"><position>10</position></action>
+				<!--<action method="addCheckoutLink"><position>11</position></action>-->
+			</block>
+		</reference>
 	</cms_index_index>
 <!-- USER LOGGED IN/OUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	<customer_logged_out>
