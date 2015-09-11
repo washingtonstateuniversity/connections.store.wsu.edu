@@ -941,9 +941,47 @@ main footer{
 .product-view .box-tags .form-add button.button span{
 	background:none;
 }
-.swatch-link.has-image img{
+.product-options,.product-options-bottom{
+	background:none;
+	border:none;
+}
+
+.swatch-link.has-image img, .swatch-link, .swatch-label{
 	border-radius: 100px;
 }
-.swatch-link, .swatch-label{
-	border-radius: 100px;
+
+#configurable_swatch_size .swatch-link, #configurable_swatch_size .swatch-label, #configurable_swatch_size .swatch-link.has-image img{
+	border-radius: 0px;
 }
+#configurable_swatch_size .swatch-link{
+	border:none;
+}
+#configurable_swatch_size .swatch-label{
+	background:none;
+	border:#da1a32 1px solid;
+	padding: 0px 5px;
+}
+#configurable_swatch_size .hover .swatch-label, #configurable_swatch_size .selected .swatch-label{
+	background:#da1a32;
+	color:#fff;
+}
+
+#configurable_swatch_size  .not-available .swatch-label{
+	border:#989898 1px dotted;
+}
+#configurable_swatch_size .not-available .swatch-label, #configurable_swatch_size .not-available .swatch-label{
+	background:#F1F1F1;
+	color:#BDBDBD;
+	cursor:default;
+}
+
+#configurable_swatch_size .not-available * {
+	cursor:default;
+}
+
+
+.product-view #product-addtocart-button{
+	
+}
+
+#lower_box .price-box{ display:none; }

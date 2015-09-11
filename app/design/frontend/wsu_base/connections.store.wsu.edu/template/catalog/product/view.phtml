@@ -66,7 +66,9 @@ $padding_ends			= $theme->getCfgLayout('product_view/padding_ends');
 
             <?php echo $this->getChildHtml('other');?>
             <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+				<div id="lower_box">
                 <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+				</div>
             <?php endif;?>
 
         </div>
