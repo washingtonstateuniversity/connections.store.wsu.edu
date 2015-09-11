@@ -978,7 +978,7 @@ main footer{
 #configurable_swatch_size .not-available * {
 	cursor:default;
 }
-
+.swatch-select{ position:absolute; top:-999em;}
 
 #lower_box .price-box{ display:none; }
 
