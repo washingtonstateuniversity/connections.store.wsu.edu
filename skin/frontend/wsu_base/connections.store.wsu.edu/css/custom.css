@@ -941,3 +941,9 @@ main footer{
 .product-view .box-tags .form-add button.button span{
 	background:none;
 }
+.swatch-link.has-image img{
+	border-radius: 100px;
+}
+.swatch-link, .swatch-label{
+	border-radius: 100px;
+}
