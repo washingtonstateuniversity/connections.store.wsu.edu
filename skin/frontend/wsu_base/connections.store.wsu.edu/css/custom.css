@@ -33,7 +33,7 @@ main .button:not(.bare), main .spine-button:not(.bare), main button:not(.bare), 
 	background:none;
 	color:#FFFFFF;
 	display:inline-block;
-    margin-right: 80px;
+    /*margin-right: 80px;*/
 	text-shadow:2px 2px 1px #393939;
 	
 }
