@@ -978,20 +978,20 @@ main footer{
 #configurable_swatch_size .not-available * {
 	cursor:default;
 }
-.swatch-select{ position:absolute; top:-999em;}
+.swatch-select{ position:absolute; top:-999em; }
 
 #lower_box .price-box{ display:none; }
 
 
 .product-view #product-addtocart-button{
-    display: block;
-    float: none;
-    clear: both;
+	display: block;
+	float: none;
+	clear: both;
 	background:#da1a32;
 	max-width:250px;
 	width:100%;
-height: 38px;
-margin:5px 0px;
+	height: 38px;
+	margin:5px 0px;
 }
 .product-view #product-addtocart-button:hover{
 	opacity:.8;
