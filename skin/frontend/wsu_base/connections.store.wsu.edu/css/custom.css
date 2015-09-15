@@ -100,12 +100,12 @@ ul.messages li[class$=-msg]:before{
 .error-msg:before{
 	content: "\f06a";
 }
-.warn-msg{
+.warn-msg,.notice-msg{
     border-color: #f47900;
     background-color: #fed697;
     color: #f48e2b;
 }
-.warn-msg:before{
+.warn-msg:before,.notice-msg:before{
 	content:"\f071";
 }
 .success-msg{
