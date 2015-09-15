@@ -69,6 +69,11 @@ main .button:not(.bare):before, main .spine-button:not(.bare):before, main butto
 
 main .button:not(.bare):hover:before, main .spine-button:not(.bare):hover:before, main button:not(.bare):hover:before, main input[type=submit]:not(.bare):hover:before, main input[type=reset]:not(.bare):hover:before, main input[type=button]:not(.bare):hover:before {background-color: #a5abb2;}
 
+input.input-text, select, textarea{
+	border: 1px solid #da1a32;
+}
+
+
 /*--messages--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 ul.messages li[class$=-msg]:before{
 	display: inline-block;
@@ -119,6 +124,7 @@ main{
 	background-color:#fff;
 	position: relative;
 }
+.content_area{ margin-top: 25px; }
 .home main{
 	background: url(/media/store-media/connections.store.wsu.edu/skin/home-main-background.jpg);
 	background-color:#fff;
@@ -1014,7 +1020,7 @@ main footer{
 .product-options-bottom .add-to-links li{ background:#A6A6A6; padding: 5px 10px; margin-left: 0px !important; margin-right: 12px; }
 
 /*--CAR_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-.cart .discount,.cart .shipping{ position:relative;    background: #D8D8D8;}
+.cart .discount,.cart .shipping{ position:relative; background: #eff0f1; }
 .cart .discount h2, .cart .shipping h2{ width: auto;}
 .cart .discount h2:before,
 .cart .shipping h2:before
@@ -1054,4 +1060,16 @@ main footer{
 .cart .discount p,
 .cart .shipping p {
     margin: 0 0 3px;
+}
+
+/*--CHECKOUT_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+[class*="-block"] {
+    background-color: #eff0f1;
+}
+ .opc-wrapper-opc [class*="-block"] h3 {
+    background-color: #da1a32;
+    /* margin: 5px; */
+    padding: 20px 10px 10px 10px;
+    border-bottom: 1px solid #fff !important;
+    color: #fff !important;
 }
