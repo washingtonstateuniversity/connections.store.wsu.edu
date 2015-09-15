@@ -16,7 +16,7 @@
     <div class="page-title title-buttons">
         <h1><?php echo $this->__('Cart') ?></h1><br/>
 		<h3><?php echo $this->__('Please review your cart and proceed to checkout') ?></h3>
-        <?php /* if(!$this->hasError()): ?>
+        <?php if(!$this->hasError()): ?>
         <ul class="checkout-types">
         <?php foreach ($this->getMethods('top_methods') as $method): ?>
             <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
@@ -24,7 +24,7 @@
             <?php endif; ?>
         <?php endforeach; ?>
         </ul>
-        <?php endif; */ ?>
+        <?php endif; ?>
     </div>
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <?php echo $this->getChildHtml('form_before') ?>
@@ -163,10 +163,10 @@
             <?php endif; ?>
             
 			<div class="grid12-6 mobile-grid-half">
-            	<?php if (!$this->getIsVirtual()): echo "";/*$this->getChildHtml('shipping');*/ endif; ?>
+            	<?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
 			</div>
 			<div class="grid12-6 mobile-grid-half">
-            	<?php //echo $this->getChildHtml('coupon') ?>
+            	<?php echo $this->getChildHtml('coupon') ?>
             </div>
             <div class="grid-full alpha omega">
                 <?php echo $this->getChildHtml('crosssell') ?>
