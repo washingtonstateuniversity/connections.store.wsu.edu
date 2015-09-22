@@ -902,7 +902,10 @@ main footer{
     transform: rotate(45deg);
 }
  
-
+.price_and_action{
+	padding: 0px 5px;
+    background-color: #e2e2e2;
+}
 .products-grid .product-name{
 	border-bottom: 1px solid;
 }
