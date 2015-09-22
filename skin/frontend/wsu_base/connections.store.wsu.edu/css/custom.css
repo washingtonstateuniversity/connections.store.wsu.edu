@@ -155,29 +155,29 @@ section#siteID{
 	display:none;
 }
 #siteID article h1{
-	background:transparent url(/media/store-media/connections.store.wsu.edu/skin/connections-logo-no-marketplace.svg) no-repeat center top !important;
-	text-indent: -999em;
+	/*background:transparent url(/media/store-media/connections.store.wsu.edu/skin/connections-logo-no-marketplace.svg) no-repeat center top !important;
     width: 250px;
     height: 85px;
     position: absolute;
     top: 11px;
-    z-index: 150;
+    z-index: 150;*/
+	text-indent: -999em;
 }
 
 .home #siteID{
-	height:104px;
+	/*height:104px;*/
 }
 .home #siteID article h2{
 	display:none;
 }
 .home #siteID article h1{
-	background:transparent url(/media/store-media/connections.store.wsu.edu/skin/connections-logo-no-marketplace.svg) no-repeat center top !important;
+	/*background:transparent url(/media/store-media/connections.store.wsu.edu/skin/connections-logo-no-marketplace.svg) no-repeat center top !important;
 	background-size:contain;
     width:415px;
     height:135px;
     position: absolute;
     top: 23px;
-    z-index: 150;
+    z-index: 150;*/
 }
 
 
@@ -209,11 +209,10 @@ li{
     position: absolute;
     width: 100%;
     right: -4px;
-    top: 87px;
+    top: 26px;
 	z-index:100;
 }
-body:not(.home) .quick-access{    top: 53px; }
-body:not(.home) .quick-access:before{
+.quick-access:before{
     width: 10px;
     height: 0;
     border-top: 36px solid #da1a33;
@@ -224,7 +223,7 @@ body:not(.home) .quick-access:before{
     z-index: 0;
     content: "";
 }
-body:not(.home) .quick-access .links:first-of-type:after{
+.quick-access .links:first-of-type:after{
     transform: skew(20deg);
     -webkit-transform: skew(20deg);
     -moz-transform: skew(20deg);
@@ -250,7 +249,7 @@ body:not(.home) .quick-access .links:first-of-type:after{
 	/*display:inline-block;*/
 	line-height: 37px;
 }
-body:not(.home) .quick-access .links a{
+.quick-access .links a{
 	padding-left: 8px;
 }
 .quick-access .links a span{
@@ -265,10 +264,10 @@ body:not(.home) .quick-access .links a{
     font-size: 15px;
 	padding:0px 5px;
 }
-body:not(.home) .quick-access .links  li{
+.quick-access .links  li{
     margin-right: 4px;
 }
-body:not(.home) .quick-access .links a span{
+.quick-access .links a span{
     padding-left: 22px;
 }
 
@@ -312,14 +311,14 @@ body:not(.home) .quick-access .links a span{
 	z-index:1;
 
 }
-body:not(.home) .quick-access .links a span:before{
+.quick-access .links a span:before{
 	margin-right: 7px;
 	position: absolute;
 	top: 0px;
 	left: 0px;
 }
 /*%--home--%*/
-.home .quick-access{
+/*.home .quick-access{
 	background:none;
     position: absolute;
     width: 100%;
@@ -375,7 +374,6 @@ body:not(.home) .quick-access .links a span:before{
 
 .home .quick-access .links a{
 	padding:0 7px 0 0;
-	/*background:url(http://store.wsu.dev/skin/frontend/wsu_base/default/images/bkg_pipe1.gif) no-repeat 100% 50%*/
 }
 .home .quick-access .links li.last a{padding:0;background:none}
 .home .quick-access .links a span:before{
@@ -394,7 +392,7 @@ body:not(.home) .quick-access .links a span:before{
     font-size: 50px;
 	z-index:1;
 	margin-right: 0px;
-}
+}*/
 
 /*%--icons--%*/
 .quick-access .links a:hover span:before{
