@@ -223,7 +223,7 @@ li{
     z-index: 0;
     content: "";
 }
-.quick-access .links:first-of-type:after{
+/*.quick-access .links:first-of-type:after{
     transform: skew(20deg);
     -webkit-transform: skew(20deg);
     -moz-transform: skew(20deg);
@@ -239,7 +239,7 @@ li{
     height: 35px;
     content: "";
 	content:"";
-}
+}*/
 .quick-access .links a{
 	color:#ddd;
 	background:none;
@@ -317,82 +317,6 @@ li{
 	top: 0px;
 	left: 0px;
 }
-/*%--home--%*/
-/*.home .quick-access{
-	background:none;
-    position: absolute;
-    width: 100%;
-    right: 31px;
-    top: 54px;
-	z-index:100;
-}
-.home .quick-access .links li{
-	padding-left:0px;
-}
-.home .quick-access .links a{
-	color:#ddd;
-	background:none;
-    position: relative;
-	width:82px;
-	height:83px;
-	color:#FFFFFF;
-	display:inline-block;
-	content:"";
-}
-.home .quick-access .links a span{
-	width:100%;
-	height:100%;
-	position:absolute;
-    top: calc( 50% - 15px - 21px );
-    left: -8px;
-    z-index: 1;
-    width: 82px;
-    text-align: center;
-    font-size: 15px;
-	padding:0px;
-}
-.home .quick-access .links a:before{
-    transform: skew(20deg);
-    -webkit-transform: skew(20deg);
-    -moz-transform: skew(20deg);
-    -ms-transform: skew(20deg);
-    -o-transform: skew(20deg);
-    background-color: #da1a33;
-	
-	border:2px solid #da1a33;
-	position:absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 0;
-    width: 82px;
-    height: 75px;
-	content:"";
-}
-.home .quick-access .links a:hover:before{
-    background-color:#39424b;
-}
-
-.home .quick-access .links a{
-	padding:0 7px 0 0;
-}
-.home .quick-access .links li.last a{padding:0;background:none}
-.home .quick-access .links a span:before{
-	display: inline-block;
-	font: normal normal normal 14px/1 FontAwesome;
-	font-size: inherit;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	transform: translate(0, 0);	
-	
-	color:#39424b;
-	position: absolute;
-    right: 2px;
-    top: 23px;
-    font-size: 50px;
-	z-index:1;
-	margin-right: 0px;
-}*/
 
 /*%--icons--%*/
 .quick-access .links a:hover span:before{
