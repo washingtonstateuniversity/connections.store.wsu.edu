@@ -21,7 +21,9 @@ body{
     color: #e2e2e2;
 }
 
-
+.darker #wsu-signature, .darkest #wsu-signature {
+    background-image: url(/media/store-media/connections.store.wsu.edu/skin/2015-Connections-shield.svg);
+}
 /*--Form-parts--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 main .button:not(.bare), main .spine-button:not(.bare), main button:not(.bare), main input[type=submit]:not(.bare), main input[type=reset]:not(.bare), main input[type=button]:not(.bare) {
 	position: relative;
@@ -149,7 +151,7 @@ section#siteID{
 	background:transparent url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;
 }
 #siteID{
-	height:60px;
+	height:104px;
 }
 #siteID article h2{
 	display:none;
@@ -170,14 +172,14 @@ section#siteID{
 .home #siteID article h2{
 	display:none;
 }
-.home #siteID article h1{
-	/*background:transparent url(/media/store-media/connections.store.wsu.edu/skin/connections-logo-no-marketplace.svg) no-repeat center top !important;
+#siteID article h1{
+	background:transparent url(/media/store-media/connections.store.wsu.edu/skin/2015-Connections-sig.svg) no-repeat center top !important;
 	background-size:contain;
     width:415px;
     height:135px;
     position: absolute;
     top: 23px;
-    z-index: 150;*/
+    z-index: 150;
 }
 
 
@@ -198,19 +200,20 @@ section#siteID{
 	position: relative;
 }
 .quick-access .links
-li,
-.quick-access .links li.first{
+li{
 	padding:0 0px 0 1px;
 	padding-left:10px;
 }
-
+.quick-access .links li.first{
+	padding-left:10px !important;
+}
 /*%--global--%*/
 .quick-access{
 	background:none;
     position: absolute;
     width: 100%;
     right: -4px;
-    top: 26px;
+    top: 70px;/*26px;*/
 	z-index:100;
 }
 .quick-access:before{

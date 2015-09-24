@@ -166,7 +166,7 @@
             <action method="addItem"><type>js</type><name>calendar/calendar.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
             <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
         </reference>
-		<remove name="product.info"/>
+		<!-- --><remove name="product.info"/>
         <reference name="content">
             <block type="catalog/product_view" name="product.info.custom" template="catalog/product/view.phtml">
                 <!--
@@ -199,12 +199,13 @@
                     <action method="addToParentGroup"><group>detailed_info</group></action>
                     <action method="setTitle" translate="value"><value>Additional Information</value></action>
                 </block>
-                <block type="catalog/product_list_related" name="catalog.product.related" as="related_products" template="catalog/product/list/related.phtml" />
-
+               
                 <block type="catalog/product_view" name="product.info.addto" as="addto" template="catalog/product/view/addto.phtml"/>
                 <block type="catalog/product_view" name="product.info.sharing" as="sharing" template="catalog/product/view/sharing.phtml"/>
                 <block type="catalog/product_view" name="product.info.addtocart" as="addtocart" template="catalog/product/view/addtocart.phtml"/>
-
+				
+				<block type="catalog/product_list_related" name="catalog.product.related" as="related_products" template="catalog/product/list/related.phtml" />
+				
                 <block type="core/text_list" name="product.info.extrahint" as="extrahint" translate="label">
                     <label>Product View Extra Hint</label>
                 </block>
@@ -258,7 +259,7 @@
                 </block>
                 <action method="unsetCallChild"><child>container1</child><call>ifEquals</call><if>0</if><key>alias_in_layout</key><key>options_container</key></action>
                 <action method="unsetCallChild"><child>container2</child><call>ifEquals</call><if>0</if><key>alias_in_layout</key><key>options_container</key></action>
-				
+
             </block>
         </reference>
         <reference name="right">
