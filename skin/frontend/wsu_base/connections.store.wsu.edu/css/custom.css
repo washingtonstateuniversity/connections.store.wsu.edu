@@ -198,7 +198,8 @@ section#siteID{
 	position: relative;
 }
 .quick-access .links
-li{
+li,
+.quick-access .links li.first{
 	padding:0 0px 0 1px;
 	padding-left:10px;
 }
