@@ -995,6 +995,12 @@ main footer{
 }
 
 /*--CHECKOUT_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+.opc-wrapper-opc a span,.opc-wrapper-opc a {
+    color: #fff !important;
+}
+.opc-wrapper-opc{
+overflow: visible !important;	
+}
 [class*="-block"] {
     background-color: #eff0f1;
 }
@@ -1005,3 +1011,75 @@ main footer{
     border-bottom: 1px solid #fff !important;
     color: #fff !important;
 }
+.opc-wrapper-opc form {
+	margin-bottom:0;
+    padding:0;
+}
+.opc-wrapper-opc .login-trigger {
+	position: relative;
+}
+.opc-wrapper-opc .login-trigger:before
+{
+    transform: skew(20deg);
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -ms-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    background-color: #747f8b;
+	
+	border:2px solid #747f8b;
+	position:absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+	width:100%;
+    height: 40px;
+	content:"";
+}
+.opc-wrapper-opc .login-trigger span
+{
+	width:100%;
+	height:100%;
+	position: relative;
+	line-height: 22px;
+    z-index: 1;
+    text-align: center;
+    font-size: 15px;
+	font-weight:bold;
+	padding:0px;
+	color:#fff;
+}
+
+.opc-wrapper-opc .login-trigger:hover span{cursor:pointer;
+ color:#fff !important; background:#39b9c6 !important; }
+ 
+ #main .opc-wrapper-opc .payment-block dt label{
+	 font-size: 100%;
+ 	width: calc(100% - 40px) !important;
+    padding: 0 !important;
+    padding-left: 40px !important;
+ }
+.opc-wrapper-opc .payment-block dt:before {
+   display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 20px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);	
+	
+	color:#39424b;
+	z-index:1;
+
+	position: absolute;
+    top: 13px;
+    left: 15px;
+	content: "\f096";
+}
+ .opc-wrapper-opc .payment-block dt:hover:before {
+	content: "\f046"; 
+ }
+  .opc-wrapper-opc .payment-block dt.active:before {
+	content: "\f14a"; 
+ }
+ .button.btn-checkout.opc-btn-checkout span{color:#fff;}
