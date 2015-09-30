@@ -22,7 +22,7 @@
 	<wsu_themecontrol_design>
 		<spine>
 			<spine_color>darkest</spine_color>
-			<spine_bleed>1</spine_bleed>
+			<spine_bleed>0</spine_bleed>
 		</spine>
 	</wsu_themecontrol_design>
 </wsu_spine>
