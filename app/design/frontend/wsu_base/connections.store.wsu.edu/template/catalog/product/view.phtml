@@ -29,10 +29,16 @@ $padding_ends			= $theme->getCfgLayout('product_view/padding_ends');
             <div class="product-name">
                 <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
             </div>
-			<?php if ($_product->isSaleable() && $this->hasOptions()):?>
+			<?php if ($_product->isSaleable()):?>
 				<?php echo $this->getChildChildHtml('containerPrice', '', true, true) ?>
 			<?php endif;?>
 			<?php echo $this->getTierPriceHtml() ?>
+			<?php if ($_product->getShortDescription()):?>
+                <div class="short-description">
+                    <h2><?php echo $this->__('Quick Overview') ?></h2>
+                    <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
+                </div>
+            <?php endif;?>
 			<!--
             <?php if ($this->canEmailToFriend()): ?>
                 <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
@@ -57,12 +63,7 @@ $padding_ends			= $theme->getCfgLayout('product_view/padding_ends');
                 </div>
             <?php endif; ?>
 
-            <?php if ($_product->getShortDescription()):?>
-                <div class="short-description">
-                    <h2><?php echo $this->__('Quick Overview') ?></h2>
-                    <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
-                </div>
-            <?php endif;?>
+
 
             <?php echo $this->getChildHtml('other');?>
             <?php if ($_product->isSaleable() && $this->hasOptions()):?>
