@@ -329,8 +329,14 @@ li{
 .quick-access .links a:hover span:before{
 	color:#fff;
 }
+.quick-access .links a[href*="customer/account"] span:before{
+	content: "\f085";
+}
 .quick-access .links a[href*="customer/account/create"] span:before{
 	content: "\f090";
+}
+.quick-access .links a[href*="customer/account/logout"] span:before{
+	content: "\f08b";
 }
 .quick-access .links a[href*="customer/account/login"] span:before{
 	content: "\f090";
