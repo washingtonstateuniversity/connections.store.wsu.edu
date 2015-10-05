@@ -836,6 +836,9 @@ main footer{
 }
 .products-grid .product-name{
 	/*border-bottom: 1px solid;*/
+	position:absolute;
+	top:206px;
+	left:0px;
 }
 .products-grid .product-name a{
 	text-decoration:none;
