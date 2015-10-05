@@ -73,7 +73,7 @@ main .button:not(.bare):hover:before, main .spine-button:not(.bare):hover:before
 
 input.input-text, select, textarea{
 	border: 1px solid #A7A7A7;
-	background-color:#F7F7F7;
+	background-color:#F7F7F7 !important;
 }
 
 
