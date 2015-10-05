@@ -147,12 +147,13 @@ section#siteID{
 	background-position:left top;
     background-size: 100% auto;
 	box-sizing:border-box;
-	border:2px solid #da1a33;
+	/*border:2px solid #da1a33;*/
 	border-top:none;
     z-index: 100;
 }
 #spine #glue:before{
-	background:transparent url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;
+	/*background:transparent url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;*/
+	background: rgba(82, 80, 80, 0.41) url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;
 }
 #siteID{
 	height:104px;
