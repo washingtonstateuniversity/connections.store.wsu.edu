@@ -434,6 +434,10 @@ main footer{
 	  position:relative;
 	  margin-left:0px;
 	}
+	.more-views li a {
+		width:63px;
+		height:63px;
+		}
 	.products-list li.item.last {border: 1px solid rgba(91,91,91,0.63);}
 	.products-list .product-image{ width:100%; height:auto; max-height:100%;}
 	.products-list .product-shop{ margin:0px;}
