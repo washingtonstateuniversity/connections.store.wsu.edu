@@ -30,6 +30,24 @@
 				<action method="addCartLink"><position>10</position></action>
 				<action method="addCheckoutLink"><position>11</position></action>
 			</block>
+			<action method="addLink" translate="label title" module="catalog">
+				<label>Compare Products</label>
+				<url helper="catalog/product_compare/getListUrl"/> <!-- @see Mage_Catalog_Helper_Product_Compare::getListUrl() -->
+				<title>Compare Products</title>
+				<prepare/>
+				<urlParams/>
+				<position>10</position> <!-- adjust as needed -->
+				<liParams/>
+				<!--
+					if you want to use the standard behavior, you will need a custom
+					helper which returns the popwin() js string and feeds it to the
+					"onclick" node below:
+				<aParams>
+					<onclick helper="your_module/getPopwinStuff"/>
+				</aParams>
+				-->
+			</action>
+
 		</reference>
 		
 		

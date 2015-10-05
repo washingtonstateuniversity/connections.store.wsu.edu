@@ -353,6 +353,9 @@ li{
 .quick-access .links a[href*="wishlist"] span:before{
 	content: "\f005";
 }
+.quick-access .links a[href*="catalog/product_compare"] span:before{
+	content: "\f24e";
+}
 
 
 .page-title{
