@@ -228,7 +228,7 @@ li{
     border-left: 100px solid transparent;
     position: absolute;
     top: 7px;
-    right: 2px;
+    right: 4px;
     z-index: 0;
     content: "";
 }
@@ -325,6 +325,7 @@ li{
 	position: absolute;
 	top: 0px;
 	left: 0px;
+	margin-top:12px;
 }
 
 /*%--icons--%*/
