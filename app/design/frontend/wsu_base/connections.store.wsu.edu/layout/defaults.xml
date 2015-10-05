@@ -79,23 +79,15 @@
 		<!--<remove name="reorder"></remove>-->
 	</customer_logged_out>
 	<customer_logged_in>
-		<reference name="top.links">
+		<!--<reference name="top.links">
 			<action method="addLink" translate="label title" module="customer">
-				<label><![CDATA[  Log Out ]]></label> <!-- <i class="fa fa-sign-out"></i> -->
+				<label><![CDATA[  Log Out ]]></label>
 				<url helper="customer/getLogoutUrl"/><title>Log Out</title>
 				<prepare/>
 				<urlParams/>
 				<position>100</position>
 			</action>
-		</reference>
-			<action method="addLink" translate="label title" module="customer">
-				<label><![CDATA[  My Account ]]></label><!--<i class="fa fa-cogs"></i>-->
-				<url helper="customer/getAccountUrl"/>
-				<title>My Account</title>
-				<prepare/>
-				<urlParams/>
-				<position>10</position>
-			</action>
+		</reference>-->
 	</customer_logged_in>
 	
 <!-- CATEGORY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
