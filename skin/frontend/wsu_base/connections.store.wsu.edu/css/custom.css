@@ -126,6 +126,9 @@ main{
 	background-color:#fff;
 	position: relative;
 }
+div#main {
+    margin-bottom: 35px;
+}
 .content_area{ margin-top: 25px; }
 .home main{
 	background: url(/media/store-media/connections.store.wsu.edu/skin/home-main-background.jpg);
