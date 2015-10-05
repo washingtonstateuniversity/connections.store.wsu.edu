@@ -875,7 +875,10 @@ main footer{
 	color:#da1a33;
 }
 
-.itemgrid-adaptive.itemgrid-4col .item:nth-child(6n+1){
+.itemgrid-adaptive.itemgrid-4col .item:nth-child(6n+1),
+.itemgrid-adaptive.itemgrid-4col .item:nth-child(5n+1),
+.itemgrid-adaptive.itemgrid-4col .item:nth-child(4n+1),
+.itemgrid-adaptive.itemgrid-4col .item:nth-child(3n+1){
 	clear:none !important;
 }
 /*--PRODUCT_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
