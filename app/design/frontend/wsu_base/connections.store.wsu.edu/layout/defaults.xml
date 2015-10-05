@@ -23,6 +23,10 @@
 				<action method="setData"><name>cart_label</name><value>Cart</value></action>
 				<action method="setData"><name>cart_label_signle</name><value>Cart (%s item)</value></action>
 				<action method="setData"><name>cart_label_full</name><value>Cart (%s items)</value></action>
+				<action method="setData"><name>cart_hide_empty</name><value>1</value></action>
+				<action method="setData"><name>checkout_hide_empty</name><value>1</value></action>
+				
+				
 				<action method="addCartLink"><position>10</position></action>
 				<action method="addCheckoutLink"><position>11</position></action>
 			</block>
@@ -43,8 +47,10 @@
 			<!-- To re-add 'My Cart' or 'Checkout' after removing both -->
 			<block type="checkout/links" name="checkout_cart_link_themed">
 				<action method="setData"><name>cart_label</name><value>Cart</value></action>
-				<action method="setData"><name>cart_label_signle</name><value>Cart (%s)</value></action>
-				<action method="setData"><name>cart_label_full</name><value>Cart (%s)</value></action>
+				<action method="setData"><name>cart_label_signle</name><value>Cart (%s item)</value></action>
+				<action method="setData"><name>cart_label_full</name><value>Cart (%s items)</value></action>
+				<action method="setData"><name>cart_hide_empty</name><value>1</value></action>
+				<action method="setData"><name>checkout_hide_empty</name><value>1</value></action>
 				<action method="addCartLink"><position>10</position></action>
 				<!--<action method="addCheckoutLink"><position>11</position></action>-->
 			</block>
