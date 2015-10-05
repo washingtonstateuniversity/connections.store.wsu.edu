@@ -72,7 +72,8 @@ main .button:not(.bare):before, main .spine-button:not(.bare):before, main butto
 main .button:not(.bare):hover:before, main .spine-button:not(.bare):hover:before, main button:not(.bare):hover:before, main input[type=submit]:not(.bare):hover:before, main input[type=reset]:not(.bare):hover:before, main input[type=button]:not(.bare):hover:before {background-color: #a5abb2;}
 
 input.input-text, select, textarea{
-	border: 1px solid #da1a32;
+	border: 1px solid #A7A7A7;
+	background-color:#F7F7F7;
 }
 
 
