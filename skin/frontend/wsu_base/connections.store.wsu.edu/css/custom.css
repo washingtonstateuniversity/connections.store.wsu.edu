@@ -19,7 +19,6 @@ body{
 /*--Spine-Overrides--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 #spine.darkest .spine-actions button, #spine.darkest .spine-footer small a, #spine.darkest .spine-social-channels a {
     color: #e2e2e2;
-	font-weight:bold;
 }
 
 .darker #wsu-signature, .darkest #wsu-signature {
