@@ -147,7 +147,7 @@ section#siteID{
 	background-position:left top;
     background-size: 100% auto;
 	box-sizing:border-box;
-	/*border:2px solid #da1a33;*/
+	/*border:2px solid #981e32;*/
 	border-top:none;
     z-index: 100;
 }
@@ -217,14 +217,14 @@ li{
 	background:none;
     position: absolute;
     width: 100%;
-    right: -4px;
-    top: 70px;/*26px;*/
+    right: -2px;
+    top: 85px;/*26px;*/
 	z-index:100;
 }
 .quick-access:before{
     width: 10px;
     height: 0;
-    border-top: 36px solid #da1a33;
+    border-top: 36px solid #981e32;
     border-left: 100px solid transparent;
     position: absolute;
     top: 7px;
@@ -287,9 +287,9 @@ li{
     -moz-transform: skew(20deg);
     -ms-transform: skew(20deg);
     -o-transform: skew(20deg);
-    background-color: #da1a33;
+    background-color: #981e32;
 	
-	border:2px solid #da1a33;
+	border:2px solid #981e32;
 	position:absolute;
     top: 0px;
     left: 0px;
@@ -785,7 +785,7 @@ main footer{
 	-moz-osx-font-smoothing: grayscale;
 	transform: translate(0, 0);	
 	content:"\f005";
-	color:#da1a33;
+	color:#981e32;
 }
 .products-grid li.item .product-image-wrapper img{
 	margin: 0px;
@@ -888,7 +888,7 @@ main footer{
 	-moz-osx-font-smoothing: grayscale;
 	transform: translate(0, 0);	
 	content:"\f07a";
-	color:#da1a33;
+	color:#981e32;
 }
 
 .itemgrid-adaptive.itemgrid-4col .item:nth-child(6n+1),
