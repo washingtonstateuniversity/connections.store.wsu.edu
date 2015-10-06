@@ -197,7 +197,7 @@ section#siteID{
 .form-list .name-middlename {
 	width:150px;
 }
-.name-middlename input.input-text {
+.form-list .name-middlename input.input-text {
 	width:100px;
 }
 
