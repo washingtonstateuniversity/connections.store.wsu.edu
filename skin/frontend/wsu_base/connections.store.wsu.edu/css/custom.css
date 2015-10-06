@@ -194,7 +194,12 @@ section#siteID{
     z-index: 150;
 }
 
-
+.name-middlename {
+	width:150px;
+}
+.name-middlename input.input-text {
+	width:100px;
+}
 
 
 .quick-access{
