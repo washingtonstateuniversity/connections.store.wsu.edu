@@ -24,6 +24,11 @@ body{
 .darker #wsu-signature, .darkest #wsu-signature {
     background-image: url(/media/store-media/connections.store.wsu.edu/skin/2015-Connections-shield.svg);
 }
+
+#spine-navigation .spine-sitenav ul {
+	font-weight:10pt;
+	font-weight:bold;
+}
 /*--Form-parts--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 main .button:not(.bare), main .spine-button:not(.bare), main button:not(.bare), main input[type=submit]:not(.bare), main input[type=reset]:not(.bare), main input[type=button]:not(.bare) {
 	position: relative;
