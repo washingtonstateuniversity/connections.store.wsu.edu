@@ -457,7 +457,6 @@ main footer{
 	.mass_item.active_item{background-color:#e3dfcd !important;border-color:#ada400 !important}
 	.product-image-wrapper img{ margin-top: 20px;}
 	.product-image-wrapper ul{ display:none;}
-	
 	input.full { width:100%}
 	
 	/* Guest blocks */
@@ -915,6 +914,7 @@ main footer{
 .add-to-box .add-to-cart,.product-options,.product-options-bottom{
 	background:none;
 	border:none;
+	padding:5px 20px;
 }
 
 .swatch-link.has-image img, .swatch-link, .swatch-label{
@@ -962,7 +962,7 @@ main footer{
 	max-width:250px;
 	width:100%;
 	height: 38px;
-	margin:5px 0px;
+	margin:40px 0px 0px 0px;
 }
 .product-view #product-addtocart-button:hover{
 	opacity:.8;
