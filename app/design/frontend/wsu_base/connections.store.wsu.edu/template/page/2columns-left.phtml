@@ -40,7 +40,7 @@ $mainContentClasses= $template->getBlockClasses("main_content");
                     <article>
                         <h2>WSU Marketplace</h2>
                         <?php if($show_headerstorename==1):?><h1><?=$name?></h1><?php endif; ?>
-                        <?=$this->getChildHtml('breadcrumbs') ?> 
+                        
                     </article>
                 </section>
                 <!-- Responsive Sections -->
@@ -52,6 +52,7 @@ $mainContentClasses= $template->getBlockClasses("main_content");
                                 <?=$this->getChildHtml('topContainer'); ?>
                                 <?=$this->getChildHtml('global_notices') ?>
                                 <?=$this->getChildHtml('global_messages') ?>
+								<?=$this->getChildHtml('breadcrumbs') ?> 
                                 <?=$this->getChildHtml('content') ?>
                             </div><!-- end of main -->   
                         </article>
