@@ -1057,6 +1057,15 @@ main footer{
 	padding-top:10px;
 }
 
+/*--LightBox--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+
+.ui-widget-overlay{
+	background: #333333 none repeat scroll 0% 0%;
+}
+
+.ui-widget-overlay{
+	opacity:0.55;
+}
 /*--CHECKOUT_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .opc-wrapper-opc a span,.opc-wrapper-opc a {
     color: #fff !important;
