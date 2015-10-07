@@ -657,9 +657,10 @@ main footer{
   width: 100%;
 }
 
-.cart .discount .buttons-set button.button span, .cart .shipping .buttons-set button.button span {
-	text-transform:none;
+.cart .discount .buttons-set button.button, .cart .shipping .buttons-set button.button{
+	margin-left: 5px;
 }
+
 .cart .discount .buttons-set button.button span, .cart .shipping .buttons-set button.button span span {
 	background:transparent none;
   color: #FFFFFF !important;
@@ -1039,8 +1040,8 @@ main footer{
 }
 .cart .discount .buttons-set button.button span,
 .cart .shipping .buttons-set button.button span{
-    color: #E8E8E8 !important;
-    text-transform: uppercase;
+    color: #FFFFFF !important;
+    text-transform: none;
     line-height: 22px;
 }
 .cart .discount p,
