@@ -656,6 +656,14 @@ main footer{
   padding: 0 !important;
   width: 100%;
 }
+.cart .discount .buttons-set button.button span, .cart .shipping .buttons-set button.button span span {
+	background:transparent none;
+  color: #FFFFFF !important;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 2px 2px 1px #393939
+  /*text-transform: uppercase;*/
+}
 .opc-wrapper-opc .buttons-set .button span span,
 .opc-wrapper-opc .discount-block .buttons-set .button span span {
   background:transparent none;
