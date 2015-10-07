@@ -656,6 +656,10 @@ main footer{
   padding: 0 !important;
   width: 100%;
 }
+
+.cart .discount .buttons-set button.button span, .cart .shipping .buttons-set button.button span {
+	text-transform:none;
+}
 .cart .discount .buttons-set button.button span, .cart .shipping .buttons-set button.button span span {
 	background:transparent none;
   color: #FFFFFF !important;
