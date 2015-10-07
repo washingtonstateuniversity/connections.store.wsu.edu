@@ -658,12 +658,12 @@ main footer{
 }
 .opc-wrapper-opc .buttons-set .button span span,
 .opc-wrapper-opc .discount-block .buttons-set .button span span {
-	background:transparent none;
+  background:transparent none;
   color: #FFFFFF !important;
   font-size: 18px;
   font-weight: bold;
-  text-shadow:2px 2px 1px #393939
-  text-transform: uppercase;
+  text-shadow: 2px 2px 1px #393939
+  /*text-transform: uppercase;*/
 }
 
 .shipping-method-block{position:absolute !important; top:-9999em  !important; left:-9999em  !important;}
