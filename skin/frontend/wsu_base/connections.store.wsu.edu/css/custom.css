@@ -612,9 +612,9 @@ main footer{
 	color:#FFFFFF;
 	display:inline-block;
     margin-right: 80px;
-	text-shadow:2px 2px 1px #393939;
-	
+	text-shadow:2px 2px 1px #393939;	
 }
+
 .checkout-types .btn-proceed-checkout.button span{
 	width:100%;
 	height:100%;
@@ -659,10 +659,10 @@ main footer{
 .opc-wrapper-opc .buttons-set .button span span,
 .opc-wrapper-opc .discount-block .buttons-set .button span span {
 	background:transparent none;
-  color: #494949 !important;
+  color: #FFFFFF !important;
   font-size: 18px;
   font-weight: bold;
-  text-shadow: 0 1px 1px #02484f;
+  text-shadow:2px 2px 1px #393939
   text-transform: uppercase;
 }
 
