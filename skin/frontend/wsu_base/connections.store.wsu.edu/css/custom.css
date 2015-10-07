@@ -1007,7 +1007,11 @@ main footer{
 .catalog-product-view .add-to-links li{ background:#A6A6A6; padding: 5px 10px; margin-left: 0px !important; margin-right: 12px; }
 
 /*--CAR_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-.cart .discount,.cart .shipping{ position:relative; background: #eff0f1; }
+.cart .shipping {display:none;}
+.cart .discount,.cart .shipping{ position:relative; background: #eff0f1; min-height:140px;}
+.cart .discount {
+	padding-top:30px;
+}
 .cart .discount h2, .cart .shipping h2{ width: auto;}
 .cart .discount h2:before,
 .cart .shipping h2:before
