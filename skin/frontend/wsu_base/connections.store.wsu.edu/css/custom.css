@@ -1053,6 +1053,10 @@ main footer{
     margin: 0 0 3px;
 }
 
+.cart .discount .buttons-set, .cart .shipping .buttons-set{
+	padding-top:10px;
+}
+
 /*--CHECKOUT_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .opc-wrapper-opc a span,.opc-wrapper-opc a {
     color: #fff !important;
