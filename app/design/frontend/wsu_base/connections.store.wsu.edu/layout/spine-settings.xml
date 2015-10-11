@@ -6,6 +6,9 @@
 			<max_width>custom</max_width>
 			<max_width_custom>1215</max_width_custom>
 		</responsive>
+		<spine>
+			<show_storenetwork>0</show_storenetwork>
+		</spine>
 		<product_view>
 			<row_type>side-left</row_type>
 			<padding>pad</padding>
