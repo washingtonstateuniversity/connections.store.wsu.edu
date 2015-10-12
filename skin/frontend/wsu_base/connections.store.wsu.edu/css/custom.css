@@ -815,9 +815,13 @@ main footer{
 	content:"\f005";
 	color:#981e32;
 }
+.products-grid li.item .product-image-wrapper
+{	
+	width: 172px;
+}
+
 .products-grid li.item .product-image-wrapper img{
 	margin: 0px;
-	width: 172px
 }
 .products-grid li.item:hover .product-image-wrapper{
 	background-color:#981E32 !important;
