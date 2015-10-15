@@ -18,30 +18,30 @@
 $socialChannels=array();
  
  
-$slot_one = $theme->getCfgGroup('spine_social/slot_one');
-$slot_two = $theme->getCfgGroup('spine_social/slot_two');
-$slot_three = $theme->getCfgGroup('spine_social/slot_three');
-$slot_four = $theme->getCfgGroup('spine_social/slot_four');
+$slot_one = $theme->getCfg('spine_social/slot_one');
+$slot_two = $theme->getCfg('spine_social/slot_two');
+$slot_three = $theme->getCfg('spine_social/slot_three');
+$slot_four = $theme->getCfg('spine_social/slot_four');
  
 if($slot_one!="skip"){
-	 $url = $theme->getCfgGroup('spine_social/slot_one_url');
-	 $text = $theme->getCfgGroup('spine_social/slot_one_text');
+	 $url = $theme->getCfg('spine_social/slot_one_url');
+	 $text = $theme->getCfg('spine_social/slot_one_text');
 	 $socialChannels[$slot_one]=array('url'=>$url,'text'=>$text);
 }
  
 if($slot_two!="skip"){
-  	 $url = $theme->getCfgGroup('spine_social/slot_two_url');
-	 $text = $theme->getCfgGroup('spine_social/slot_two_text');
+  	 $url = $theme->getCfg('spine_social/slot_two_url');
+	 $text = $theme->getCfg('spine_social/slot_two_text');
 	 $socialChannels[$slot_two]=array('url'=>$url,'text'=>$text);
 }
 if($slot_three!="skip"){
-	 $url = $theme->getCfgGroup('spine_social/slot_three_url');
-	 $text = $theme->getCfgGroup('spine_social/slot_three_text');
+	 $url = $theme->getCfg('spine_social/slot_three_url');
+	 $text = $theme->getCfg('spine_social/slot_three_text');
 	 $socialChannels[$slot_three]=array('url'=>$url,'text'=>$text);
 }
 if($slot_four!="skip"){
-	 $url = $theme->getCfgGroup('spine_social/slot_four_url');
-	 $text = $theme->getCfgGroup('spine_social/slot_four_text');
+	 $url = $theme->getCfg('spine_social/slot_four_url');
+	 $text = $theme->getCfg('spine_social/slot_four_text');
 	 $socialChannels[$slot_four]=array('url'=>$url,'text'=>$text);
 }
  
