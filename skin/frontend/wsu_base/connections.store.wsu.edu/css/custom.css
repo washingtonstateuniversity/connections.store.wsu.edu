@@ -1171,3 +1171,25 @@ overflow: visible !important;
 	content: "\f14a"; 
  }
  .button.btn-checkout.opc-btn-checkout span{color:#fff;}
+
+/*--WISHLIST_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+#wishlist-view-form .buttons-set.buttons-set2{
+	border-top: 1px solid #494949;
+	margin-top: 25px;
+	padding-top: 10px;
+}
+#wishlist-view-form .link-edit.button.button-secondary{
+    display: block;
+    text-align: center;
+    line-height: 33px;
+    height: 35px;
+    padding: 0px;
+}
+#wishlist-view-form .link-edit.button.button-secondary:hover{background-color: #39424b;}
+#wishlist-view-form .button.btn-cart{
+    display: block;
+    height: 35px;
+    width: 100%;
+	background-color: #981e32;
+}
+#wishlist-view-form .button.btn-cart:hover{background-color: #39424b;}
