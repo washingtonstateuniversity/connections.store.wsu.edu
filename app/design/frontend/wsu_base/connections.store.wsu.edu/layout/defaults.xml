@@ -48,7 +48,7 @@
 
 		</reference>
 		<reference name="content">
-            <remove name="breadcrumbs" />
+            <!--<remove name="breadcrumbs" />-->
         </reference>
 	</default>
 <!-- HOME PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
@@ -140,7 +140,7 @@
 			<action method="unsetChild"><name>currency</name></action>
 		</reference>
 		<reference name="category.products">
-			<block type="page/html_breadcrumbs" name="onlybreadcrumbs" as="onlybreadcrumbs"/>
+			<!--<block type="page/html_breadcrumbs" name="onlybreadcrumbs" as="onlybreadcrumbs"/>-->
 		</reference>
 	</catalog_category_default>
 
@@ -189,7 +189,7 @@
         <reference name="content">
 			
             <block type="catalog/product_view" name="product.info.custom" template="catalog/product/view.phtml">
-				<block type="page/html_breadcrumbs" name="onlybreadcrumbs" as="onlybreadcrumbs"/>
+				<!--<block type="page/html_breadcrumbs" name="onlybreadcrumbs" as="onlybreadcrumbs"/>-->
                 <!--
                 <action method="addReviewSummaryTemplate"><type>default</type><template>review/helper/summary.phtml</template></action>
                 <action method="addReviewSummaryTemplate"><type>short</type><template>review/helper/summary_short.phtml</template></action>
