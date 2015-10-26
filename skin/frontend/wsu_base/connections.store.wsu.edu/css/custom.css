@@ -273,6 +273,7 @@ li{
 	color:#ddd;
 	background:none;
     /*position: relative;*/
+	position: static;
 	height:32px;
 	color:#FFFFFF;
 	/*display:inline-block;*/
