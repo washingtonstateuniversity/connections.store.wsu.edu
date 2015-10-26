@@ -1202,3 +1202,6 @@ overflow: visible !important;
 .std p {
 	margin: 0px 0px 5px 0px;
 }
+.std br {
+	display:none;
+}
