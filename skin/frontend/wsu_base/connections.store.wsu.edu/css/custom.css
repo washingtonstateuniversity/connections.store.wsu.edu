@@ -1199,10 +1199,7 @@ overflow: visible !important;
 }
 #wishlist-view-form .button.btn-cart:hover{background-color: #39424b;}
 
-.product-view .product-shop .short-description .std p {
+.std p {
 	margin: 0px 0px 5px 0px;
 }
 
-.product-view .product-shop .short-description .std br {
-	display:none;
-}
