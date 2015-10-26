@@ -145,6 +145,7 @@ div#main {
 }
 .content_area{ 
 	/*margin-top: 25px; */
+    z-index: 101;
 }
 .home main{
 	background: url(/media/store-media/connections.store.wsu.edu/skin/home-main-background.jpg);
