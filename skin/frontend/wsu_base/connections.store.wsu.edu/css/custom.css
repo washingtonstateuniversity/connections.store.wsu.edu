@@ -144,8 +144,8 @@ div#main {
     margin-bottom: 35px;
 }
 .content_area{ 
-	/*margin-top: 25px; */
-    z-index: 101;
+	/*margin-top: 25px;
+    z-index: 101; */
 }
 .home main{
 	background: url(/media/store-media/connections.store.wsu.edu/skin/home-main-background.jpg);
@@ -214,7 +214,7 @@ section#siteID{
 .quick-access{
 	background:none;
     position: absolute;
-    width: 100%;
+    width: auto;
 	z-index:100;
 }
 .quick-access .links{
