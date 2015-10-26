@@ -1198,3 +1198,7 @@ overflow: visible !important;
 	background-color: #981e32;
 }
 #wishlist-view-form .button.btn-cart:hover{background-color: #39424b;}
+
+.std p {
+	margin: 0px 0px 5px 0px;
+}
