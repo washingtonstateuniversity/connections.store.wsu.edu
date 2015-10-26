@@ -348,7 +348,7 @@ li{
 	left: 0px;
 }
 
-/*%--icons--%*/
+/*%--icons--%
 .quick-access .links a:hover span:before{
 	color:#fff;
 }
@@ -379,7 +379,7 @@ li{
 .quick-access .links a[href*="catalog/product_compare"] span:before,
 .quick-access .links a[href*="#hideme_compare"] span:before{
 	content: "\f24e";
-}
+}*/
 
 
 
