@@ -2,7 +2,7 @@
 <layout>
 	<default>
 		<reference name="head">
-			<action method="removeItem"><type>skin_js</type><name>js/lightbox.ini.js</name></action>
+			<action method="removeItem"><type>skin_js</type><name>src/js/lightbox.ini.js</name></action>
 			<action method="addItem"><type>skin_css</type><name>css/custom.css</name></action>
 			<action method="addItem"><type>skin_js</type><name>js/jquery.cycle2.min.js</name></action>
 			<action method="addItem"><type>skin_js</type><name>js/jquery.cycle2.carousel.min.js</name></action>
