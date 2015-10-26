@@ -143,6 +143,9 @@ main{
 div#main {
     margin-bottom: 35px;
 }
+#main .std hr {
+	height:3px;
+}
 .content_area{ 
 	/*margin-top: 25px;
     z-index: 101; */
