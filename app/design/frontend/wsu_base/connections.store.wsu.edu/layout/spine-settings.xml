@@ -34,12 +34,12 @@
 	<wsu_themecontrol>
 		<spine_social>
 			<slot_one>facebook</slot_one><!-- skip, facebook, twitter, youtube, directory, linkedin, pinterest, gplus, flickr, tumblr, custom -->
-			<slot_one_url>http://facebook.com/wsupullman</slot_one_url>
+			<slot_one_url>http://facebook.com/wsuconnections</slot_one_url>
 			<slot_one_text>Facebook</slot_one_text>
 
-			<slot_two>skip</slot_two>
-			<slot_two_url></slot_two_url>
-			<slot_two_text></slot_two_text>			
+			<slot_two>twitter</slot_two>
+			<slot_two_url>https://twitter.com/wsuconnections1</slot_two_url>
+			<slot_two_text>Twitter</slot_two_text>			
 
 			<slot_three>skip</slot_three>
 			<slot_three_url></slot_three_url>
