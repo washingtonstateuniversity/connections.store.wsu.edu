@@ -164,7 +164,7 @@ section#siteID{
 	background-color:#38424a;
 	background-repeat: no-repeat;
 	background-position:left top;
-    background-size: 100% auto;
+    background-size: auto 100%;
 	box-sizing:border-box;
 	/*border:2px solid #981e32;*/
 	border-top:none;
