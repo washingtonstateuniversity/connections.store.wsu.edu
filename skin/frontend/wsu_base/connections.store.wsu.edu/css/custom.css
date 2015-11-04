@@ -817,13 +817,14 @@ main footer{
 
 	.products-list li.item.last {border: 1px solid rgba(91,91,91,0.63);}
 	.products-list .product-image{ width:100%; height:auto; max-height:100%;}
-	.products-list .product-shop{ margin-left:359px;}
+	.products-list .product-shop{ margin-left:335px;}
 	[name="goingToEvent"] {display: none !important;visibility: hidden;}
 	.template{display:none;}
 	.products-list h2.product-name {font-size: 1.75em;font-weight: bold;}
 	.products-list h2.product-name a{ text-decoration:none; cursor:default;}
 ul.products-list ul.add-to-links:after {
     content: "";
+	    clear: none;
 }
 
 
