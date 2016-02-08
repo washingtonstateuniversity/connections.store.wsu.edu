@@ -4,7 +4,7 @@
 		<responsive>
 			<fluid_width>fluid</fluid_width>
 			<max_width>custom</max_width>
-			<max_width_custom>1215</max_width_custom>
+			<max_width_custom>2500</max_width_custom>
 			<show_breadcrumbs>1</show_breadcrumbs>
 		</responsive>
 		<spine>

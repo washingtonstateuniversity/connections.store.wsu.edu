@@ -1,6 +1,6 @@
 /* CSS Document */
 body{
-	font-family: "pragmatica-web-condensed", Arial, Helvetica, sans-serif;
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 	font-style:normal;
 	font-size:100%;
 	line-height:1.6;
@@ -172,7 +172,7 @@ section#siteID{
 }
 #spine #glue:before{
 	/*background:transparent url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;*/
-	background: rgba(82, 80, 80, 0.41) url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;
+	/*background: rgba(82, 80, 80, 0.41) url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;*/
 }
 #siteID{
 	height:104px;
