@@ -28,6 +28,11 @@
 			<spine_color>darkest</spine_color>
 			<spine_bleed>0</spine_bleed>
 		</spine>
+		<font>
+			<primary_font_family_group>google</primary_font_family_group>
+			<primary_font_family>Open Sans</primary_font_family>
+			<primary_font_weight>300italic,400italic,600italic,700italic,800italic,400,300,600,700,800</primary_font_weight>
+		</font>
 	</wsu_themecontrol_design>
 	
 	
