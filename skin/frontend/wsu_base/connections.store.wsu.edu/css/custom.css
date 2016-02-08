@@ -177,7 +177,7 @@ section#siteID{
 	/*background: rgba(82, 80, 80, 0.41) url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;*/
 }
 #siteID{
-	height:104px;
+	height:60px;
 }
 #siteID article h2{
 	display:none;
@@ -275,14 +275,26 @@ li{
     z-index: 1;
 	height:32px;
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
 	padding:0px 5px;
+	font-weight:100;
+	color:#ececec;
 }
+.quick-access .links a span:before{
+	font-size:24px;
+	    top: -1px;
+}
+
+.quick-access .links a[href*="customer/account/create"] span:before{
+    content: "\f044";
+}
+
+
 .quick-access .links  li{
     margin-right: 4px;
 }
 .quick-access .links a span{
-    padding-left: 22px;
+	padding-left: 28px;
 }
 
 .quick-access .links a{
@@ -696,13 +708,15 @@ main footer{
 
 /*--CATEGORIES--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .category-title{
-    margin-top: 25px;
+    margin-top: 0px;
     padding: 0px;
     border-bottom: 1px solid #38424a;
 }
 .category-title h1{
-	font-size:15px;
-	color:#4a535a;
+    font-size: 22px;
+    color: #5a5a5a;
+    font-weight: 700;
+	margin: 0;
 }
 
 /*--PRODUCT_LISTS--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
@@ -735,11 +749,16 @@ ul.products-list ul.add-to-links:after {
 }
 
 
+.products-grid{
+	display:flex;
+	flex-wrap: wrap;
+}
+
 .products-grid li.item{
 	position:relative;
-	margin:25px 25px 0px 25px;
-	
+	/*margin:25px 25px 0px 25px;*/
 }
+
 .display-onhover{
 	display: inline-block;
     float: right;
