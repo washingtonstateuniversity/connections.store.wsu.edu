@@ -6,6 +6,7 @@ body{
 	line-height:1.6;
 
 	background:none !important;
+	/*
   background-image   : url(/media/store-media/connections.store.wsu.edu/skin/background-strip.png),
                        url(/media/store-media/connections.store.wsu.edu/skin/background.jpg) !important;
 
@@ -14,6 +15,7 @@ body{
 
   background-position: 100% top,
                        center top !important;
+					   */
 }
 
 /*--Spine-Overrides--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
@@ -151,24 +153,24 @@ div#main {
     z-index: 101; */
 }
 .home main{
-	background: url(/media/store-media/connections.store.wsu.edu/skin/home-main-background.jpg);
+	/*background: url(/media/store-media/connections.store.wsu.edu/skin/home-main-background.jpg);
 	background-color:#fff;
 	background-repeat: no-repeat;
 	background-position:center bottom;
-    background-size: 100% auto;
+    background-size: 100% auto;*/
 	
 }
 section#siteID{
-	/*background:none !important;*/
+	/*background:none !important;
 	background-image : url(/media/store-media/connections.store.wsu.edu/skin/header-bk.jpg);
 	background-color:#38424a;
 	background-repeat: no-repeat;
 	background-position:left top;
     background-size: auto 100%;
-	box-sizing:border-box;
-	/*border:2px solid #981e32;*/
+	box-sizing:border-box;*/
+	/*border:2px solid #981e32;
 	border-top:none;
-    z-index: 100;
+    z-index: 100;*/
 }
 #spine #glue:before{
 	/*background:transparent url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;*/
@@ -197,13 +199,16 @@ section#siteID{
 	display:none;
 }
 #siteID article h1{
-	background:transparent url(/media/store-media/connections.store.wsu.edu/skin/2015-Connections-sig.svg) no-repeat center top !important;
-	background-size:contain;
-    width:415px;
-    height:65px;
+	    background: transparent url(/media/store-media/connections.store.wsu.edu/skin/2015-Connections-sig.svg) no-repeat center center !important;
+    background-size: contain;
+    width: 415px;
+    height: 59px;
     position: absolute;
-    top: 2px;
+    top: 0px;
     z-index: 150;
+    right: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .form-list .name-middlename {
@@ -238,41 +243,16 @@ li{
 }
 /*%--global--%*/
 .quick-access{
-	background:none;
+    background: #919191;
     position: absolute;
-    width: 100%;
-    right: -2px;
-    top: 85px;/*26px;*/
-	z-index:100;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
+    padding: 0;
+    margin: 0;
+	text-align: left;
 }
-.quick-access:before{
-    width: 10px;
-    height: 0;
-    border-top: 36px solid #981e32;
-    border-left: 79px solid transparent;
-    position: absolute;
-    top: 7px;
-    right: 2px;
-    z-index: 0;
-    content: "";
-}
-/*.quick-access .links:first-of-type:after{
-    transform: skew(20deg);
-    -webkit-transform: skew(20deg);
-    -moz-transform: skew(20deg);
-    -ms-transform: skew(20deg);
-    -o-transform: skew(20deg);
-    background-color: #eff0f1;
-	position: absolute;
-    top: 1px;
-    right: 100%;
-    z-index: 0;
-    max-width: 260px;
-    width: 100%;
-    height: 35px;
-    content: "";
-	content:"";
-}*/
+
 .quick-access .links a{
 	color:#ddd;
 	background:none;
@@ -305,85 +285,12 @@ li{
     padding-left: 22px;
 }
 
-
-.quick-access .links a:before{
-    transform: skew(20deg);
-    -webkit-transform: skew(20deg);
-    -moz-transform: skew(20deg);
-    -ms-transform: skew(20deg);
-    -o-transform: skew(20deg);
-    background-color: #981e32;
-	
-	border:2px solid #981e32;
-	position:absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 0;
-    width: 100%;
-    height: 32px;
-	content:"";
-}
-.quick-access .links a:hover:before{
-    background-color:#39424b;
-}
-
 .quick-access .links a{
 	padding:0 7px 0 0;
-	/*background:url(http://store.wsu.dev/skin/frontend/wsu_base/default/images/bkg_pipe1.gif) no-repeat 100% 50%*/
 }
 .quick-access .links li.last a{padding:0;background:none}
-.quick-access .links a span:before{
-	display: inline-block;
-	font: normal normal normal 14px/1 FontAwesome;
-	font-size: 20px;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	transform: translate(0, 0);	
-	
-	color:#39424b;
-	z-index:1;
 
-}
-.quick-access .links a span:before{
-	margin-right: 7px;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-}
 
-/*%--icons--%
-.quick-access .links a:hover span:before{
-	color:#fff;
-}
-.quick-access .links a[href*="customer/account"] span:before{
-	content: "\f085";
-}
-.quick-access .links a[href*="customer/account/create"] span:before{
-	content: "\f090";
-}
-.quick-access .links a[href*="customer/account/logout"] span:before{
-	content: "\f08b";
-}
-.quick-access .links a[href*="customer/account/login"] span:before{
-	content: "\f090";
-}
-.quick-access .links a[href*="checkout"] span:before{
-	content: "\f046";
-}
-.quick-access .links a[href*="checkout/cart"] span:before{
-	content: "\f07a";
-}
-.quick-access .links a.with-items[href*="checkout/cart"] span:before{
-	content: "\f217";
-}
-.quick-access .links a[href*="wishlist"] span:before{
-	content: "\f005";
-}
-.quick-access .links a[href*="catalog/product_compare"] span:before,
-.quick-access .links a[href*="#hideme_compare"] span:before{
-	content: "\f24e";
-}*/
 
 
 
