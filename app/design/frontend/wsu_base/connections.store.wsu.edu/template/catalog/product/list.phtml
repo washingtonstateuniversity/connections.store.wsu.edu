@@ -215,40 +215,6 @@
 							echo $helpLabels->getLabels($_product); //Product labels 
 						?>
 					</a>
-				
-					<?php //Add-to links
-						if ($gc['display_addtolinks'] != 0 && $gc['addtolinks_simple']) {
-							
-							if($productType != 'event' && $_compareUrl=$this->getAddToCompareUrl($_product)) { 
-								?><!--<li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li> --><?php 
-							} 
-							
-							if ($gc['display_addtolinks'] == 1) { //Display on hover
-								echo $helpTemplate->getCategoryAddtoLinksComplex_2($_product, $this->getAddToCompareUrl($_product), 'addto-links-icons addto-onimage display-onhover');
-							} else { //Always display
-								echo $helpTemplate->getCategoryAddtoLinksComplex_2($_product, $this->getAddToCompareUrl($_product), 'addto-links-icons addto-onimage');
-							}
-						}
-					?>
-				</div> <!-- end: product-image-wrapper -->
-				<div class="price_and_action">
-					<?php
-						
-						if ($gc['display_price'] == 1) { echo '<div class="display-onhover">'; }
-						echo $this->getPriceHtml($_product, true);
-						if ($gc['display_price'] == 1){ echo '</div>'; }
-	
-						//If at least one element was set as "Display on hover" but no element was set as "Display":
-						//aggregate classes from those elements and apply them to the "actions" container.
-						$actionsClasses = '';
-						if ($gc['display_addtocart'] == 1 || ($gc['display_addtolinks'] == 1 && !$gc['addtolinks_simple'])) {
-							$actionsClasses = ' display-onhover';
-						}
-						if ($gc['display_addtocart'] == 2 || ($gc['display_addtolinks'] == 2 && !$gc['addtolinks_simple']))  {
-							$actionsClasses = '';
-						}
-					?>
-					
 					<div class="actions clearer<?php echo $actionsClasses; ?>">
 						<?php 
 						
@@ -277,13 +243,50 @@
 								echo $helpTemplate->getCategoryAddtoLinks($_product, $this->getAddToCompareUrl($_product), 'addto-gaps-right addto-texticons');
 							}
 						?>
+						
+						<?php
+						//If at least one element was set as "Display on hover" but no element was set as "Display":
+							//aggregate classes from those elements and apply them to the "actions" container.
+							$actionsClasses = '';
+							if ($gc['display_addtocart'] == 1 || ($gc['display_addtolinks'] == 1 && !$gc['addtolinks_simple'])) {
+								$actionsClasses = ' display-onhover';
+							}
+							if ($gc['display_addtocart'] == 2 || ($gc['display_addtolinks'] == 2 && !$gc['addtolinks_simple']))  {
+								$actionsClasses = '';
+							}
+							 //Add-to links
+							if ($gc['display_addtolinks'] != 0 && $gc['addtolinks_simple']) {
+								
+								if($productType != 'event' && $_compareUrl=$this->getAddToCompareUrl($_product)) { 
+									?><!--<li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li> --><?php 
+								} 
+								
+								if ($gc['display_addtolinks'] == 1) { //Display on hover
+									echo $helpTemplate->getCategoryAddtoLinksComplex_2($_product, $this->getAddToCompareUrl($_product), 'addto-links-icons addto-onimage display-onhover');
+								} else { //Always display
+									echo $helpTemplate->getCategoryAddtoLinksComplex_2($_product, $this->getAddToCompareUrl($_product), 'addto-links-icons addto-onimage');
+								}
+							}
+						?>
 					</div> <!-- end: actions -->
-				</div>
-				<h2 class="product-name">
+				</div> <!-- end: product-image-wrapper -->
+				<div class="price_and_action <?=($gc['display_price'] == 1 ? "price_visible" : "")?>">
+					<?php
+						
+						if ($gc['display_price'] == 1) { echo '<div class="display-onhover">'; }
+						echo $this->getPriceHtml($_product, true);
+						if ($gc['display_price'] == 1){ echo '</div>'; }
+	
+						
+					?>
+					
+					<h2 class="product-name">
 					<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
 						<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
 					</a>
 				</h2>
+				</div>
+				
 
 				<?php if ($tmpHtml = $this->getChildHtml('block_category_below_product')): ?>
 					<div class="block_category_below_product std"><?php echo $tmpHtml; ?></div>

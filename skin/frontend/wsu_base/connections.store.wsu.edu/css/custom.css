@@ -750,13 +750,18 @@ ul.products-list ul.add-to-links:after {
 
 
 .products-grid{
-	display:flex;
-	flex-wrap: wrap;
+    display: flex;
+	flex-flow: row wrap;
+    justify-content: space-around;
 }
 
 .products-grid li.item{
-	position:relative;
-	/*margin:25px 25px 0px 25px;*/
+    position: relative;
+    align-self: flex-start;
+    padding: 0;
+    max-width: 250px;
+    width: auto;
+    float: initial;
 }
 
 .display-onhover{
@@ -781,11 +786,17 @@ ul.products-list ul.add-to-links:after {
 }
 .products-grid li.item .product-image-wrapper
 {	
-	width: 172px;
+	/*width: 172px;*/
+	    position: relative;
 }
-
+.products-grid li.item .actions {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
 .products-grid li.item .product-image-wrapper img{
 	margin: 0px;
+	float: right;
 }
 .products-grid li.item:hover .product-image-wrapper{
 	background-color:#981E32 !important;
@@ -842,20 +853,30 @@ ul.products-list ul.add-to-links:after {
 }
 .products-grid .product-image{
 	margin:0px;
-	border-width:1px
+	border-width:2px;
+	border-color:#6f6f6f;
+	border-left-width: 7px;
 }
 .price_and_action{
-	padding: 0px 5px;
-    background-color: #e2e2e2;
-	width:162px;
-	clear:both;
+	/*padding: 0px 5px;
+    background-color: #e2e2e2;*/
+	/*width:162px;
+	clear:both;*/
 }
-.products-grid .product-name{
-	/*border-bottom: 1px solid;*/
+.products-grid .price_visible .product-name{
+	/*border-bottom: 1px solid;
 	position:absolute;
 	top:210px;
-	left:0px;
-	width:162px;
+	left:0px;*/
+	width:calc( 100% - 100px );
+}
+.products-grid .price_visible .product-name{
+	/*border-bottom: 1px solid;
+	position:absolute;
+	top:210px;
+	left:0px;*/
+	width:calc( 100% - 100px );
+	
 }
 .products-grid .product-name a{
 	text-decoration:none;
@@ -866,12 +887,26 @@ ul.products-list ul.add-to-links:after {
 .products-grid .price-box {
     margin: 5px 0;
     display: inline-block;
-    float: left;
+    float: right;
+}
+.products-grid .price-box p{
+	padding:0px;	
 }
 .products-grid .price-box .regular-price .price{
-	color:#981E32;
+	color: #5a5a5a;
+	font-size: 28px;
+    font-weight: 500;
 }
-
+.products-grid .price-box .old-price .price{
+    color: #5a5a5a;
+    font-size: 15px;
+    font-weight: 300;
+}
+.products-grid .price-box .special-price .price{
+	color:#981E32;
+	font-size: 28px;
+    font-weight: 500;
+}
 .catalog-category-view .button.btn-cart{
 	background: none;
     border: none;
