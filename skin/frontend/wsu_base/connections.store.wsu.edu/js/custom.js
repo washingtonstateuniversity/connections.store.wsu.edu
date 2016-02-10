@@ -1,4 +1,5 @@
-(function($){
+(function( window, $, WSU ){ 
+
 	$(document).ready(function(){
 			
 		$('.more-views a').lightbox({
@@ -30,7 +31,41 @@
 				}
 			},
 		});
-
+		$.each($('.swatch-button'),function(idx,item){
+			var tar =$(item);
+			tar.tooltip({
+				show: { effect: "fadeIn", duration: 50 }, 
+				position: { 
+					my: "center bottom-10",
+					at: "center top"
+				},
+				items: "span",
+				using: function( position, feedback ) {
+					//$( this ).css( position );
+					$( this ).addClass( $( this ).data('type') );
+				},
+				content: function() {
+					var element = $( this );
+					return element.next('.swatch-items').html();
+				},
+				hide: { effect: "fadeOut" }, //fadeOut
+				close: function(event, ui){
+					ui.tooltip.hover(
+						function () {
+							$(this).stop(true).fadeTo(100, 1); 
+						},
+						function () {
+							$(this).fadeOut("400", function(){
+								$(this).remove(); 
+							})
+						}
+					);
+				}  
+			});
+		});
+		
 			//$('.more-views a').lightbox( "option", "resizeToBestPossibleSize", false );
 	});
-})(jQuery);
+
+	
+}( window, jQuery, jQuery.WSU||{} ) );

@@ -375,7 +375,7 @@ main footer{
 	.products-list .price-box {float:none;}
 	.mass_item.active_item{background-color:#e3dfcd !important;border-color:#ada400 !important}
 	.product-image-wrapper img{ margin-top: 20px;}
-	.product-image-wrapper ul{ display:none;}
+	/*.product-image-wrapper ul{ display:none;}  Not sure where this came from look to git history for what*/
 	input.full { width:100%}
 	
 	/* Guest blocks */
@@ -785,8 +785,7 @@ ul.products-list ul.add-to-links:after {
 	content:"\f005";
 	color:#981e32;
 }
-.products-grid li.item .product-image-wrapper
-{	
+.products-grid li.item .product-image-wrapper{	
 	/*width: 172px;*/
 	    position: relative;
 }
@@ -794,6 +793,10 @@ ul.products-list ul.add-to-links:after {
     position: absolute;
     bottom: 0px;
     right: 0px;
+    display: flex;
+    align-content: flex-end;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
 .products-grid li.item .product-image-wrapper img{
 	margin: 0px;
@@ -802,56 +805,47 @@ ul.products-list ul.add-to-links:after {
 .products-grid li.item:hover .product-image-wrapper{
 	background-color:#981E32 !important;
 }
+
+.promo_lables{
+    position: absolute;
+    top: 10px;
+    left: -5px;
+    display: block;
+    width: 107px;
+    line-height: 26px;
+    text-transform: uppercase;
+}
+
+
 .products-grid li.item .sticker-wrapper{
-	position:absolute;
+	/*position:absolute;*/
+	display: block;
+	    margin-bottom: 5px;
 }
-.products-grid li.item .sticker-wrapper:before{
-	position:absolute;
-	top:0px;
-	left:0px;
-	z-index: 0;
-	width: 0; 
-	height: 0; 
-	content:"";
-}
+
 .products-grid li.item .sticker-wrapper .sticker{
 	width: 100%;
     height: 100%;
-    position: absolute;
-    top: 9px;
+    /*position: absolute;*/
+	display:block;
+    /*top: 9px;
     left: -3px;
-    z-index: 1;
+    z-index: 1;*/
     text-align: center;
-    font-size: 10px;
+    font-size: 24px;
+	font-weight:600;
     padding: 0px;
-    -ms-transform: rotate(-45deg); /* IE 9 */
-    -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
-    transform: rotate(-45deg);
     color: #fff;
 }
 .products-grid li.item .sticker-wrapper.top-left{
-	top:0px;
-	left:0px;
+	background:#941e3d;
 }
 .products-grid li.item .sticker-wrapper.top-right{
-	top:0px;
-	right:30px;
+	background:#fea03b;
 }
-.products-grid li.item .sticker-wrapper.top-left:before{
-	border-top: 30px solid #ff361e; 
-	border-right: 30px solid transparent;
-}
-.products-grid li.item .sticker-wrapper.top-right:before{
-	border-top: 30px solid #ff361e; 
-	border-left: 30px solid transparent;
-}
-.products-grid li.item .sticker-wrapper.top-right .sticker{
-	top: -4px;
-    left: 20px;
-    -ms-transform: rotate(45deg); /* IE 9 */
-    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
-    transform: rotate(45deg);
-}
+
+
+
 .products-grid .product-image{
 	margin:0px;
 	border-width:2px;
@@ -948,6 +942,90 @@ ul.products-list ul.add-to-links:after {
 .products-list .right-column {
     margin-left: 329px;
 }
+
+.swatch-area{
+    background: rgba(226,226,226,.75);
+    border-width: 2px 0px 0px 2px;
+    float: right;
+    border-radius: 0px;
+    border-color: #5a5a5a;
+    margin-bottom: 2px;
+    border-style: solid;
+	
+}
+.swatch-button{
+	width:40px;
+	height:40px;
+	display:block;
+	position:relative;
+	font-size:24px;
+	font-weight:600;
+	text-align:center;
+	line-height:40px;
+}
+.swatch-area:hover{
+    background: rgba(226,226,226,1);
+	color:#941e3d;
+}
+.swatch-button[data-type="color"]{line-height: 35px;}
+.swatch-button img{	
+    vertical-align: middle !important;
+	    box-shadow: 0px 2px 3px rgba(73, 73, 73, 0.62);
+}
+.swatch-items{display:none;}
+.configurable-swatch-list li{}
+
+
+.ui-tooltip {
+	position: absolute;
+	background: #f4f4f4;
+	border: 3px solid #2E2E2E;
+	max-width: 75px;
+	width:auto;
+}
+.ui-tooltip.size{
+	max-width: 45px;
+}
+.ui-tooltip:after, .ui-tooltip:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.ui-tooltip:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: #f4f4f4;
+	border-width: 20px;
+	margin-left: -20px;
+}
+.ui-tooltip:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-top-color: #2E2E2E;
+	border-width: 22px;
+	margin-left: -22px;
+}
+
+span.size-option{
+	display:block;
+	font-size:18px;
+	font-weight:800;
+	text-align:center;
+	border:1px #f4f4f4 solid;
+	max-width: 75px;
+	line-height:20px;
+}
+span.size-option:hover{
+	border:1px #272727 solid;
+}
+
+
+
+
 
 
 /*--PRODUCT_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/

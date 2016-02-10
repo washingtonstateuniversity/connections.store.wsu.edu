@@ -47,9 +47,14 @@
 			</action>-->
 
 		</reference>
-		<reference name="content">
-            <!--<remove name="breadcrumbs" />-->
-        </reference>
+		    <reference name="root">
+				<action method="unsetChild"><name>breadcrumbs</name></action>
+				<reference name="content">
+					<action method="insert"><child>breadcrumbs</child></action>
+				</reference>
+			</reference>	 <!--	<reference name="content">
+           <remove name="breadcrumbs" />
+        </reference>-->
 	</default>
 <!-- HOME PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	<cms_index_index>

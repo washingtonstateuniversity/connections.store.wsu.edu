@@ -206,13 +206,14 @@
 					<?php 
 						$imgLable = $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true); 
 					?>
-					<a href="<?=$_product->getProductUrl()?>" title="<?=$imgLable?>" class="product-image">
+					<a href="<?=$_product->getProductUrl()?>" title="click for details about:
+<?=$imgLable?>" class="product-image">
 						<img src="<?php echo $helpImg->getImg($_product, $imgWidth, $imgHeight, 'small_image'); ?>" alt="<?=$imgLable?>" />
 						<?php
 							if ($theme->getCfg('category/alt_image')) {
 								echo $theme->getAltImgHtml($_product, $imgWidth, $imgHeight);
 							}
-							echo $helpLabels->getLabels($_product); //Product labels 
+							echo "<span class='promo_lables'>" . $helpLabels->getLabels($_product) . '</span>'; //Product labels 
 						?>
 					</a>
 					<div class="actions clearer<?php echo $actionsClasses; ?>">
@@ -230,13 +231,7 @@
 						
 						
 						<?php //Cart button ?>
-						<?php if ($gc['display_addtocart'] != 0): ?>
-							<?php if ($_product->isSaleable()): ?>
-								<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button bare btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
-							<?php else: ?>
-								<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
-							<?php endif; ?>
-						<?php endif; ?>
+						
 						
 						<?php //Add-to links
 							if ($gc['display_addtolinks'] != 0 && !$gc['addtolinks_simple'])  {
@@ -268,6 +263,107 @@
 								}
 							}
 						?>
+						
+						
+						
+						
+						
+		
+							<?php $cProduct = Mage::getModel('catalog/product')->load($_product->getId());?>
+									<?php if ($cProduct->getData('type_id') == "configurable")
+									{
+							 $configAttributesArray = $_product->getTypeInstance(true)->getConfigurableAttributesAsArray($_product);?>
+							
+							<div class="swatch-area available-size">
+										<?php
+											//filter so only Size is left and select the values in the array
+							$configAttributesFilteredBySize = array_filter($configAttributesArray, function($v) { return $v['label'] == 'Size'; });
+							$configAttributesFilteredBySizeValues = $configAttributesFilteredBySize[key($configAttributesFilteredBySize)]['values'];
+							//get the configurable product its childproducts
+							$childProducts = Mage::getModel('catalog/product_type_configurable')->getUsedProducts(null,$_product);
+							?>
+							
+								<span class="swatch-button" data-type="size">
+									<?php
+										foreach($configAttributesFilteredBySizeValues as $configAttributeValue){
+											$label = $configAttributeValue['label'];
+											if( !empty($label.trim(" ")) ){
+												echo  $label;
+												$value = $configAttributeValue['value_index'];
+												foreach($childProducts as $childProduct){
+													if($childProduct->getSize() == $value){
+														$label = $childProduct->getAttributeText('Size');
+														if( !empty($label.trim(" ")) ){
+															echo $label;
+														}
+														
+													}break;
+												}
+												break;
+											}
+										}
+									?>
+								</span>
+								<div class="swatch-items">
+									<?php
+										foreach($configAttributesFilteredBySizeValues as $configAttributeValue){
+											$label = $configAttributeValue['label'];
+											if( !empty($label.trim(" ")) ){
+												echo "<span class='size-option'>" . $label . "</span>";
+												$value = $configAttributeValue['value_index'];
+												foreach($childProducts as $childProduct){
+													if($childProduct->getSize() == $value){
+														$label = $childProduct->getAttributeText('Size');
+														if( !empty($label.trim(" ")) ){
+															echo "<span class='size-option'>" . $lable . "</span>";
+														}
+													}
+												}
+											}
+										}
+									}?>
+								</div>
+							</div>				
+						
+						
+						
+						
+						<?php
+							// Provides extra blocks on which to hang some features for products in the list
+							// Features providing UI elements targeting this block will display directly below the product name
+							if ($this->getChild('name.after')) {
+								$_nameAfterChildren = $this->getChild('name.after')->getSortedChildren();
+								foreach ($_nameAfterChildren as $_nameAfterChildName) {
+									$_nameAfterChild = $this->getChild('name.after')->getChild($_nameAfterChildName);
+									$_nameAfterChild->setProduct($_product);
+									echo $_nameAfterChild->toHtml();
+								}
+							}
+						?>	
+						<?php if ($gc['display_addtocart'] != 0): ?>
+							<?php if ($_product->isSaleable()): ?>
+								<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button bare btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+							<?php else: ?>
+								<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+							<?php endif; ?>
+						<?php endif; ?>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 					</div> <!-- end: actions -->
 				</div> <!-- end: product-image-wrapper -->
 				<div class="price_and_action <?=($gc['display_price'] == 1 ? "price_visible" : "")?>">
@@ -281,7 +377,8 @@
 					?>
 					
 					<h2 class="product-name">
-					<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
+					<a href="<?php echo $_product->getProductUrl() ?>" title="click for details about:
+<?php echo $this->stripTags($_product->getName(), null, true) ?>">
 						<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
 					</a>
 				</h2>
