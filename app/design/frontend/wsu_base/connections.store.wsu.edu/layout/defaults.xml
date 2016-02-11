@@ -122,7 +122,7 @@
 	<!-- Default category (without layered navigation) -->
 	<catalog_category_default>
 		<reference name="root">
-			<action method="setTemplate"><template>page/1columns.phtml</template></action>
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
 		</reference>
 		<reference name="product_list">
 			<!-- HOWTO: Change review summary template

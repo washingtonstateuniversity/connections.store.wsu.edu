@@ -197,7 +197,9 @@
 			?>
 		
 			<li class="item">
-				
+				<?php if ($tmpHtml = $this->getChildHtml('block_category_above_product')): ?>
+					<div class="block_category_above_product std"><?php echo $tmpHtml; ?></div>
+				<?php endif; ?>
 
 				    
 				<div class="product-image-wrapper" style="max-width:<?php echo $imgWidth; ?>px;">
@@ -383,7 +385,9 @@
 				</div>
 				
 
-				
+				<?php if ($tmpHtml = $this->getChildHtml('block_category_below_product')): ?>
+					<div class="block_category_below_product std"><?php echo $tmpHtml; ?></div>
+				<?php endif; ?>
 			</li>
 		<?php endforeach; ?>    
 	</ul>
