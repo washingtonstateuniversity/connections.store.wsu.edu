@@ -270,61 +270,60 @@
 						
 		
 							<?php $cProduct = Mage::getModel('catalog/product')->load($_product->getId());?>
-									<?php if ($cProduct->getData('type_id') == "configurable")
-									{
-							 $configAttributesArray = $_product->getTypeInstance(true)->getConfigurableAttributesAsArray($_product);?>
+							<?php if ($cProduct->getData('type_id') == "configurable") :?>
+								<?php $configAttributesArray = $_product->getTypeInstance(true)->getConfigurableAttributesAsArray($_product);?>
 							
-							<div class="swatch-area available-size">
+								<div class="swatch-area available-size">
+											<?php
+												//filter so only Size is left and select the values in the array
+								$configAttributesFilteredBySize = array_filter($configAttributesArray, function($v) { return $v['label'] == 'Size'; });
+								$configAttributesFilteredBySizeValues = $configAttributesFilteredBySize[key($configAttributesFilteredBySize)]['values'];
+								//get the configurable product its childproducts
+								$childProducts = Mage::getModel('catalog/product_type_configurable')->getUsedProducts(null,$_product);
+								?>
+								
+									<span class="swatch-button" data-type="size">
 										<?php
-											//filter so only Size is left and select the values in the array
-							$configAttributesFilteredBySize = array_filter($configAttributesArray, function($v) { return $v['label'] == 'Size'; });
-							$configAttributesFilteredBySizeValues = $configAttributesFilteredBySize[key($configAttributesFilteredBySize)]['values'];
-							//get the configurable product its childproducts
-							$childProducts = Mage::getModel('catalog/product_type_configurable')->getUsedProducts(null,$_product);
-							?>
-							
-								<span class="swatch-button" data-type="size">
-									<?php
-										foreach($configAttributesFilteredBySizeValues as $configAttributeValue){
-											$label = $configAttributeValue['label'];
-											if( !empty($label.trim(" ")) ){
-												echo  $label;
-												$value = $configAttributeValue['value_index'];
-												foreach($childProducts as $childProduct){
-													if($childProduct->getSize() == $value){
-														$label = $childProduct->getAttributeText('Size');
-														if( !empty($label.trim(" ")) ){
-															echo $label;
-														}
-														
-													}break;
+											foreach($configAttributesFilteredBySizeValues as $configAttributeValue){
+												$label = $configAttributeValue['label'].trim(" ");
+												if( !empty($label) ){
+													echo  $label;
+													$value = $configAttributeValue['value_index'];
+													foreach($childProducts as $childProduct){
+														if($childProduct->getSize() == $value){
+															$label = $childProduct->getAttributeText('Size');
+															if( !empty($label.trim(" ")) ){
+																echo $label;
+															}
+															
+														}break;
+													}
+													break;
 												}
-												break;
 											}
-										}
-									?>
-								</span>
-								<div class="swatch-items">
-									<?php
-										foreach($configAttributesFilteredBySizeValues as $configAttributeValue){
-											$label = $configAttributeValue['label'];
-											if( !empty($label.trim(" ")) ){
-												echo "<span class='size-option'>" . $label . "</span>";
-												$value = $configAttributeValue['value_index'];
-												foreach($childProducts as $childProduct){
-													if($childProduct->getSize() == $value){
-														$label = $childProduct->getAttributeText('Size');
-														if( !empty($label.trim(" ")) ){
-															echo "<span class='size-option'>" . $lable . "</span>";
+										?>
+									</span>
+									<div class="swatch-items">
+										<?php
+											foreach($configAttributesFilteredBySizeValues as $configAttributeValue){
+												$label = $configAttributeValue['label'];
+												if( !empty($label.trim(" ")) ){
+													echo "<span class='size-option'>" . $label . "</span>";
+													$value = $configAttributeValue['value_index'];
+													foreach($childProducts as $childProduct){
+														if($childProduct->getSize() == $value){
+															$label = $childProduct->getAttributeText('Size');
+															if( !empty($label.trim(" ")) ){
+																echo "<span class='size-option'>" . $lable . "</span>";
+															}
 														}
 													}
 												}
 											}
-										}
-									}?>
-								</div>
-							</div>				
-						
+										?>
+									</div>
+								</div>				
+							<?php endif; ?>
 						
 						
 						
