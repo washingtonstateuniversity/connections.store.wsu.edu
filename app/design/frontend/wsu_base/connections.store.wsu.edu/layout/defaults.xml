@@ -156,8 +156,8 @@
 			<action method="setTemplate"><template>page/1column.phtml</template></action>
 		</reference>
 		<reference name="catalog.leftnav">
-			<action method="unsetChild"><child>state_renderers</child></action>
-            <!--<block type="catalog/layer_view" name="catalog.leftnav" after="currency" template="catalog/layer/view.phtml">
+			<!--<action method="unsetChild"><child>state_renderers</child></action>
+            <block type="catalog/layer_view" name="catalog.leftnav" after="currency" template="catalog/layer/view.phtml">
                 <block type="core/text_list" name="catalog.leftnav.state.renderers" as="state_renderers" />
             </block>-->
         </reference>
