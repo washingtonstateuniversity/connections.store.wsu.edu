@@ -178,7 +178,7 @@
 		</reference>
 		
 		<reference name="product_list">
-			<!-- Custom static blocks -->
+			<!-- Custom static blocks
 			<block type="cms/block" name="block_category_above_collection">
 				<action method="setBlockId"><block_id>block_category_above_collection</block_id></action>
 			</block>
@@ -187,7 +187,7 @@
 			</block>
 			<block type="cms/block" name="block_category_below_collection">
 				<action method="setBlockId"><block_id>block_category_below_collection</block_id></action>
-			</block>
+			</block> -->
 		</reference>
 	</catalog_category_layered>
 
