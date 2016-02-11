@@ -63,6 +63,28 @@
 				}  
 			});
 		});
+		$('.filtering_button').on('click',function(){
+			
+			if( $(this).is('.open') ){
+				$(this).removeClass('open');
+				$('.filtering_block').removeClass('open');
+			}else{
+				$(this).addClass('open');
+				$('.filtering_block').addClass('open');
+			}
+		});
+		
+		$('#narrow-by-list dt').on('click',function(){
+			
+			if( $(this).is('.open') ){
+				$(this).removeClass('open');
+				$(this).next('dd').removeClass('open');
+			}else{
+				$(this).addClass('open');
+				$(this).next('dd').addClass('open');
+			}
+		});
+		
 		
 			//$('.more-views a').lightbox( "option", "resizeToBestPossibleSize", false );
 	});

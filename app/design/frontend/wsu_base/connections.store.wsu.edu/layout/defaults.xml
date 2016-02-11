@@ -122,11 +122,12 @@
 	<!-- Default category (without layered navigation) -->
 	<catalog_category_default>
 		<reference name="root">
-			<action method="setTemplate"><template>page/1column.phtml</template></action>
+			<action method="setTemplate"><template>page/1columns.phtml</template></action>
 		</reference>
 		<reference name="product_list">
 			<!-- HOWTO: Change review summary template
-			<action method="addReviewSummaryTemplate"><type>short</type><template>review/helper/summary_short_nolinks.phtml</template></action> -->
+				<action method="addReviewSummaryTemplate"><type>short</type><template>review/helper/summary_short_nolinks.phtml</template></action>
+			-->
 			<!-- Custom static blocks -->
 			<block type="cms/block" name="block_category_above_collection">
 				<action method="setBlockId"><block_id>block_category_above_collection</block_id></action>
@@ -154,10 +155,28 @@
 		<reference name="root">
 			<action method="setTemplate"><template>page/1column.phtml</template></action>
 		</reference>
+		<reference name="catalog.leftnav">
+			<action method="unsetChild"><child>state_renderers</child></action>
+            <!--<block type="catalog/layer_view" name="catalog.leftnav" after="currency" template="catalog/layer/view.phtml">
+                <block type="core/text_list" name="catalog.leftnav.state.renderers" as="state_renderers" />
+            </block>-->
+        </reference>
 		<reference name="left">
 			<!-- Remove currency switcher from sidebar -->
+			<action method="unsetChild"><name>catalog.leftnav</name></action>
 			<action method="unsetChild"><name>currency</name></action>			
 		</reference>
+
+		<reference name="content">
+			<!-- Remove currency switcher from sidebar -->
+			<action method="unsetChild"><name>breadcrumbs</name></action>			
+		</reference>
+	    <reference name="product_list_toolbar">
+			<action method="insert"><child>breadcrumbs</child></action>
+			<action method="insert"><child>state_renderers</child></action>
+			<action method="insert"><child>left_first</child></action>
+		</reference>
+		
 		<reference name="product_list">
 			<!-- Custom static blocks -->
 			<block type="cms/block" name="block_category_above_collection">
