@@ -39,27 +39,36 @@ if (Mage::helper('configurableswatches')->isEnabled() && $_product && $_product-
     $_swatchOuterHeight = $_dimHelper->getOuterHeight(Mage_ConfigurableSwatches_Helper_Swatchdimensions::AREA_LISTING);
 ?>
 <div class="swatch-area">
-	<span class="swatch-button"  data-type="color">
-	
-		<?php foreach ($_attrValues as $_optionValue => $_optionLabel): ?>
+
+<?php $_label = "";
+	$_value = "";
+	$super_id=$_swatchAttribute->getId();
+	foreach ($_attrValues as $_optionValue => $_optionLabel): ?>
 			<?php
+			$_value .= $_optionValue;
 			$_optionCode = Mage::helper('configurableswatches')->getHyphenatedString($_optionLabel);
 			$_swatchUrl = Mage::helper('configurableswatches/productimg')->getSwatchUrl($_product, $_optionLabel, $_swatchInnerWidth, $_swatchInnerHeight, $_swatchType);
 			$_hasImage = !empty($_swatchUrl);
-			
+			if($_hasImage){
+					$_label .="<img src='".$_swatchUrl."' alt='".$_optionLabel."' width='".($_swatchInnerWidth*2)."' height='".($_swatchInnerHeight*2)."' />";
+			}else{
+				$_label .=$_optionLabel;
+			} 
 			?>
-				<?php if ($_hasImage): ?>
-					<img src="<?php echo $_swatchUrl; ?>" alt="<?php echo $_optionLabel; ?>" width="<?php echo ($_swatchInnerWidth*2) ?>" height="<?php echo ($_swatchInnerHeight*2) ?>" />
-				<?php else: ?>
-					<?php echo $_optionLabel; ?>
-				<?php endif; ?>
 			<?php break; ?>
 		<?php endforeach; ?>
+
+
+
+	<span class="swatch-button"  data-type="color" data-superattribute="<?=$super_id?>"  data-set_superAttr_id="<?=$_value?>">
+	
+		<?=$_label?>
 	
 	</span>
 	<div class="swatch-items">
-		<ul class="configurable-swatch-list configurable-swatch-<?php echo $_swatchAttribute->getAttributeCode() ?> clearfix">
-			<?php foreach ($_attrValues as $_optionValue => $_optionLabel): ?>
+		<ul class="configurable-swatch-list configurable-swatch-<?php echo $_swatchAttribute->getAttributeCode() ?> clearfix" >
+			<?php 
+			foreach ($_attrValues as $_optionValue => $_optionLabel): ?>
 				<?php
 				$_optionCode = Mage::helper('configurableswatches')->getHyphenatedString($_optionLabel);
 				$_swatchUrl = Mage::helper('configurableswatches/productimg')->getSwatchUrl($_product, $_optionLabel, $_swatchInnerWidth, $_swatchInnerHeight, $_swatchType);
@@ -82,7 +91,10 @@ if (Mage::helper('configurableswatches')->isEnabled() && $_product && $_product-
 			<li class="option-<?php echo $_optionCode; ?><?php echo $_liClass; ?>" data-product-id="<?php echo $_product->getId() ?>" data-option-label="<?php echo $_optionLabel ?>">
 				<a href="javascript:void(0)" name="<?php echo $_optionCode; ?>" class="<?php echo $_aClass ?>" title="<?php echo $_optionLabel; ?>"
 					   style="height: <?php echo $_swatchOuterHeight ?>px; <?php if (!$_hasImage): ?>min-<?php endif; ?>width: <?php echo $_swatchOuterWidth ?>px;">
-					<span class="swatch-label" style="height: <?php echo $_swatchInnerHeight ?>px; <?php if (!$_hasImage): ?>min-<?php endif; ?>width: <?php echo $_swatchInnerWidth ?>px; line-height: <?php echo $_swatchInnerHeight ?>px;">
+					<span class="swatch-label swatch-item" style="height: <?php echo $_swatchInnerHeight ?>px; <?php if (!$_hasImage): ?>min-<?php endif; ?>width: <?php echo $_swatchInnerWidth ?>px; line-height: <?php echo $_swatchInnerHeight ?>px;"
+					 data-superattribute_id='<?=$_optionValue?>'
+					data-superid='<?=$super_id?>'
+					>
 					<?php if ($_hasImage): ?>
 						<img src="<?php echo $_swatchUrl; ?>" alt="<?php echo $_optionLabel; ?>" width="<?php echo $_swatchInnerWidth ?>" height="<?php echo $_swatchInnerHeight ?>" />
 					<?php else: ?>

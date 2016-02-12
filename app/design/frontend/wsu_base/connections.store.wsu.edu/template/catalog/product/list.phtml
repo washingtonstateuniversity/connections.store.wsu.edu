@@ -282,39 +282,51 @@
 								$childProducts = Mage::getModel('catalog/product_type_configurable')->getUsedProducts(null,$_product);
 								?>
 								
-									<span class="swatch-button" data-type="size">
-										<?php
-											foreach($configAttributesFilteredBySizeValues as $configAttributeValue){
-												$label = $configAttributeValue['label'].trim(" ");
-												if( !empty($label) ){
-													echo  $label;
-													$value = $configAttributeValue['value_index'];
-													foreach($childProducts as $childProduct){
-														if($childProduct->getSize() == $value){
-															$label = $childProduct->getAttributeText('Size');
-															if( !empty($label.trim(" ")) ){
-																echo $label;
-															}
-															
-														}break;
-													}
-													break;
+								<?php $_label = "";
+										$_value = "";
+										foreach($configAttributesFilteredBySizeValues as $configAttributeValue){
+											$label = $configAttributeValue['label'].trim(" ");
+											if( !empty($label) ){
+												$_label .= $label;
+												$value = $configAttributeValue['value_index'];
+												$_value = $value;
+												foreach($childProducts as $childProduct){
+													if($childProduct->getSize() == $value){
+														$label = $childProduct->getAttributeText('Size');
+														if( !empty($label.trim(" ")) ){
+															$_label .= $label;
+														}
+														
+													}break;
 												}
+												break;
 											}
-										?>
+										}
+									?>
+								
+								
+								<?php
+								$super_id = $configAttributesFilteredBySizeValues[0]['product_super_attribute_id'];
+								
+								?>
+									<span class="swatch-button" data-type="size" data-superattribute="<?=$configAttributesFilteredBySizeValues[0]['product_super_attribute_id']?>" data-set_superAttr_id="<?=$_value?>">
+									<?=$_label?>
 									</span>
 									<div class="swatch-items">
 										<?php
 											foreach($configAttributesFilteredBySizeValues as $configAttributeValue){
 												$label = $configAttributeValue['label'];
 												if( !empty($label.trim(" ")) ){
-													echo "<span class='size-option'>" . $label . "</span>";
+													
 													$value = $configAttributeValue['value_index'];
+													echo "<span class='size-option swatch-item' data-superattribute_id='".$value."'  data-superid='".$super_id."'>" . $label . "</span>";
+													
+													//ok I'm not 100% on this being needed... for what and why.. double check
 													foreach($childProducts as $childProduct){
 														if($childProduct->getSize() == $value){
 															$label = $childProduct->getAttributeText('Size');
 															if( !empty($label.trim(" ")) ){
-																echo "<span class='size-option'>" . $lable . "</span>";
+																echo "<span class='size-option swatch-item' data-superattribute_id='".$value."' data-superid='".$super_id."'>" . $lable . "</span>";
 															}
 														}
 													}
@@ -341,7 +353,8 @@
 						?>	
 						<?php if ($gc['display_addtocart'] != 0): ?>
 							<?php if ($_product->isSaleable()): ?>
-								<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button bare btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+							
+							<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="inline-config-ok button bare btn-cart" data-baseurl="<?=MAGE::helper('checkout/cart')->getAddUrl($_product)?>"><span><?php echo $this->__('Add to Cart') ?></span></button>
 							<?php else: ?>
 								<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
 							<?php endif; ?>

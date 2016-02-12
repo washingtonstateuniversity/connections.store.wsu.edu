@@ -60,9 +60,44 @@
 							})
 						}
 					);
-				}  
+				},
+				open:function(event, ui){
+					ui.tooltip.find('.swatch-item').on('click', function(){
+						var id = $(this).data('superattribute_id');
+						var superid = $(this).data('superid');
+						
+						var btn = $('.swatch-button[data-superattribute="'+superid+'"]');
+						btn.attr('data-set_superAttr_id',id);
+						console.log(superid);
+						console.log(id);
+					});
+				}
 			});
 		});
+		
+		
+		
+		
+		
+		$('.inline-config-ok').on('click', function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			var btn = $(this);
+			var top = btn.closest('.item');
+			var url = btn.data('baseurl');
+			
+			var data = "";
+			$.each(top.find('.swatch-button'), function(){
+				var btn = $(this);
+				data += "&super_attribute["+ btn.data("superattribute") +"]=" + btn.attr('data-set_superAttr_id');
+			});
+			console.log(url + "?qty=1" + data);
+			window.location = url + "?qty=1" + data;
+		});
+		
+		
+		
+		
 		$('.filtering_button').on('click',function(){
 			
 			if( $(this).is('.open') ){
