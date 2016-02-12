@@ -29,7 +29,7 @@ $_product = $this->getProduct();
 
 if (Mage::helper('configurableswatches')->isEnabled() && $_product && $_product->getId()
     && ($_attrValues = $_product->getListSwatchAttrValues()) && count($_attrValues) > 0):
-
+	$_product_id =$_product->getId();
     $_swatchAttribute = Mage::helper('configurableswatches/productlist')->getSwatchAttribute();
 
     $_dimHelper = Mage::helper('configurableswatches/swatchdimensions');
@@ -60,7 +60,7 @@ if (Mage::helper('configurableswatches')->isEnabled() && $_product && $_product-
 
 
 
-	<span class="swatch-button"  data-type="color" data-superattribute="<?=$super_id?>"  data-set_superAttr_id="<?=$_value?>">
+	<span class="swatch-button"  data-type="color" data-_type="color" data-superattribute="<?=$super_id?>"   data-_product_id='<?=$_product_id?>' data-set_superAttr_id="<?=$_value?>">
 	
 		<?=$_label?>
 	
@@ -86,6 +86,12 @@ if (Mage::helper('configurableswatches')->isEnabled() && $_product && $_product-
 				if (Mage::helper('configurableswatches/productlist')->swatchMatchesFilter($_optionValue)) {
 					$_liClasses[] = 'filter-match';
 				}
+				
+				
+				if( $_label === $_optionLabel ){
+					$_liClasses[] = "active";
+				}
+				
 				$_liClass = (!empty($_liClasses)) ? ' ' . implode(' ', $_liClasses) : '';
 				?>
 			<li class="option-<?php echo $_optionCode; ?><?php echo $_liClass; ?>" data-product-id="<?php echo $_product->getId() ?>" data-option-label="<?php echo $_optionLabel ?>">
@@ -94,6 +100,9 @@ if (Mage::helper('configurableswatches')->isEnabled() && $_product && $_product-
 					<span class="swatch-label swatch-item" style="height: <?php echo $_swatchInnerHeight ?>px; <?php if (!$_hasImage): ?>min-<?php endif; ?>width: <?php echo $_swatchInnerWidth ?>px; line-height: <?php echo $_swatchInnerHeight ?>px;"
 					 data-superattribute_id='<?=$_optionValue?>'
 					data-superid='<?=$super_id?>'
+					 data-_product_id='<?=$_product_id?>'
+					 data-_type="color"
+					 
 					>
 					<?php if ($_hasImage): ?>
 						<img src="<?php echo $_swatchUrl; ?>" alt="<?php echo $_optionLabel; ?>" width="<?php echo $_swatchInnerWidth ?>" height="<?php echo $_swatchInnerHeight ?>" />

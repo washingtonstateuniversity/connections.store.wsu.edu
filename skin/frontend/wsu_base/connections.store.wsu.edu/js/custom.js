@@ -64,12 +64,18 @@
 				open:function(event, ui){
 					ui.tooltip.find('.swatch-item').on('click', function(){
 						var id = $(this).data('superattribute_id');
+						$(this).closest('.ui-tooltip-content').find('.active').removeClass('active');
+						$(this).addClass('active');
 						var superid = $(this).data('superid');
-						
-						var btn = $('.swatch-button[data-superattribute="'+superid+'"]');
+						var _product_id = $(this).data('_product_id');
+						var _type = $(this).data('_type');
+						var btn = $('.swatch-button[data-_product_id="'+_product_id+'"][data-_type="'+_type+'"]');
 						btn.attr('data-set_superAttr_id',id);
-						console.log(superid);
-						console.log(id);
+						
+						btn.html($(this).html());
+						btn.closest('.swatch-area').find('.swatch-item.active').removeClass('active');
+						btn.closest('.swatch-area').find('.swatch-item[data-superattribute_id="'+id+'"]').addClass('active');
+	
 					});
 				}
 			});
