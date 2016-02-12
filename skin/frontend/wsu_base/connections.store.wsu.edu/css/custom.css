@@ -177,38 +177,34 @@ section#siteID{
 	/*background: rgba(82, 80, 80, 0.41) url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;*/
 }
 #siteID{
-	height:60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 60px;
 }
-#siteID article h2{
+#identity{    align-self: flex-end;
+    min-height: 60px;
+    width: auto;
+    flex-grow: 2;}
+#identity h2{
 	display:none;
 }
-#siteID article h1{
-	/*background:transparent url(/media/store-media/connections.store.wsu.edu/skin/connections-logo-no-marketplace.svg) no-repeat center top !important;
-    width: 250px;
-    height: 85px;
-    position: absolute;
-    top: 11px;
-    z-index: 150;*/
-	text-indent: -999em;
-}
-
-.home #siteID{
-	/*height:104px;*/
-}
-.home #siteID article h2{
-	display:none;
-}
-#siteID article h1{
-	    background: transparent url(/media/store-media/connections.store.wsu.edu/skin/2015-Connections-sig.svg) no-repeat center center !important;
+#identity h1{
+text-indent: -999em;
+    background-image: url(/media/store-media/connections.store.wsu.edu/skin/2015-Connections-sig.svg);
     background-size: contain;
-    width: 415px;
-    height: 59px;
-    position: absolute;
-    top: 0px;
-    z-index: 150;
-    right: 0;
+    background-repeat: no-repeat;
+    /* width: 100%; */
+    min-height: 60px;
+    /* position: relative; */
+    /* top: 0px; */
+    /* z-index: 150; */
+    /* right: 0; */
     margin: 0;
     padding: 0;
+    display: block;
+    float: none;
+    background-position: right center;
 }
 
 .form-list .name-middlename {
@@ -219,12 +215,6 @@ section#siteID{
 }
 
 
-.quick-access{
-	background:none;
-    position: absolute;
-    width: auto;
-	z-index:100;
-}
 .quick-access .links{
 	padding:0px;
 }
@@ -243,14 +233,14 @@ li{
 }
 /*%--global--%*/
 .quick-access{
-    background: #919191;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: 100;
+	background: #919191;
+    position: relative;
     padding: 0;
     margin: 0;
-	text-align: left;
+    text-align: left;
+    height: 37px;
+	width: auto;
+	align-self:flex-start;
 }
 
 .quick-access .links a{
