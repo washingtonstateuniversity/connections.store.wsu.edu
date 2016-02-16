@@ -103,7 +103,17 @@
 		
 		
 		
-		
+		$('.sorting_button').on('click',function(){
+			
+			if( $(this).is('.open') ){
+				$(this).removeClass('open');
+				$('.sorting_block').removeClass('open');
+			}else{
+				$(this).addClass('open');
+				$('.sorting_block').addClass('open');
+			}
+		});
+				
 		$('.filtering_button').on('click',function(){
 			
 			if( $(this).is('.open') ){
@@ -132,6 +142,13 @@
 				$('.filtering_block').removeClass('open');
 				$('.filtering_button').removeClass('open');
 			}
+			
+			if( 0 === $(e.target).closest('.sorting_area ').length ){
+				//console.log($(e.target).attr('class'));
+				$('.sorting_block').removeClass('open');
+				$('.sorting_button').removeClass('open');
+			}
+
 		});
 		
 			//$('.more-views a').lightbox( "option", "resizeToBestPossibleSize", false );

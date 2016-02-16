@@ -10,27 +10,36 @@
 ?>
 <div class="cat_list_header_top">
 	<?=$this->getChildHtml('breadcrumbs') ?>
-	<div class="sort_by">
-		<label><?php echo $this->__('Sort By') ?></label>
-		<select onchange="setLocation(this.value)">
-		<?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
-			<option value="<?php echo $this->getOrderUrl($_key, 'asc') ?>"<?php if($this->isOrderCurrent($_key)): ?> selected="selected"<?php endif; ?>>
-				<?php echo $this->__($_order) ?>
-			</option>
-		<?php endforeach; ?>
-		</select>
-		<?php if($this->getCurrentDirection() == 'desc'): ?>
-			<a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Set Ascending Direction')) ?>"><img src="<?php echo $this->getSkinUrl('images/i_desc_arrow.gif') ?>" alt="<?php echo Mage::helper('core')->quoteEscape($this->__('Set Ascending Direction')) ?>" class="v-middle" /></a>
-		<?php else: ?>
-			<a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Set Descending Direction')) ?>"><img src="<?php echo $this->getSkinUrl('images/i_asc_arrow.gif') ?>" alt="<?php echo Mage::helper('core')->quoteEscape($this->__('Set Descending Direction')) ?>" class="v-middle" /></a>
-		<?php endif; ?>
+	<div class="sorting_area ">
+		<h4 class="sorting_button <?=$this->getCurrentDirection();?>">
+			<?php echo $this->__('Sort By') ?>: <span class="sort_applied"><?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
+				<?php if($this->isOrderCurrent($_key)): ?>
+							<?php echo $this->__($_order) ?>
+				<?php endif; ?>
+			<?php endforeach; ?></span>
+		<!--	
+<?php if($this->getCurrentDirection() == 'desc'): ?>
+				<a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Set Ascending Direction')) ?>"><img src="<?php echo $this->getSkinUrl('images/i_desc_arrow.gif') ?>" alt="<?php echo Mage::helper('core')->quoteEscape($this->__('Set Ascending Direction')) ?>" class="v-middle" /></a>
+			<?php else: ?>
+				<a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Set Descending Direction')) ?>"><img src="<?php echo $this->getSkinUrl('images/i_asc_arrow.gif') ?>" alt="<?php echo Mage::helper('core')->quoteEscape($this->__('Set Descending Direction')) ?>" class="v-middle" /></a>
+			<?php endif; ?>
+			-->
+			
+		</h4>
+		<div class="sorting_block">
+			<?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
+				<a href="<?php echo $this->getOrderUrl($_key, 'asc') ?>"<?php if($this->isOrderCurrent($_key)): ?> class="active"<?php endif; ?>>
+					<?php echo $this->__($_order) ?>
+				</a>
+			<?php endforeach; ?>
+		</div>
 	</div>
 	<?php if ($_leftContent = $this->getChildHtml('left_first')): ?>
 		<?php echo $_leftContent;   ?>
 	<?php endif; ?>
 
 </div>
-
+<div class="designer_hr"></div>
 <?php if($this->getCollection()->getSize()): ?>
 <div class="cat_list_header_bottom">
     <div class="filtering_result_labels">

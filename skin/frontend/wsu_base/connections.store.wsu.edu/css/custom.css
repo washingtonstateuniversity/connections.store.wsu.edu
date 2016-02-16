@@ -722,6 +722,7 @@ main footer{
 
 .filtering_result_labels{
 	flex-grow:2;
+	line-height: 44px;
 }
 
 
@@ -733,6 +734,7 @@ main footer{
 /* filtering ("layered nav") */
 .filtering_area{
 	position:relative;
+	
 }
 .filtering_button{
     display: inline-block;
@@ -779,7 +781,7 @@ main footer{
     display: block;
     max-width: 330px;
     position: absolute;
-    top: 40px;
+    top: 44px;
     right: 0px;
     z-index: 999999;
     width: 330px;
@@ -787,6 +789,89 @@ main footer{
     border:1px #202020 solid;
     padding:10px 11px 34px 17px;
 }
+
+
+
+
+
+
+
+/* filtering ("layered nav") */
+.sorting_area{
+	position:relative;
+	margin-right:15px;
+}
+.sorting_button{
+    display: inline-block;
+	position:relative;
+    font-size: 22px;
+    font-weight: 100;
+    font-style: italic;
+    border: 1px #494949 solid;
+    padding: 0px 40px 4px 7px;
+    line-height: 30px;
+    background: #eee;
+    box-shadow: inset 1px 0px 24px -5px rgba(0,0,0,0.20);
+	cursor:pointer;
+}
+.sorting_button:before{
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);	
+    content: "\f102";
+    color: #5a5a5a;
+    position: absolute;
+    top: 0px;
+    right: 6px;
+    line-height: 34px;
+    font-size: 18px;
+}
+.sorting_button:hover, .sorting_button.open{
+    background: #5a5a5a;
+	color:#ececec;
+}
+.sorting_button:hover:before, .sorting_button.open:before{
+	color:#ececec;
+}
+.sorting_button.desend:before{
+	    content: "\f103";
+}
+.sorting_block{
+	display:none;
+}
+.sorting_block.open {
+    display: block;
+    max-width: 174px;
+    position: absolute;
+    top: 44px;
+    right: 0px;
+    z-index: 999999;
+    width: 330px;
+    background: #f9f9f9;
+    border:1px #202020 solid;
+    padding:10px 11px 34px 17px;
+}
+
+.sorting_block a{
+	display:block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #narrow-by-list dt{
 	border-bottom: 1px #202020 solid;
@@ -831,7 +916,16 @@ main footer{
 	font-size:10px;
 }
 
-/* paging nad toolbar */
+.designer_hr{
+    width: calc( 100% - 2px );
+    height: 2px;
+    background: #b7b7b7;
+    border: 1px #707070 solid;
+    margin-top: 2px;	
+}
+
+
+/* paging and toolbar */
 .pages {
     padding: 5px 10px;
 }
@@ -879,7 +973,11 @@ span.match_count {
     color: #181818;
 }
 
-
+.sorter {
+    background: none;
+    padding: 0px;
+    border: none;
+}
 
 
 
