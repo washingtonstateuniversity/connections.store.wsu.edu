@@ -1,19 +1,6 @@
-<?php
-    $_helper    = $this->helper('catalog/output');
-    //$_category  = $this->getCurrentCategory();
-	$_category = Mage::registry('current_category');
-
-    $_imgHtml   = '';
-    if ($_imgUrl = $_category->getImageUrl()) {
-        $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->escapeHtml($_category->getName()).'" title="'.$this->escapeHtml($_category->getName()).'" style="width:100%"/></p>';
-        $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
-    }
-?>
-
-
-
 <?php if($this->getCollection()->getSize()): ?>
 <div class="cat_list_header_bottom">
-		<?php echo $this->getPagerHtml() ?>
+	<?php //echo $this->getPagerBlock()->setTemplate('catalog/product/list/pager.phtml')->toHtml();?>
+	<?php echo $this->getPagerHtml() ?>
 </div>
 <?php endif ?>
