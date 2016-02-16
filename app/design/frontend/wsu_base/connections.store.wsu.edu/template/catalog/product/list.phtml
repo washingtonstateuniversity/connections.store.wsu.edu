@@ -47,7 +47,7 @@
 
 <div class="category-products">
 	<?php if (!$hideToolbar): ?>
-		<?php echo $this->getToolbarHtml() ?>
+		<?php echo $this->getToolbarHtml(); ?>
 	<?php endif; ?>
 	<?php if($this->getMode()!='grid'): //List mode ?>
 <!-- Lists -->
@@ -382,8 +382,6 @@
 						if ($gc['display_price'] == 1) { echo '<div class="display-onhover">'; }
 						echo $this->getPriceHtml($_product, true);
 						if ($gc['display_price'] == 1){ echo '</div>'; }
-	
-						
 					?>
 					
 					<h2 class="product-name">
@@ -405,7 +403,7 @@
 
 	<?php if (!$hideToolbar): ?>
 		<div class="toolbar-bottom">
-			<?php echo $this->getToolbarHtml() ?>
+			<?php echo $this->getToolbarBlock()->setTemplate('catalog/product/list/toolbar_bottom.phtml')->toHtml();?>
 		</div>
 	<?php endif; ?>
 </div>
