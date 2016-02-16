@@ -22,6 +22,9 @@
 			<padding_flanks>narrow</padding_flanks>
 			<padding_ends>short</padding_ends>
 		</content_area>
+		<catalog_product_view>
+			<used_root>0</used_root>
+		</catalog_product_view>
 	</wsu_themecontrol_layout>
 	<wsu_themecontrol_design>
 		<spine>
