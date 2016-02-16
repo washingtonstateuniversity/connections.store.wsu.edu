@@ -1190,7 +1190,33 @@ span.size-option:hover{
 .swatch-item.active{border:1px #272727 solid;}
 
 
+.pages li{ line-height:40px;}
 
+.pages .previous:before{
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 40px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);	
+	content:"\f104";
+	color:#181818;
+}
+.pages .previous:before.disabled{color:#5a5a5a;}
+
+.pages .next:before{
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 40px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);	
+	content:"\f105";
+	color:#181818;
+}
+.pages .next:before.disabled{color:#5a5a5a;}
 
 /*--PRODUCT_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .product-view .box-tags .form-add button.button span{
