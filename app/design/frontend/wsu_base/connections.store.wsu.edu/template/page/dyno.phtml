@@ -1,0 +1,150 @@
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+$lang=$this->getLang();
+$store = Mage::app()->getStore();
+$name = $store->getFrontendName();
+$randomClass = 'five'.rand(0,5).' ten'.rand(0,10);
+$storeId = $store->getStoreId();
+$storeCode = $store->getCode();
+$theme = $this->helper('wsu_themecontrol');
+$template = $this->helper('wsu_themecontrol/template');
+$binderClassStr = $theme->getBinderClassStr($storeCode);
+$binderStyleStr =  $theme->getBinderStyleStr($storeCode);
+$bodyClasses = $storeCode.$storeId.' -store '.$this->getBodyClass() .' -mage_body '. $theme->getThemeBodyClasses() .' -theme_classes '. $randomClass;
+$spine_tool_bar_color = $theme->getCfgDesign('spine/spine_tool_bar_color');
+
+$show_headerstorename	= $theme->getCfgLayout('spine/show_headerstorename');
+
+$mainContentClasses = $template->getBlockClasses("main_content");
+?>
+<?php 
+
+$blockname = $this->getNameInLayout();
+$layout = $this->helper('wsu_themecontrol/layout')
+			->setupLayout( 
+				$this, 
+				array( 
+					'row_type',
+					'padding',
+					'padding_flanks',
+					'padding_ends'
+				 )
+			);
+?>
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js no-svg lt-ie9 lt-ie8 lt-ie7" lang="<?=$lang ?>"> <![endif]-->
+<!--[if IE 7]><html class="no-js no-svg lt-ie9 lt-ie8" lang="<?=$lang ?>"> <![endif]-->
+<!--[if IE 8]><html class="no-js no-svg lt-ie9" lang="<?=$lang ?>"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="<?=$lang ?>"><!--<![endif]-->
+<head>
+	<?=$this->getChildHtml('head')?>
+</head>
+<body class="DYNO <?=$bodyClasses?>">
+    <!-- WRAPPING -->
+    <div id="jacket">
+        <div id="binder" class="<?=$binderClassStr?>" style="<?=$binderStyleStr?>">
+            <!-- CONTENT -->
+            <main id="page" role="main">
+                <div id="siteID">
+					<div class="quick-access <?=$spine_tool_bar_color; ?>">
+						<?=$this->getChildHtml('topLinks') ?>
+					</div>
+					<div id="identity">
+						<h2>WSU Marketplace</h2>
+						<?php if($show_headerstorename==1):?><h1><?=$name?></h1><?php endif; ?>
+					</div>
+                </div>
+                <!-- Responsive Sections -->
+                <section class="row <?=$layout['row_type'].' '.$layout['padding'].' '.$layout['padding_flanks'].' '.$layout['padding_ends']?> content_area">
+
+
+
+
+				
+				<?php 
+				$section_layout = array(
+					'single'=>array('content'),
+					'side-left'=>array('left','content'),
+					'side-right'=>array('content','right'),
+					'halves'=>array('content','right')
+				);
+				$sections = array();
+				
+				$content; 
+				?>
+				
+<?php
+ob_start();
+?>
+	<article>
+		<?=$this->getChildHtml('after_body_start') ?>
+		<div id="main" class="<?=$mainContentClasses?>" >
+			<?=$this->getChildHtml('topContainer'); ?>
+			<?=$this->getChildHtml('topBar') ?>
+			<?=$this->getChildHtml('global_notices') ?>
+			<?=$this->getChildHtml('global_messages') ?>
+			<?=$this->getChildHtml('content') ?>
+		</div><!-- end of main -->   
+	</article>
+<?php
+$sections['content'] =  ob_get_clean();
+?>
+
+<?php
+ob_start();
+?>
+<?php if( in_array($layout['row_type'],array('halves','side-left','side-right')) ):?>
+	<aside id="sidebar_area">
+		<section>
+			<?=$this->getChildHtml('left'); ?>
+		</section>
+	</aside>
+<?php endif; ?>
+<?php
+$sections['left'] =  ob_get_clean();
+?>
+
+<?php
+ob_start();
+?>
+<?php if( in_array($layout['row_type'],array('halves','side-left','side-right')) ):?>
+	<aside id="sidebar_area">
+		<section>
+			<?=$this->getChildHtml('right'); ?>
+		</section>
+	</aside>
+<?php endif; ?>
+<?php
+$sections['right'] =  ob_get_clean();
+?>				
+				
+				<?php 
+					$number_names=array(1=>'one',2=>'two',3=>'three',4=>'four');
+					$i=1;
+					foreach($section_layout[$layout['row_type']] as $section){
+						echo "<div class='column {$number_names[$i]}'>";
+						echo $sections[$section];
+						echo "</div><!--/column-->";
+						$i++;
+					}
+				
+				?>
+
+					
+                </section>
+                <footer>
+					<?=$this->getChildHtml('footer') ?>
+                    <?=$this->getAbsoluteFooter() ?>
+				</footer>
+            </main><!--/#page-->
+            <!-- /CONTENT -->
+    
+            <?=$this->getChildHtml('header') ?>
+        </div><!--/cover-->
+    </div><!--/jacket-->
+    <!-- /WRAPPING -->
+	<?=$this->getChildHtml('before_body_end') ?>
+</body>
+</html>
