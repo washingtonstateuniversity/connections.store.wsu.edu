@@ -1051,7 +1051,7 @@ ul.products-list ul.add-to-links:after {
 .products-grid{
     display: flex;
 	flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .products-grid li.item{
