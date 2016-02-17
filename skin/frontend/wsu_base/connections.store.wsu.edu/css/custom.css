@@ -918,6 +918,56 @@ main footer{
 	font-size:10px;
 }
 
+.filtering_block .actions a{
+	border: 1px solid #525252;
+    padding: 3px 3px 4px 5px;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 15px;
+	display: block;
+}
+.filtering_block .actions a:hover{color: #121212; background:rgba(128,128,128,1.00)}
+.filtering_block .currently .block-subtitle{
+	font-size: 20px;
+    font-weight: 900;
+    padding: 0px;
+}
+
+.filtering_block .currently li {
+   border-bottom:1px solid
+}
+
+.filtering_block .currently .btn-remove{
+    display: inline-block;
+    float: right;
+    margin: 0px 0px;
+    border: 1px solid #525252;
+    padding: 3px 3px 4px 5px;
+}
+.filtering_block .currently .label{
+	font-weight:600;
+}
+
+.inline-filter span, .inline-filter a:before{
+	background: #000;
+    color: #fff;
+    padding: 2px 6px;
+    margin-right: 3px;
+}
+.inline-filter span{}
+.inline-filter a:before{    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    content: "\f00d";
+    padding: 5px 7px;
+    line-height: 16px;
+}
+.inline-filter a:hover:before{ background:rgba(170,170,170,1.00); color:#4D0A0B;}
+
 .designer_hr{
     width: calc( 100% - 2px );
     height: 2px;
@@ -927,19 +977,8 @@ main footer{
 }
 
 
-/* paging and toolbar */
-.pages {
-    padding: 5px 10px;
-}
 
-.pages ol li {
-    display: inline-block;
-}
 
-.pages ol {
-    padding: 0px;
-    display: inline-block;
-}
 
 .viewing_selector {
     padding: 5px 10px;
@@ -1290,7 +1329,30 @@ span.size-option:hover{
 .swatch-item.active{border:1px #272727 solid;}
 
 
-.pages li{ line-height:40px;}
+
+/* paging and toolbar */
+.pages {
+    padding: 0px 10px;
+}
+
+.pages ol {
+    padding: 0px;
+    display: inline-block;
+	
+}
+
+
+.pages ol li {
+    display: inline-block;
+	    vertical-align: top;
+		line-height:40px;
+		font-size: 15px;
+    font-weight: 400;
+}
+.pages li .current, .pages li .last {
+    font-size: 24px;
+    font-weight: 700;
+}
 
 .pages .previous:before{
 	display: inline-block;
@@ -1317,6 +1379,23 @@ span.size-option:hover{
 	color:#181818;
 }
 .pages .next:before.disabled{color:#5a5a5a;}
+
+.pages .next_jump, .pages .previous_jump{	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 20px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);	
+	line-height: 26px;
+	color:#181818;}
+.next_jump{
+	content:"\f101";	
+}
+.previous_jump{
+	content:"\f100";	
+}
+
 
 /*--PRODUCT_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .product-view .box-tags .form-add button.button span{

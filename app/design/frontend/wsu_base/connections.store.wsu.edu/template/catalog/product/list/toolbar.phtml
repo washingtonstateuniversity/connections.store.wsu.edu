@@ -50,7 +50,19 @@
 		
 		<?php if ($_stateContent = $this->getChildHtml('state_renderers')): ?>
 			<div class="state_of_the_list"><?php echo $_stateContent;   ?></div>
-		<?php endif; ?>	
+		<?php endif; ?>
+		  <?php
+   if(Mage::registry('current_category')) {
+       $_filters = Mage::getSingleton('catalog/layer')->getState()->getFilters();
+   } else {
+       $_filters = Mage::getSingleton('catalogsearch/layer')->getState()->getFilters();
+   }
+   ?>
+	<?php foreach ($_filters as $_filter):?>
+	<span class="inline-filter"><a href="<?php echo $_filter->getRemoveUrl() ?>" title="<?php echo $this->__('Remove This Item') ?>"><span><?php echo $this->stripTags($_filter->getLabel()) ?></span></a></span>
+	<?php endforeach; ?>
+		
+			
     </div>
 	<div class="limiter">
 		<?php echo $this->getPagerHtml() ?>

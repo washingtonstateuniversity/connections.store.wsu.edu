@@ -64,7 +64,7 @@
     <div class="pages">
         
         <ol>
-		
+			<!--<li><a class="previous_jump" title="" href="<?php echo $this->getPreviousJumpUrl() ?>">«</a></li>-->
 			<li>
 				<?php if (!$this->isFirstPage()): ?>
                 <a class="previous active <?php (!$this->getAnchorTextForPrevious() ? "i-previous":"");?> " href="<?=$this->getPreviousPageUrl();?>" title="<?=$this->__('Previous');?>"></a>
@@ -72,9 +72,9 @@
 					<span class="previous disabled"></span>
 				<?php endif;?>
             </li>
-			<li><a class="previous_jump" title="" href="<?php echo $this->getPreviousJumpUrl() ?>">«</a></li>
+			
 		
-			<li><strong><?php echo $this->__('Page') ?></strong></li>
+			<li><span class="page_label"><?php echo $this->__('Page') ?></span></li>
 
         
             <li><a class="first" href="<?php echo $this->getFirstPageUrl() ?>"></a></li>
@@ -82,7 +82,7 @@
 			
         <?php foreach ($this->getFramePages() as $_page): ?>
             <?php if ($this->isPageCurrent($_page)): ?>
-                <li class="current"><?php echo $_page ?></li>
+                <li><span class="current"><?php echo $_page ?></span></li>
             <?php else: ?>
             <!--    <li><a href="<?php echo $this->getPageUrl($_page) ?>"><?php echo $_page ?></a></li> -->
             <?php endif;?>
@@ -91,7 +91,7 @@
 		
 
         <li>of <a class="last" href="<?php echo $this->getLastPageUrl() ?>"><?php echo $this->getLastPageNum() ?></a></li>
-        	<li><a class="next_jump" title="" href="<?php echo $this->getNextJumpUrl() ?>">»</a></li>
+        	
             <li>
 				<?php if (!$this->isLastPage()): ?>
 					<a class="next active <?=(!$this->getAnchorTextForNext() ? "i-next" : "");?>" href="<?=$this->getNextPageUrl() ?>" title="<?=$this->__('Next') ?>"></a>
@@ -99,7 +99,7 @@
 					<span class="next disabled"></span>
 				<?php endif;?>
             </li>
-        
+       	 <!--<li><a class="next_jump" title="" href="<?php echo $this->getNextJumpUrl() ?>">»</a></li>-->
         </ol>
 
     </div>
