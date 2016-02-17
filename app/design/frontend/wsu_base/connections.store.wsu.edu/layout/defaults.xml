@@ -154,8 +154,6 @@
 		</reference>
 	    <reference name="product_list_toolbar">
 			<action method="insert"><child>breadcrumbs</child></action>
-			<action method="insert"><child>state_renderers</child></action>
-			<action method="insert"><child>left_first</child></action>
 		</reference>
 	</catalog_category_default>
 
