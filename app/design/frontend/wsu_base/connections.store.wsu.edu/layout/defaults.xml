@@ -148,6 +148,15 @@
 		<reference name="category.products">
 			<!--<block type="page/html_breadcrumbs" name="onlybreadcrumbs" as="onlybreadcrumbs"/>-->
 		</reference>
+		<reference name="content">
+			<!-- Remove currency switcher from sidebar -->
+			<action method="unsetChild"><name>breadcrumbs</name></action>			
+		</reference>
+	    <reference name="product_list_toolbar">
+			<action method="insert"><child>breadcrumbs</child></action>
+			<action method="insert"><child>state_renderers</child></action>
+			<action method="insert"><child>left_first</child></action>
+		</reference>
 	</catalog_category_default>
 
 	<!-- Category with layered navigation -->
