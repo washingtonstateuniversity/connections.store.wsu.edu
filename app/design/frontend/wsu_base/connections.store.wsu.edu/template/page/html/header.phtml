@@ -125,49 +125,7 @@ $searchOptionClasses = implode(' ', $searchOps );
 				<ul>
 					<li><a href="<?=Mage::getUrl('locations'); ?>">Physical Locations</a></li>
 				</ul>
-				<?php if($show_storenetwork): ?>
-					<ul>
-					<?php 
-						$currentUrl = Mage::helper('core/url')->getCurrentUrl();
-						$currentUrl = str_ireplace('www.', '', parse_url($currentUrl, PHP_URL_HOST));
-						
-						$websites = Mage::getModel('core/website')->getCollection();
-						$sessionId = Mage::getSingleton("core/session")->getEncryptedSessionId(); 
-					?>
-					<?php if(count($websites)>5):?>
-						<li><select id="website-changer" onChange="document.location=this.options[selectedIndex].value">
-								<option selected="selected">Switch stores</option>
-							<?php
-							foreach($websites as $website) {
-								$default_store = $website->getDefaultStore();
-								$url_obj = new Mage_Core_Model_Url();
-								$default_store_path = $url_obj->getBaseUrl(array('_store'=> $default_store->getCode()));
-							?>
-								<!--<option <?php if(strstr($default_store_path,$currentUrl )>-1):?>selected="selected"<?php endif; ?> value="<?php echo $default_store_path."?SID=".$sessionId ?>"  data-default_store_path="<?=$default_store_path ?>" data-currentUrl="<?=$currentUrl ?>"><?php echo $website->getName()?></option>-->
-								<option value="<?php echo $default_store_path."?SID=".$sessionId ?>"  data-default_store_path="<?=$default_store_path ?>" data-currentUrl="<?=$currentUrl ?>">
-									<?php echo $website->getName()?>
-								</option>
-							<?php
-							}
-							?>
-							</select>
-						</li>
-					<?php else: ?>
-	<?php
-						foreach($websites as $website) {
-							$default_store = $website->getDefaultStore();
-							if(!empty($default_store)){
-								$url_obj = new Mage_Core_Model_Url();
-								$default_store_path = $url_obj->getBaseUrl(array('_store'=> $default_store->getCode()));
-							?>
-						<li><a href="<?php echo $default_store_path."?SID=".$sessionId ?>"><?php echo $website->getName()?></a></li>
-							<?php
-							}
-						}
-						?>
-					<?php endif; ?>
-					</ul>
-				<?php endif; ?>
+				<?php // note that the network menu section is missing as this is a standalone site.  Look to the main theme to re-add it ?>
             </nav>
            
         </section><!-- #spine-navigation -->
