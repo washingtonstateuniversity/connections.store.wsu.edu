@@ -18,30 +18,30 @@
 $socialChannels=array();
  
  
-$slot_one = $theme->getCfg('spine_social/slot_one');
-$slot_two = $theme->getCfg('spine_social/slot_two');
-$slot_three = $theme->getCfg('spine_social/slot_three');
-$slot_four = $theme->getCfg('spine_social/slot_four');
+$slot_one = $theme->getCfgGroup('spine_social/slot_one');
+$slot_two = $theme->getCfgGroup('spine_social/slot_two');
+$slot_three = $theme->getCfgGroup('spine_social/slot_three');
+$slot_four = $theme->getCfgGroup('spine_social/slot_four');
  
 if($slot_one!="skip"){
-	 $url = $theme->getCfg('spine_social/slot_one_url');
-	 $text = $theme->getCfg('spine_social/slot_one_text');
+	 $url = $theme->getCfgGroup('spine_social/slot_one_url');
+	 $text = $theme->getCfgGroup('spine_social/slot_one_text');
 	 $socialChannels[$slot_one]=array('url'=>$url,'text'=>$text);
 }
  
 if($slot_two!="skip"){
-  	 $url = $theme->getCfg('spine_social/slot_two_url');
-	 $text = $theme->getCfg('spine_social/slot_two_text');
+  	 $url = $theme->getCfgGroup('spine_social/slot_two_url');
+	 $text = $theme->getCfgGroup('spine_social/slot_two_text');
 	 $socialChannels[$slot_two]=array('url'=>$url,'text'=>$text);
 }
 if($slot_three!="skip"){
-	 $url = $theme->getCfg('spine_social/slot_three_url');
-	 $text = $theme->getCfg('spine_social/slot_three_text');
+	 $url = $theme->getCfgGroup('spine_social/slot_three_url');
+	 $text = $theme->getCfgGroup('spine_social/slot_three_text');
 	 $socialChannels[$slot_three]=array('url'=>$url,'text'=>$text);
 }
 if($slot_four!="skip"){
-	 $url = $theme->getCfg('spine_social/slot_four_url');
-	 $text = $theme->getCfg('spine_social/slot_four_text');
+	 $url = $theme->getCfgGroup('spine_social/slot_four_url');
+	 $text = $theme->getCfgGroup('spine_social/slot_four_text');
 	 $socialChannels[$slot_four]=array('url'=>$url,'text'=>$text);
 }
  
@@ -54,10 +54,10 @@ if($slot_four!="skip"){
 					'social'=>array('url'=>'http://social.wsu.edu','text'=>'Social'),
 				);*/
  $wsuChannels = array(
-					'mywsu'=>array('url'=>'https://my.wsu.edu/','text'=>'myWSU'),
-					'access'=>array('url'=>'http://access.wsu.edu/','text'=>'Access'),
-					'policies'=>array('url'=>'http://policies.wsu.edu/','text'=>'Policies'),
-					'copyright'=>array('url'=>'http://copyright.wsu.edu','text'=>'&nbsp;&copy;'),
+					'mywsu-link'=>array('url'=>'https://my.wsu.edu/','text'=>'myWSU'),
+					'access-link'=>array('url'=>'http://access.wsu.edu/','text'=>'Access'),
+					'policies-link'=>array('url'=>'http://policies.wsu.edu/','text'=>'Policies'),
+					'copyright-link'=>array('url'=>'http://copyright.wsu.edu','text'=>'&nbsp;&copy;'),
 				);
  if ( !isset($cropping) ) { $cropping = ''; } else { $cropping = ' '.$cropping; }
  
@@ -98,9 +98,9 @@ $searchOptionClasses = implode(' ', $searchOps );
 				<?php if($show_print): ?><li id="wsu-print-tab" class="spine-print-tab closed" label="Print"><button>Print</button></li><?php endif ?>
             </ul>
             <?php if($show_search): ?>
-            <section id="wsu-search" class="<?=$searchOptionClasses?> tools closed" data-default="site-search">
+            <!--<section id="wsu-search" class="<?=$searchOptionClasses?> tools closed" data-default="site-search">
                 <?php echo $this->getChildHtml('topBar') ?>
-            </section>
+            </section>-->
             <?php endif ?>
         </section><!--/#wsu-actions-->
         <section id="spine-navigation" class="spine-navigation">
@@ -120,52 +120,56 @@ $searchOptionClasses = implode(' ', $searchOps );
                 </ul>
             </nav>
             
-            <?php if($show_storenetwork): ?>
+            
             <nav class="spine-offsitenav">
-                <ul>
-                
-                <?php 
-					$currentUrl = Mage::helper('core/url')->getCurrentUrl();
-					$currentUrl = str_ireplace('www.', '', parse_url($currentUrl, PHP_URL_HOST));
-					
-					$websites = Mage::getModel('core/website')->getCollection();
-					$sessionId = Mage::getSingleton("core/session")->getEncryptedSessionId(); 
-					if(count($websites)>5):?>
-                
-                        <li><select id="website-changer" onChange="document.location=this.options[selectedIndex].value">
-                                <option selected="selected">Switch stores</option>
-                            <?php
-                            foreach($websites as $website) {
-                                $default_store = $website->getDefaultStore();
-                                $url_obj = new Mage_Core_Model_Url();
-                                $default_store_path = $url_obj->getBaseUrl(array('_store'=> $default_store->getCode()));
-                            ?>
-                                <!--<option <?php if(strstr($default_store_path,$currentUrl )>-1):?>selected="selected"<?php endif; ?> value="<?php echo $default_store_path."?SID=".$sessionId ?>"  data-default_store_path="<?=$default_store_path ?>" data-currentUrl="<?=$currentUrl ?>"><?php echo $website->getName()?></option>-->
-                                <option value="<?php echo $default_store_path."?SID=".$sessionId ?>"  data-default_store_path="<?=$default_store_path ?>" data-currentUrl="<?=$currentUrl ?>">
-                                    <?php echo $website->getName()?>
-                                </option>
-                            <?php
-                            }
-                            ?>
-                            </select>
-                        </li>
-                    <?php else: ?>
-<?php
-                        foreach($websites as $website) {
-                            $default_store = $website->getDefaultStore();
+				<ul>
+					<li><a href="<?=Mage::getUrl('locations.html'); ?>">Physical Locations</a></li>
+				</ul>
+				<?php if($show_storenetwork): ?>
+					<ul>
+					<?php 
+						$currentUrl = Mage::helper('core/url')->getCurrentUrl();
+						$currentUrl = str_ireplace('www.', '', parse_url($currentUrl, PHP_URL_HOST));
+						
+						$websites = Mage::getModel('core/website')->getCollection();
+						$sessionId = Mage::getSingleton("core/session")->getEncryptedSessionId(); 
+					?>
+					<?php if(count($websites)>5):?>
+						<li><select id="website-changer" onChange="document.location=this.options[selectedIndex].value">
+								<option selected="selected">Switch stores</option>
+							<?php
+							foreach($websites as $website) {
+								$default_store = $website->getDefaultStore();
+								$url_obj = new Mage_Core_Model_Url();
+								$default_store_path = $url_obj->getBaseUrl(array('_store'=> $default_store->getCode()));
+							?>
+								<!--<option <?php if(strstr($default_store_path,$currentUrl )>-1):?>selected="selected"<?php endif; ?> value="<?php echo $default_store_path."?SID=".$sessionId ?>"  data-default_store_path="<?=$default_store_path ?>" data-currentUrl="<?=$currentUrl ?>"><?php echo $website->getName()?></option>-->
+								<option value="<?php echo $default_store_path."?SID=".$sessionId ?>"  data-default_store_path="<?=$default_store_path ?>" data-currentUrl="<?=$currentUrl ?>">
+									<?php echo $website->getName()?>
+								</option>
+							<?php
+							}
+							?>
+							</select>
+						</li>
+					<?php else: ?>
+	<?php
+						foreach($websites as $website) {
+							$default_store = $website->getDefaultStore();
 							if(!empty($default_store)){
 								$url_obj = new Mage_Core_Model_Url();
 								$default_store_path = $url_obj->getBaseUrl(array('_store'=> $default_store->getCode()));
 							?>
-						<li><a href="<?php echo $default_store_path."../../../../foundation.store.wsu.edu/page/html/?SID=".$sessionId ?>"><?php echo $website->getName()?></a></li>
+						<li><a href="<?php echo $default_store_path."?SID=".$sessionId ?>"><?php echo $website->getName()?></a></li>
 							<?php
 							}
-                        }
-                        ?>
-                    <?php endif; ?>
-                </ul>
+						}
+						?>
+					<?php endif; ?>
+					</ul>
+				<?php endif; ?>
             </nav>
-            <?php endif; ?>
+           
         </section><!-- #spine-navigation -->
         <!-- Social and Global Links -->
         <footer class="spine-footer">
@@ -179,7 +183,7 @@ $searchOptionClasses = implode(' ', $searchOps );
             <nav id="wsu-global-links" class="spine-global-links">
                 <ul>
 					<?php foreach($wsuChannels as $channel=>$prop) : ?>
-                        <li id="<?=$channel?>"><a href="<?=(isset($prop['url'])?$prop['url']:'#')?>"><?=(isset($prop['text'])?$prop['text']:'#')?></a></li>
+                        <li class="<?=$channel?>"><a href="<?=(isset($prop['url'])?$prop['url']:'#')?>"><?=(isset($prop['text'])?$prop['text']:'#')?></a></li>
                     <?php endforeach;  ?>
                 </ul>
             </nav>        
