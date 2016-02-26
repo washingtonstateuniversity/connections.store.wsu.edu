@@ -192,8 +192,10 @@ section#siteID{
 	text-indent: -999em;
 }
 #identity h1{
-	    text-indent: -999em;
+    text-indent: -999em;
     margin: 0px;
+    height: 0px;
+    padding: 0px;
 }
 
 .form-list .name-middlename {
