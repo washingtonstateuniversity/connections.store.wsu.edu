@@ -181,10 +181,10 @@ section#siteID{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    min-height: 60px;
+   /* min-height: 60px;*/
 }
 #identity{    align-self: flex-end;
-    min-height: 60px;
+    /*min-height: 60px;*/
     width: auto;
     flex-grow: 2;}
 #identity h2{
@@ -192,7 +192,8 @@ section#siteID{
 	text-indent: -999em;
 }
 #identity h1{
-	text-indent: -999em;
+	    text-indent: -999em;
+    margin: 0px;
 }
 
 .form-list .name-middlename {
