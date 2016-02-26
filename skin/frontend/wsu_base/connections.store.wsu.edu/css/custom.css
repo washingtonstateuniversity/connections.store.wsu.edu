@@ -1046,7 +1046,7 @@ ul.products-list ul.add-to-links:after {
     position: relative;
     align-self: flex-start;
     padding: 0;
-    max-width: 250px;
+    max-width: 220px;
     width: auto;
     float: initial;
 }
