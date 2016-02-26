@@ -33,12 +33,12 @@ $mainContentClasses= $template->getBlockClasses("main_content");
 			<!-- CONTENT -->
 			<main id="page" role="main">
                 <div id="siteID">
-					<div class="quick-access <?=$spine_tool_bar_color; ?>">
-						<?=$this->getChildHtml('topLinks') ?>
-					</div>
 					<div id="identity">
 						<h2>WSU Marketplace</h2>
 						<?php if($show_headerstorename==1):?><h1><?=$name?></h1><?php endif; ?>
+					</div>
+					<div class="quick-access <?=$spine_tool_bar_color; ?>">
+						<?=$this->getChildHtml('topLinks') ?>
 					</div>
                 </div>
 				<!-- Responsive Sections -->

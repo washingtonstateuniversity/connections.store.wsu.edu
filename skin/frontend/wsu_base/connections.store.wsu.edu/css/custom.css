@@ -23,8 +23,9 @@ body{
     color: #e2e2e2;
 }
 
-.darker #wsu-signature, .darkest #wsu-signature {
-    background-image: url(/media/store-media/connections.store.wsu.edu/skin/2015-Connections-shield.svg);
+body #wsu-signature {
+    background-image: url(/media/store-media/connections.store.wsu.edu/skin/logo-stack.svg)!important;
+    background-size: 113px auto;
 }
 
 #spine-navigation .spine-sitenav ul {
@@ -188,23 +189,10 @@ section#siteID{
     flex-grow: 2;}
 #identity h2{
 	display:none;
+	text-indent: -999em;
 }
 #identity h1{
-text-indent: -999em;
-    background-image: url(/media/store-media/connections.store.wsu.edu/skin/2015-Connections-sig.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    /* width: 100%; */
-    min-height: 60px;
-    /* position: relative; */
-    /* top: 0px; */
-    /* z-index: 150; */
-    /* right: 0; */
-    margin: 0;
-    padding: 0;
-    display: block;
-    float: none;
-    background-position: right center;
+	text-indent: -999em;
 }
 
 .form-list .name-middlename {
