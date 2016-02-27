@@ -28,6 +28,17 @@ body #wsu-signature {
     background-size: 113px auto;
 }
 
+@media only screen and (max-width: 791px){
+	body #wsu-signature  {
+		background-image: url(/media/store-media/connections.store.wsu.edu/skin/logo-hor.svg)!important;
+		background-size: auto 50px ;
+	}
+}
+@media only screen and (max-width: 530px){
+#binder #wsu-signature {
+    background-position: center 5px;
+}
+}
 #spine-navigation .spine-sitenav ul {
 	font-size:10pt;
 	font-weight:bold;
