@@ -41,26 +41,40 @@
     }
 ?>
 
-
-<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
-
-<?php if($_imgUrl): ?>
-    <?php echo $_imgHtml ?>
-<?php endif; ?>
-
-<?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
-    <div class="category-description std">
-        <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
-    </div>
-    <?php endif; ?>
-
-<?php if($this->isContentMode()): ?>
-    <?php echo $this->getCmsBlockHtml() ?>
-
-<?php elseif($this->isMixedMode()): ?>
-    <?php echo $this->getCmsBlockHtml() ?>
-    <?php echo $this->getProductListHtml() ?>
-
-<?php else: ?>
-    <?php echo $this->getProductListHtml() ?>
-<?php endif; ?>
+<script>
+jQuery(document).ready(function(){
+	jQuery(window).on("resize",function(){
+		jQuery("#cat-area").css("font-size",function(){
+		   return (jQuery("#cat-area").width() * 0.00825); //we know the max from the main width but we hard coded the ratio value
+		});
+	 }).trigger("resize");
+});
+</script>
+<div id="cat-area">
+	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+	
+	<?php if($_imgUrl): ?>
+		<?php echo $_imgHtml ?>
+	<?php endif; ?>
+	
+	<?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
+		<div class="category-description std">
+			<?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
+		</div>
+		<?php endif; ?>
+	
+	<?php if($this->isContentMode()): ?>
+		<?php echo $this->getCmsBlockHtml() ?>
+	
+	<?php elseif($this->isMixedMode() && $tmp=$this->getCmsBlockHtml() ): ?>
+		<div class="cat-block-plus">
+			<div class="category-topper">
+				<?php echo $this->getCmsBlockHtml() ?>
+			</div>
+			<?php echo $this->getProductListHtml() ?>
+		</div>
+	
+	<?php else: ?>
+		<?php echo $this->getProductListHtml() ?>
+	<?php endif; ?>
+</div>

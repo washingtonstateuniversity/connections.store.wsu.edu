@@ -193,6 +193,10 @@ section#siteID{
     flex-wrap: wrap;
     justify-content: space-between;
    /* min-height: 60px;*/
+   position: absolute;
+    right: 0px;
+    top: 0px;
+	z-index: 10;
 }
 #identity{    align-self: flex-end;
     /*min-height: 60px;*/
@@ -359,6 +363,28 @@ main footer{
 }
 
 
+
+/* content areas */
+.content_area{
+	z-index:5;
+}
+.cat-block-plus{
+	background-color:#fff !important;
+}
+.cat-block-plus .category-topper{
+    z-index: 6;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.category-products{
+	padding-top: 35px;
+}
+.cat-block-plus .category-products{
+    z-index: 8;
+    position: relative;
+    padding-top: 43.60269em;
+}
 
 
 	
