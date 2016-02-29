@@ -386,7 +386,11 @@ main footer{
     padding-top: 43.60269em;
 }
 
-
+.cat-block-plus .note-msg{
+    z-index: 8;
+    position: relative;
+    padding-top: 43.60269em;
+}
 	
 	.blockHeader {font-size: 1.5em;font-weight: bold;}
 	.blockHeader i{font-style:normal;}

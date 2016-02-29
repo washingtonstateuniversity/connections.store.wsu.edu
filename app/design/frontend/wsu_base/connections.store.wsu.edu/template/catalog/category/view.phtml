@@ -51,17 +51,7 @@ jQuery(document).ready(function(){
 });
 </script>
 <div id="cat-area">
-	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
-	
-	<?php if($_imgUrl): ?>
-		<?php echo $_imgHtml ?>
-	<?php endif; ?>
-	
-	<?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
-		<div class="category-description std">
-			<?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
-		</div>
-		<?php endif; ?>
+
 	
 	<?php if($this->isContentMode()): ?>
 		<?php echo $this->getCmsBlockHtml() ?>
@@ -71,10 +61,38 @@ jQuery(document).ready(function(){
 			<div class="category-topper">
 				<?php echo $this->getCmsBlockHtml() ?>
 			</div>
+			
+				<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+	
+				<?php if($_imgUrl): ?>
+					<?php echo $_imgHtml ?>
+				<?php endif; ?>
+				
+				<?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
+					<div class="category-description std">
+						<?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
+					</div>
+				<?php endif; ?>
+			
+			
 			<?php echo $this->getProductListHtml() ?>
 		</div>
 	
 	<?php else: ?>
+	
+		<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+	
+		<?php if($_imgUrl): ?>
+			<?php echo $_imgHtml ?>
+		<?php endif; ?>
+		
+		<?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
+			<div class="category-description std">
+				<?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
+			</div>
+		<?php endif; ?>
+	
+	
 		<?php echo $this->getProductListHtml() ?>
 	<?php endif; ?>
 </div>
