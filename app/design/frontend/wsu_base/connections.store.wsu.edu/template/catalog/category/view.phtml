@@ -42,13 +42,9 @@
 ?>
 
 <script>
-jQuery(document).ready(function(){
 	jQuery(window).on("resize",function(){
-		jQuery("#cat-area").css("font-size",function(){
-		   return (jQuery("#cat-area").width() * 0.00825); //we know the max from the main width but we hard coded the ratio value
-		});
+		jQuery("#cat-area").css("font-size",(jQuery(this).width() * 0.00825));
 	 }).trigger("resize");
-});
 </script>
 <div id="cat-area">
 
