@@ -378,18 +378,18 @@ main footer{
     left: 0px;
 }
 .category-products{
-	padding-top: 35px;
+	margin-top: 35px;
 }
 .cat-block-plus .category-products{
     z-index: 8;
     position: relative;
-    padding-top: 43.60269em;
+    margin-top: 43.60269em;
 }
 
 .cat-block-plus .note-msg{
     z-index: 8;
     position: relative;
-    padding-top: 43.60269em;
+    margin-top: 43.60269em;
 }
 	
 	.blockHeader {font-size: 1.5em;font-weight: bold;}
