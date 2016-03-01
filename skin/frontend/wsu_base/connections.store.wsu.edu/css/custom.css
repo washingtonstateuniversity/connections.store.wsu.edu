@@ -28,17 +28,6 @@ body #wsu-signature {
     background-size: 113px auto;
 }
 
-@media only screen and (max-width: 791px){
-	body #wsu-signature  {
-		background-image: url(/media/store-media/connections.store.wsu.edu/skin/logo-hor.svg)!important;
-		background-size: auto 50px ;
-	}
-}
-@media only screen and (max-width: 530px){
-#binder #wsu-signature {
-    background-position: center 5px;
-}
-}
 #spine-navigation .spine-sitenav ul {
 	font-size:10pt;
 	font-weight:bold;
@@ -376,6 +365,7 @@ main footer{
     position: absolute;
     top: 0px;
     left: 0px;
+	max-width: 100%;
 }
 .category-products{
 	margin-top: 35px;
@@ -763,6 +753,10 @@ main footer{
 
 .breadcrumbs{
 	flex-grow:2;
+	color: #000;
+}
+.breadcrumbs a {
+	color: #232323;	
 }
 .sort_by{}
 
@@ -827,7 +821,10 @@ main footer{
 
 
 
-
+#narrow-by-list a {
+    font-size: 18px;
+    line-height: 22px;
+}
 
 
 
@@ -892,6 +889,7 @@ main footer{
 
 .sorting_block a{
 	display:block;
+	font-size: 18px;
 }
 
 
@@ -1015,6 +1013,7 @@ main footer{
 
 .viewing_selector {
     padding: 5px 10px;
+	font-size: 19px;
 }
 
 .viewing_selector a {
@@ -1704,3 +1703,21 @@ overflow: visible !important;
 .opc-menu .review-menu-block {
 	background-color:#bbbbbb;
 }
+
+@media only screen and (max-width: 791px){
+	body #wsu-signature  {
+		background-image: url(/media/store-media/connections.store.wsu.edu/skin/logo-hor.svg)!important;
+		background-size: auto 50px ;
+	}
+	.breadcrumbs {
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 530px){
+	#binder #wsu-signature {
+		background-position: center 5px;
+	}
+}
+
+
+
