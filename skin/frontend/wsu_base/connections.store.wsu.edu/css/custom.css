@@ -387,9 +387,10 @@ main footer{
 }
 
 .cat-block-plus .note-msg{
-    z-index: 8;
+	z-index: 8;
     position: relative;
-    margin-top: 43.60269em;
+    margin-top: 24.60269em;
+    font-size: 2.4em !important;
 }
 	
 	.blockHeader {font-size: 1.5em;font-weight: bold;}
