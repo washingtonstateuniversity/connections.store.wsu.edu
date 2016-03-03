@@ -1146,7 +1146,9 @@ ul.products-list ul.add-to-links:after {
     text-transform: uppercase;
 }
 
-
+.ratings{
+	display:none;
+}
 .products-grid li.item .sticker-wrapper{
 	/*position:absolute;*/
 	display: block;
