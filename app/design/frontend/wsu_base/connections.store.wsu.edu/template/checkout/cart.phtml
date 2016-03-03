@@ -130,31 +130,31 @@
         <!-- end: cart-table-wrapper -->
         </fieldset>
     </form>
-    <div class="row halves cart-collaterals nested-container">
+    <div class="cart-collaterals nested-container">
 
-        <div class="column one cart-left-column grid12-8">
+        <div class="column">
         	<?php if ($tmpHtml = $this->getChildHtml('checkout.cart.extra')): ?>
-            <div class="grid-full alpha omega">
+            <div class="checkout_cart_extra">
                 <?php /* Extensions placeholder */ ?>
                 <?php echo $tmpHtml; ?>
 			</div>
             <?php endif; ?>
             
             <?php if ($tmpHtml = $this->getChildHtml('block_cart_below_table')): ?>
-            	<div class="block_cart_below_table grid-full alpha omega"><?php echo $tmpHtml; ?></div>
+            	<div class="block_cart_below_table"><?php echo $tmpHtml; ?></div>
             <?php endif; ?>
             
-			<div class="grid12-6 mobile-grid-half">
+			<div class="shipping">
             	<?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
 			</div>
-			<div class="grid12-6 mobile-grid-half">
+			<div class="coupon">
             	<?php echo $this->getChildHtml('coupon') ?>
             </div>
-            <div class="grid-full alpha omega">
+            <div class="crosssell">
                 <?php echo $this->getChildHtml('crosssell') ?>
             </div>
         </div> <!-- end: cart-left-column -->
-    	<div class="column two cart-right-column grid12-4">
+    	<div class="column">
             <div class="totals grid-full alpha omega">
                 <div class="totals-inner">
                 <?php echo $this->getChildHtml('totals'); ?>
