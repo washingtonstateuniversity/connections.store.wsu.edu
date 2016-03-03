@@ -144,15 +144,21 @@
             	<div class="block_cart_below_table"><?php echo $tmpHtml; ?></div>
             <?php endif; ?>
             
+			<?php if (!$this->getIsVirtual() && $tmpHtml = $this->getChildHtml('shipping')): ?>
 			<div class="shipping">
-            	<?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
+            	<?php echo $tmpHtml; ?>
 			</div>
+			<?php endif; ?>
+			 <?php if ($tmpHtml = $this->getChildHtml('coupon') ): ?>
 			<div class="coupon">
-            	<?php echo $this->getChildHtml('coupon') ?>
+            	<?php echo $tmpHtml ?>
             </div>
+			<?php endif; ?>
+			<?php if ($tmpHtml = $this->getChildHtml('crosssell') ): ?>
             <div class="crosssell">
-                <?php echo $this->getChildHtml('crosssell') ?>
+                <?php echo $tmpHtml ?>
             </div>
+			<?php endif; ?>
         </div> <!-- end: cart-left-column -->
     	<div class="column">
             <div class="totals grid-full alpha omega">
