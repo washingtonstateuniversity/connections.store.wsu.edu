@@ -1224,6 +1224,7 @@ ul.products-list ul.add-to-links:after {
 	color: #5a5a5a;
 	font-size: 28px;
     font-weight: 500;
+	line-height: 28px;
 }
 .products-grid .price-box .old-price .price{
     color: #5a5a5a;
