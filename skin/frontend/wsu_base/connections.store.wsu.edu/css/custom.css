@@ -1533,30 +1533,24 @@ span.size-option:hover{
 .cart .discount {
 	padding-top:30px;
 }
-.cart .discount h2, .cart .shipping h2{ width: auto;}
-.cart .discount h2:before,
-.cart .shipping h2:before
-{	
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 0;
-    width: 0;
-    height: 0;
-    content: "";
-    border-top: 7em solid #1F1F1F;
-    border-right: 8em solid transparent;
-}
+.cart .discount h2, .cart .shipping h2{    float: none;
+    background: #323232;
+    width: auto;
+    font: 400 14px/16px "Open Sans","Lucida Sans",sans-serif;
+    color: #df280a;
+    padding: 0px;}
+
 .cart .discount h2 span,
 .cart .shipping h2 span{
-	top: -25px;
-    left: 7px;
     position: relative;
     z-index: 2;
     width: 2em;
-    display: inline-block;
-	color:#fff;
-	font-weight:bold;
+    /* display: inline-block; */
+    color: #fff;
+    font-weight: bold;
+    padding: 15px 10px;
+    font-size: 13px;
+    line-height: 41px;
 }
 .cart .discount .discount-form, .cart .shipping .shipping-form {
 	margin-left: 122px;
@@ -1577,6 +1571,45 @@ span.size-option:hover{
 .cart .discount .buttons-set, .cart .shipping .buttons-set{
 	padding-top:10px;
 }
+
+
+.cart-collaterals.nested-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+}
+.cart-collaterals.nested-container  .column {
+    flex-grow: 2;
+    width: auto !important;
+}
+.cart .discount .input-box {
+    width: 205px;
+}
+.cart .discount input.input-text {
+    width: 205px;
+}.cart .discount .discount-form, .cart .shipping .shipping-form {
+    margin-left: 9px;
+    margin-top: 5px;
+}
+.cart .totals, .cart .shipping, .cart .coupon {
+    position: relative;
+    /* background: #eff0f1; */
+    min-height: 140px;
+    flex-shrink: 1;
+    flex-grow: 2;
+}
+
+.cart .discount h2:before, .cart .shipping h2:before {
+    content: inital;
+}
+
+.cart .discount {
+    padding-top: 0px;
+}
+
+
+
+
 
 /*--LightBox--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 
@@ -1727,22 +1760,4 @@ overflow: visible !important;
 /* note these shouldn't be here, but we are shimming for now to speed it up */
 .page-title h1{
 	display:none;	
-}
-.cart-collaterals.nested-container {
-    display: flex;
-    flex-flow: row wrap;
-}
-.cart-collaterals.nested-container  .column {
-    flex-grow: 2;
-    width: auto !important;
-}
-.cart .discount .input-box {
-    width: 205px;
-}
-.cart .discount input.input-text {
-    width: 205px;
-}.cart .discount .discount-form, .cart .shipping .shipping-form {
-    margin-left: 33px;
-    display: flex;
-    flex-direction: column;
 }
