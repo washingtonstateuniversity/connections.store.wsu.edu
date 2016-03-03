@@ -372,7 +372,7 @@ $editUrl = $this->getConfigureUrl();
     <?php endif; ?>
     <td class="a-center">
     	
-        <!-- <span class="cell-label"><?=$this->__('Qty') ?></span>-->
+        <span class="cell-label qty"><?=$this->__('Qty') ?></span>
     
         <input name="cart[<?=$_item->getId() ?>][qty]" value="<?=$this->getQty() ?>" size="4" title="<?=$this->__('Qty') ?>" class="input-text qty" maxlength="12" />
     </td>
