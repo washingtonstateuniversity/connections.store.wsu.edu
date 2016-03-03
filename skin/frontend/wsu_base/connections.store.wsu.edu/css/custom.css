@@ -1607,7 +1607,9 @@ span.size-option:hover{
     padding-top: 0px;
 }
 .cell-label qty{display:none;}
-
+.cart .totals table {
+	width:100%;	
+}
 @media only screen and (max-width: 767px){
 	.cart .data-table tr, .cart .data-table td {
 		border: none !important;
