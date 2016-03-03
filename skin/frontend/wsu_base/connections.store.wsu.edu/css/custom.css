@@ -1610,6 +1610,13 @@ span.size-option:hover{
 .cart .totals table {
 	width:100%;	
 }
+.checkout-cart-index .page-title{
+	margin: 0px;
+}
+.checkout-cart-index .page-title h3{
+	padding:0px;
+	
+}
 @media only screen and (max-width: 767px){
 	.cart .data-table tr, .cart .data-table td {
 		border: none !important;
