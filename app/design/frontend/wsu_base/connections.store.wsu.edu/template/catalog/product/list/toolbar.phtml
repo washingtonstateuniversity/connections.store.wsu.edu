@@ -65,15 +65,18 @@
 			
     </div>
 	<div class="limiter">
-		<?php echo $this->getPagerHtml() ?>
-		<div class="viewing_selector">
-		<?php echo $this->__('View') ?>
-		<?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
-			<a href="<?php echo $this->getLimitUrl($_key) ?>" onclick="setLocation(<?php echo $this->getLimitUrl($_key) ?>)"<?php if($this->isLimitCurrent($_key)): ?>class="active"<?php endif ?>>
-				<?php echo $_limit ?>
-			</a>
-		<?php endforeach; ?>
-		</div>
+		<?php $pager=$this->getPagerHtml() ?>
+		<?php echo $pager ?>
+		<?php if( "" !== trim($pager) ): ?>
+			<div class="viewing_selector">
+			<?php echo $this->__('View') ?>
+			<?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
+				<a href="<?php echo $this->getLimitUrl($_key) ?>" onclick="setLocation(<?php echo $this->getLimitUrl($_key) ?>)"<?php if($this->isLimitCurrent($_key)): ?>class="active"<?php endif ?>>
+					<?php echo $_limit ?>
+				</a>
+			<?php endforeach; ?>
+			</div>
+		<?php endif; ?>
 	</div>
 	<?php if( $this->isExpanded() ): ?>
 	<div class="sorter">
