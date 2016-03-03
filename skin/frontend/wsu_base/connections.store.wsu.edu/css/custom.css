@@ -1232,6 +1232,7 @@ ul.products-list ul.add-to-links:after {
 	color:#981E32;
 	font-size: 28px;
     font-weight: 500;
+	line-height: 28px;
 }
 .catalog-category-view .button.btn-cart{
     background: rgba(226,226,226,.75);
