@@ -33,6 +33,17 @@
 		});
 		$.each($('.swatch-button'),function(idx,item){
 			var tar =$(item);
+			var product = tar.closest('.item');
+			tar.hover(
+				function () {
+					product.addClass('hover');
+				},
+				function () {
+					product.removeClass('hover');
+				}
+			);
+			
+			
 			tar.tooltip({
 				show: { effect: "fadeIn", duration: 50 }, 
 				position: { 
@@ -40,7 +51,7 @@
 					at: "center top"
 				},
 				items: "span",
-				using: function( position, feedback ) {
+				using: function( ) {
 					//$( this ).css( position );
 					$( this ).addClass( $( this ).data('type') );
 				},
@@ -52,16 +63,20 @@
 				close: function(event, ui){
 					ui.tooltip.hover(
 						function () {
+							product.addClass('hover');
 							$(this).stop(true).fadeTo(100, 1); 
 						},
 						function () {
+							product.removeClass('hover');
 							$(this).fadeOut("400", function(){
+								
 								$(this).remove(); 
 							})
 						}
 					);
 				},
 				open:function(event, ui){
+					product.addClass('hover');
 					ui.tooltip.find('.swatch-item').on('click', function(){
 						var id = $(this).data('superattribute_id');
 						$(this).closest('.ui-tooltip-content').find('.active').removeClass('active');

@@ -346,11 +346,17 @@
 							// Provides extra blocks on which to hang some features for products in the list
 							// Features providing UI elements targeting this block will display directly below the product name
 							if ($this->getChild('name.after')) {
+								
 								$_nameAfterChildren = $this->getChild('name.after')->getSortedChildren();
+								$items=[];
 								foreach ($_nameAfterChildren as $_nameAfterChildName) {
-									$_nameAfterChild = $this->getChild('name.after')->getChild($_nameAfterChildName);
-									$_nameAfterChild->setProduct($_product);
-									echo $_nameAfterChild->toHtml();
+									if(!in_array($_nameAfterChildName,$items)){
+										//echo "<h1>".$_nameAfterChildName."</h1>";
+										$items[]=$_nameAfterChildName;
+										$_nameAfterChild = $this->getChild('name.after')->getChild($_nameAfterChildName);
+										$_nameAfterChild->setProduct($_product);
+										echo $_nameAfterChild->toHtml();
+									}
 								}
 							}
 						?>	
