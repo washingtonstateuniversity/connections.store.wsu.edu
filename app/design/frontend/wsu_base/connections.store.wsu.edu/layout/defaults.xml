@@ -9,17 +9,10 @@
 			<action method="addItem"><type>skin_js</type><name>js/custom.js</name></action>
 		</reference>
 
-		
-		<!--
 		<reference name="top.links">
-			<remove name="wishlist_link"/>
-		</reference>
-		-->
-		<reference name="top.links">
-			<!-- Removes 'My Cart' AND 'Checkout' links
-			Default position: 40 and 50 respectively -->
-			<remove name="checkout_cart_link"/>
+			<remove name="checkout_cart_link"/> <!-- we are removing any set toplinks from partent themes first -->
 			<remove name="checkout_cart_link_custom"/>
+			<remove name="checkout_cart_link_wsu_base"/>
 			<!-- To re-add 'My Cart' or 'Checkout' after removing both -->
 			<block type="checkout/links" name="checkout_cart_link_themed">
 				<action method="setData"><name>cart_label</name><value>Cart</value></action>
@@ -34,27 +27,13 @@
 				
 				<action method="makeCompareLink"></action>
 			</block>
-			
-			<!--<action method="addLink" translate="label title" module="catalog">
-				<label>Compare Products</label>
-				<url helper="catalog/product_compare/getListUrl"/>
-				<title>Compare Products</title>
-				<prepare/>
-				<urlParams/>
-				<position>10</position>
-				<liParams/>
-
-			</action>-->
-
 		</reference>
 		    <reference name="root">
 				<action method="unsetChild"><name>breadcrumbs</name></action>
 				<reference name="content">
 					<action method="insert"><child>breadcrumbs</child></action>
 				</reference>
-			</reference>	 <!--	<reference name="content">
-           <remove name="breadcrumbs" />
-        </reference>-->
+			</reference>
 	</default>
 <!-- HOME PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	<cms_index_index>
@@ -66,7 +45,6 @@
 		<block type="core/template" name="cms_index_index" template="hompages/default.phtml"/>
 	  </reference>
 		<reference name="top.links">
-			<!-- To re-add 'My Cart' or 'Checkout' after removing both -->
 			<block type="checkout/links" name="checkout_cart_link_themed">
 				<action method="setData"><name>cart_label</name><value>Cart</value></action>
 				<action method="setData"><name>cart_label_signle</name><value>Cart (%s item)</value></action>
@@ -74,26 +52,16 @@
 				<action method="setData"><name>cart_hide_empty</name><value>0</value></action>
 				<action method="setData"><name>checkout_hide_empty</name><value>1</value></action>
 				<action method="addCartLink"><position>10</position></action>
-				<!--<action method="addCheckoutLink"><position>11</position></action>-->
 			</block>
 		</reference>
 	</cms_index_index>
 <!-- USER LOGGED IN/OUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	<customer_logged_out>
 		<reference name="top.links">
-			<!--<action method="addLink" translate="label title">
-				<label><![CDATA[<span><i class="fa fa-sign-in"></i>  Sign Up </span>]]></label>
-				<url>customer/account/create</url>
-				<title>Sign Up</title>
-				<prepare>true</prepare>
-				<urlParams/>
-				<position>1</position>
-				<liParams>id="link-sign-up"</liParams>
-			</action>-->
 			<remove name="wishlist_link"/>
 			<action method="removeLinkByUrl"><url helper="customer/getLoginUrl"/></action>
 			<action method="addLink" translate="label title" module="customer">
-				<label><![CDATA[ Log In ]]></label><!-- <i class="fa fa-sign-in"></i>   -->
+				<label><![CDATA[ Log In ]]></label>
 				<url helper="customer/getLoginUrl"/>
 				<title>Log In</title>
 				<prepare/>
@@ -101,22 +69,7 @@
 				<position>2</position>
 			</action>
 		</reference>
-		<!---<reference name="right">
-			<block type="customer/form_login" name="customer_form_mini_login" before="-" template="customer/form/mini.login.phtml"/>
-		</reference>-->
-		<!--<remove name="reorder"></remove>-->
 	</customer_logged_out>
-	<customer_logged_in>
-		<!--<reference name="top.links">
-			<action method="addLink" translate="label title" module="customer">
-				<label><![CDATA[  Log Out ]]></label>
-				<url helper="customer/getLogoutUrl"/><title>Log Out</title>
-				<prepare/>
-				<urlParams/>
-				<position>100</position>
-			</action>
-		</reference>-->
-	</customer_logged_in>
 	
 <!-- CATEGORY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	<!-- Default category (without layered navigation) -->
@@ -320,12 +273,8 @@
     </catalog_product_view>
 	<checkout_cart_index>
 		<reference name="top.links">
-			<!-- Removes 'My Cart' AND 'Checkout' links
-			Default position: 40 and 50 respectively -->
 			<remove name="checkout_cart_link_themed"/>
-			<!-- To re-add 'My Cart' or 'Checkout' after removing both -->
 			<block type="checkout/links" name="checkout_cart_link_themed_cart">
-				<!--<action method="addCartLink"><position>10</position></action>-->
 				<action method="addCheckoutLink"><position>11</position></action>
 			</block>
 		</reference>
