@@ -33,6 +33,14 @@ body #wsu-signature {
 		 background-size: 149px auto;
 	 }
 }
+.lt-ie10 #wsu-signature {
+	 background-size: 149px auto;
+ }
+@media screen and (max-width: 791px){
+	.lt-ie10 .fluid #wsu-signature {
+		background-size: auto 30px;
+	}
+}
 #spine-navigation .spine-sitenav ul {
 	font-size:10pt;
 	font-weight:bold;
@@ -154,43 +162,18 @@ div#main {
 #main .std hr {
 	height:3px;
 }
-.content_area{ 
-	/*margin-top: 25px;
-    z-index: 101; */
-}
-.home main{
-	/*background: url(/media/store-media/connections.store.wsu.edu/skin/home-main-background.jpg);
-	background-color:#fff;
-	background-repeat: no-repeat;
-	background-position:center bottom;
-    background-size: 100% auto;*/
-	
-}
-section#siteID{
-	/*background:none !important;
-	background-image : url(/media/store-media/connections.store.wsu.edu/skin/header-bk.jpg);
-	background-color:#38424a;
-	background-repeat: no-repeat;
-	background-position:left top;
-    background-size: auto 100%;
-	box-sizing:border-box;*/
-	/*border:2px solid #981e32;
-	border-top:none;
-    z-index: 100;*/
-}
-#spine #glue:before{
-	/*background:transparent url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;*/
-	/*background: rgba(82, 80, 80, 0.41) url(/media/store-media/connections.store.wsu.edu/skin/spine_background.png) repeat center top !important;*/
-}
+
 #siteID{
+	-js-display: flex;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-   /* min-height: 60px;*/
    position: absolute;
     right: 0px;
     top: 0px;
 	z-index: 10;
+	height:auto;
+	width:auto;
 }
 #identity{    align-self: flex-end;
     /*min-height: 60px;*/
@@ -331,6 +314,7 @@ main footer{
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
+  -js-display: flex;
   display: flex;
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
@@ -740,6 +724,7 @@ main footer{
 	#mass_products{padding: 0;}
 /* Product list blocks */
 .cat_list_header_top,.cat_list_header_bottom{
+	-js-display: flex;
 	 display: flex;
 	 flex-flow: row wrap;
 }
@@ -1032,6 +1017,7 @@ main footer{
 }
 
 .limiter {
+	-js-display: flex;
     display: flex;
 }
 
@@ -1081,6 +1067,7 @@ ul.products-list ul.add-to-links:after {
 
 
 .products-grid{
+	-js-display: flex;
     display: flex;
 	flex-flow: row wrap;
     justify-content: space-between;
@@ -1125,6 +1112,7 @@ ul.products-list ul.add-to-links:after {
     position: absolute;
     bottom: 0px;
     right: 0px;
+	-js-display: flex;
     display: flex;
     align-content: flex-end;
     align-items: flex-end;
@@ -1556,6 +1544,7 @@ span.size-option:hover{
 }
 .cart .discount .discount-form, .cart .shipping .shipping-form {
 	margin-left: 122px;
+	-js-display: flex;
     display: flex;
     flex-direction: column;
 }
@@ -1576,6 +1565,7 @@ span.size-option:hover{
 
 
 .cart-collaterals.nested-container {
+	-js-display: flex;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
@@ -1640,6 +1630,7 @@ span.size-option:hover{
 		height: auto;
 		position: relative;
 		margin: 0px 15px;
+		-js-display: flex;
 		display: flex;
 		flex-flow: row wrap;
 	}
@@ -1696,10 +1687,10 @@ span.size-option:hover{
 		margin: 0px;
 	}
 	td.col-unit-price.a-right {
-    font-size: 15px;
-    font-weight: 500;
-    padding: 0px;
-}
+		font-size: 15px;
+		font-weight: 500;
+		padding: 0px;
+	}
 }
 
 /*--LightBox--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
