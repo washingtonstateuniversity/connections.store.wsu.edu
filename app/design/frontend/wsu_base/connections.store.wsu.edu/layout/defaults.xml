@@ -279,4 +279,29 @@
 			</block>
 		</reference>
 	</checkout_cart_index>
+	<checkout_onepage_index>
+
+		<reference name="top.links">
+			<remove name="checkout_cart_link_themed"/>
+			<block type="checkout/links" name="checkout_cart_link_themed_checkout">
+				<action method="setData"><name>cart_label</name><value helper="wsu_themecontrol/layout/getCartLabel" /></action>
+				<action method="setData"><name>cart_label_signle</name><value helper="wsu_themecontrol/layout/getCartLabelSingle" /></action>
+				<action method="setData"><name>cart_label_full</name><value helper="wsu_themecontrol/layout/getCartLabelFull" /></action>
+				<action method="setData" ifconfig="wsu_themecontrol/header/cart_hide_empty"><name>cart_hide_empty</name><value>1</value></action>
+				<action method="addCartLink"><position>10</position></action>
+			</block>
+		</reference>
+	</checkout_onepage_index>	
+	<opc_index_index>
+		<reference name="top.links">
+			<remove name="checkout_cart_link_themed"/>
+			<block type="checkout/links" name="checkout_cart_link_themed_checkout">
+				<action method="setData"><name>cart_label</name><value helper="wsu_themecontrol/layout/getCartLabel" /></action>
+				<action method="setData"><name>cart_label_signle</name><value helper="wsu_themecontrol/layout/getCartLabelSingle" /></action>
+				<action method="setData"><name>cart_label_full</name><value helper="wsu_themecontrol/layout/getCartLabelFull" /></action>
+				<action method="setData" ifconfig="wsu_themecontrol/header/cart_hide_empty"><name>cart_hide_empty</name><value>1</value></action>
+				<action method="addCartLink"><position>10</position></action>
+			</block>
+		</reference>
+	</opc_index_index>
 </layout>
