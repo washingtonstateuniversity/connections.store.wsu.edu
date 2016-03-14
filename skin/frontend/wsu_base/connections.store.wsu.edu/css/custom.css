@@ -298,11 +298,11 @@ li{
 
 /*--FOOTER--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 main footer{
-	padding:0px !important;
+	/*padding:0px !important;
 	position:absolute;
 	bottom:0px;
 	width:100%;
-	/*height:36px;
+	height:36px;
 	background:#d5151f;*/
 	
 }
