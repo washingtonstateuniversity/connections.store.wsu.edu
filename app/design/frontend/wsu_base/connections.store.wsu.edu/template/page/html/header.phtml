@@ -87,7 +87,7 @@ $searchOptionClasses = implode(' ', $searchOps );
 <!-- SPINE -->
 <div id="spine" class="spine-column <?=$spineClasses?>">
     <div id="glue" class="spine-glue">
-        <header class="spine-header"><a href="http://www.wsu.edu/" id="wsu-signature">Washington State University</a></header>
+        <header class="spine-header"><a href="<?=$home_link?>" id="wsu-signature">Washington State University</a></header>
         <!-- ACTIONS -->
         <section id="wsu-actions" class="spine-actions">
             <!-- Tabs -->
@@ -126,6 +126,7 @@ $searchOptionClasses = implode(' ', $searchOps );
 					<li><a href="<?=Mage::getUrl('privacy');?>">Privacy Policy</a></li>
 					<li><a href="<?=Mage::getUrl('catalogsearch/advanced');?>">Advanced Search</a></li>
 					<li><a href="<?=Mage::getUrl('order-return');?>">Orders &amp; Returns</a></li>
+					<li><a href="https://wsu.edu" target="_blank">WSU Home</a></li>
 				</ul>
 				<?php // note that the network menu section is missing as this is a standalone site.  Look to the main theme to re-add it ?>
             </nav>
