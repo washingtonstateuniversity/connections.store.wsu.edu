@@ -306,6 +306,10 @@ main footer{
 	background:#d5151f;*/
 	
 }
+.footer-block{
+	display:flex;
+	flex-flow:row wrap;
+}
 .footer-cell{flex-grow: 1;}
 .footer-cell.two{flex-grow: 2;}
 .licensed-link{
@@ -315,6 +319,37 @@ main footer{
 	width: 100%;
 	display: inline-block;
 	background:url('/media/store-media/connections.store.wsu.edu/skin/clc-logo.svg') 0% 0% / contain no-repeat rgba(255, 255, 255, 0);
+}
+.alumni{
+	max-width: 40%;
+	margin-left: 15px;
+}
+.alumni a{}
+.alumni .message{
+    line-height: 1em;
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: right;
+    float: left;
+    margin-top: .6em;
+}
+.alumni img{
+	display: inline-block;
+    vertical-align: bottom;
+    width: 27%;
+    /* font-size: 0.7em; */
+    float: left;
+}
+.alumni .disclaimer{
+
+    display: inline-block;
+    font-size: 0.5em;
+    max-width: 46%;
+    float: left;
+    margin-top: 1.6em;
+	    line-height: 0.9em;	
 }
 #site-global-footer{
 	background: url(/media/store-media/connections.store.wsu.edu/skin/footer-bk.jpg);
