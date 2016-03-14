@@ -19,10 +19,13 @@ body{
 }
 
 /*--Spine-Overrides--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-#spine.darkest .spine-actions button, #spine.darkest .spine-footer small a, #spine.darkest .spine-social-channels a {
-    color: #e2e2e2;
+#spine.darker .spine-actions button, #spine.darker .spine-footer small a, #spine.darker .spine-social-channels a {
+    color: #BBBEC0;
 }
-
+#spine.darker .spine-global-links a, #spine.darker .spine-offsitenav a {
+    color: #8D989E;
+    font-weight: 600;
+}
 body #wsu-signature {
     background-image: url(/media/store-media/connections.store.wsu.edu/skin/logo-stack.svg)!important;
     background-size: 113px auto;
