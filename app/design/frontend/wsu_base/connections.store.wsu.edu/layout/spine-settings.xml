@@ -10,6 +10,10 @@
 		<spine>
 			<show_storenetwork>0</show_storenetwork>				
 		</spine>
+		<layout>
+			<default_padding_root> </default_padding_root>
+			<default_padding_footer> </default_padding_footer>
+		</layout>
 		<product_view>
 			<row_type>side-left</row_type>
 			<padding>pad</padding>
