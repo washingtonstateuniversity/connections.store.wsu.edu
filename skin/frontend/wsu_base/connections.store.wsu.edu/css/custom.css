@@ -306,7 +306,7 @@ main footer{
 	background:#d5151f;*/
 	
 }
-.footer-block{
+.footer-area{
 	display:flex;
 	flex-flow:row wrap;
 }
