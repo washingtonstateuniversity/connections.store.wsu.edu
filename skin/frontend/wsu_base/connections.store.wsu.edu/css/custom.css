@@ -224,7 +224,7 @@ li{
     padding: 0;
     margin: 0;
     text-align: left;
-    height: 37px;
+    min-height: 37px;
 	width: auto;
 	align-self:flex-start;
 }
