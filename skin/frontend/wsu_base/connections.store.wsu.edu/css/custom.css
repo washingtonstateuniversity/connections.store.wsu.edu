@@ -1755,7 +1755,9 @@ span.size-option:hover{
 .customer-account #sidebar_area{
 	    margin-top: 45px;
 }
-
+.customer-account .data-table tbody td.last{
+	    width: 75px;
+}
 
 
 /*--CHECKOUT_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
