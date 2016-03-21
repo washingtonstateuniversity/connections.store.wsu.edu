@@ -1753,10 +1753,13 @@ span.size-option:hover{
 
 /*--customer-account--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .customer-account #sidebar_area{
-	    margin-top: 45px;
+    margin-top: 45px;
 }
 .customer-account .data-table tbody td.last{
-	    width: 75px;
+	width: 108px;
+}
+.customer-account .messages {
+	margin-top: 35px !important;
 }
 
 
