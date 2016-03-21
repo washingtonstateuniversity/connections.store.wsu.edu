@@ -29,6 +29,15 @@
 		<catalog_product_view>
 			<used_root>0</used_root>
 		</catalog_product_view>
+		<customer_account_index>
+			<used_root>1</used_root>
+			<used_customer_account_dashboard>1</used_customer_account_dashboard>
+			<used_customer_account_dashboard_address>1</used_customer_account_dashboard_address>
+			<row_type_root>side-right</row_type_root>
+			<row_type_customer_account_dashboard>single</row_type_customer_account_dashboard>
+			<row_type_customer_account_dashboard_address>halves</row_type_customer_account_dashboard_address>
+		</customer_account_index>
+		
 	</wsu_themecontrol_layout>
 	<wsu_themecontrol_design>
 		<spine>
