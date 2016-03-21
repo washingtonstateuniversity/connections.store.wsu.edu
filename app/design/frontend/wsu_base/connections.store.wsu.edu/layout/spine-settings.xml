@@ -37,7 +37,31 @@
 			<row_type_customer_account_dashboard>single</row_type_customer_account_dashboard>
 			<row_type_customer_account_dashboard_address>halves</row_type_customer_account_dashboard_address>
 		</customer_account_index>
+		<customer_address_index>
+			<used_root>1</used_root>
+			<row_type_root>side-right</row_type_root>
+		</customer_address_index>
+		<customer_address_form>
+			<used_root>1</used_root>
+			<row_type_root>side-right</row_type_root>
+		</customer_address_form>
 		
+		<customer_account_edit>
+			<used_root>1</used_root>
+			<row_type_root>side-right</row_type_root>
+		</customer_account_edit>
+		<wishlist_index_index>
+			<used_root>1</used_root>
+			<row_type_root>side-right</row_type_root>
+		</wishlist_index_index>
+		<sales_order_invoice>
+			<used_root>1</used_root>
+			<row_type_root>side-right</row_type_root>
+		</sales_order_invoice>
+		<sales_order_view>
+			<used_root>1</used_root>
+			<row_type_root>side-right</row_type_root>
+		</sales_order_view>
 	</wsu_themecontrol_layout>
 	<wsu_themecontrol_design>
 		<spine>
