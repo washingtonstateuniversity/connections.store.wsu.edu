@@ -6,6 +6,7 @@
 			<max_width>1386</max_width>
 			<max_width_custom></max_width_custom>
 			<show_breadcrumbs>1</show_breadcrumbs>
+            <breadcrumbs_reverse>1</breadcrumbs_reverse>
 		</responsive>
 		<spine>
 			<show_storenetwork>0</show_storenetwork>				
