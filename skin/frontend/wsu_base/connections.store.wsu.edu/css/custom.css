@@ -293,7 +293,13 @@ li{
 .breadcrumbs {
 	margin-top: 9px;
 }
-
+.breadcrumbs .parent_links{
+	font-size:18px;font-weight:100
+}
+.breadcrumbs span,
+span.last{
+	font-size:24px;font-weight:600	
+}
 
 
 /*--FOOTER--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
