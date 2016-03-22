@@ -46,6 +46,7 @@ $layout = $this->helper('wsu_themecontrol/layout')
     <!-- WRAPPING -->
     <div id="jacket">
         <div id="binder" class="<?=$binderClassStr?>" style="<?=$binderStyleStr?>">
+            <?=$this->getChildHtml('header') ?>
             <!-- CONTENT -->
             <main id="page" role="main">
                 <div id="siteID">
@@ -142,7 +143,7 @@ $sections['right'] =  ob_get_clean();
             </main><!--/#page-->
             <!-- /CONTENT -->
     
-            <?=$this->getChildHtml('header') ?>
+            
         </div><!--/cover-->
     </div><!--/jacket-->
     <!-- /WRAPPING -->
