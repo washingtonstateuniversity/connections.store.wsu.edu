@@ -102,6 +102,11 @@ input.input-text, select, textarea{
 	border: 1px solid #A7A7A7;
 	background-color:#F7F7F7 !important;
 }
+
+.block button.button span{
+  background-image:none;
+}
+
 /*--jquery_ui_overides--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .ui-dialog.ui-widget {
     z-index: 999999999 !important;
