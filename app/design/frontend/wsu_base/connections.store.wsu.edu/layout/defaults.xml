@@ -70,11 +70,7 @@
 			</action>
 		</reference>
 	</customer_logged_out>
-    <wishlist_index_index>
-		<reference name="top.links">
-			<remove name="wishlist_link"/>
-		</reference>
-    </wishlist_index_index>	
+
 <!-- CATEGORY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	<!-- Default category (without layered navigation) -->
 	<catalog_category_default>
@@ -308,4 +304,15 @@
 			</block>
 		</reference>
 	</opc_index_index>
+    
+    
+ 
+    <wishlist_index_index>
+		<reference name="top.links">
+			<remove name="wishlist_link"/>
+		</reference>
+        <reference name="right">
+			<remove name="wishlist_sidebar"/>
+		</reference>
+    </wishlist_index_index>	
 </layout>
