@@ -306,18 +306,5 @@
 	</opc_index_index>
     
     
-    <customer_account>
-        <!-- Mage_Wishlist -->
-        <reference name="customer_account_navigation">
-            <action method="addLink" translate="label" module="wishlist" ifconfig="wishlist/general/active"><name>wishlist</name><path>wishlist/</path><label>My Wishlist</label></action>
-        </reference>
-    </customer_account>
-    <wishlist_index_index>
-		<reference name="top.links">
-			<remove name="wishlist_link"/>
-		</reference>
-        <reference name="right">
-			<remove name="wishlist_sidebar"/>
-		</reference>
-    </wishlist_index_index>	
+
 </layout>
