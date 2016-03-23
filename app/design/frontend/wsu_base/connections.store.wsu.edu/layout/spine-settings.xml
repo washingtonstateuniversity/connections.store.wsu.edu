@@ -63,6 +63,11 @@
 			<used_root>1</used_root>
 			<row_type_root>side-right</row_type_root>
 		</sales_order_view>
+        
+		<sales_order_history>
+			<used_root>1</used_root>
+			<row_type_root>side-right</row_type_root>
+		</sales_order_history>
 	</wsu_themecontrol_layout>
 	<wsu_themecontrol_design>
 		<spine>
