@@ -1124,12 +1124,12 @@ ul.products-list ul.add-to-links:after {
 }
 
 
-.products-grid{
+/*.products-grid{
 	-js-display: flex;
     display: flex;
 	flex-flow: row wrap;
     justify-content: space-between;
-}
+}*/
 
 .products-grid li.item{
     position: relative;
@@ -1894,10 +1894,11 @@ overflow: visible !important;
 	background-color:#bbbbbb;
 }
 
-@media only screen and (max-width: 791px){
-	body #wsu-signature  {
+@media only screen and (max-width: 989px){
+	#binder #wsu-signature  {
 		background-image: url(/media/store-media/connections.store.wsu.edu/skin/logo-hor.svg)!important;
-		background-size: auto 50px ;
+		background-size: auto 45px ;
+        background-position: center 2px;
 	}
 	.breadcrumbs {
 		width: 100%;
