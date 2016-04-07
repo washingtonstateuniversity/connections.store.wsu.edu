@@ -1745,6 +1745,86 @@ span.size-option:hover{
 	padding:0px;
 	
 }
+
+
+/* customer/account/create -----------------------------------------*/
+
+
+.customer-account-create button.bt-login-social span {
+    height: 78px;
+    line-height: 87px;
+    /* vertical-align: middle; */
+    display: inline-block;
+    padding: 0px;
+}
+.customer-account-create button.bt-login-social span span{
+    padding: 0px 15px 0px 15px !important;
+}
+
+.customer-account-create #sociallogin_button .bt-login.facebook span,
+.customer-account-create .bt-popup.facebook span {
+    background: none;
+    display: block;
+    float: none;
+    height: auto;
+    line-height: 1em;
+}
+.customer-account-create #sociallogin_button .bt-login.facebook span span,
+.customer-account-create .bt-popup.facebook span span {
+    background: none;
+    display: block;
+    float: none;
+    background-color: #4D78B6;
+    font-size: 1.4em;
+    border-radius: .25em;
+    line-height: 1.2em;
+    height: auto;
+    padding: 10px 0px 8px 0px;
+}
+
+.customer-account-create #sociallogin_button .bt-login.facebook span span:hover,
+.customer-account-create .bt-popup.facebook span span:hover {
+    background-color: #8297B5;
+}
+
+omer-account-create #sociallogin_button .bt-login.facebook span span:before,
+.customer-account-create .bt-popup.facebook span span:before{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 1.25em;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    content:"\f230";
+    margin-right:10px;
+}
+
+.customer-account-create div#sociallogin_button:before {content: "Social logins:";display: block;border-bottom: 1px #494949 solid;font-size: 2em;font-weight: 600;}
+.customer-account-create div#sociallogin_button:after {content: "Or create a Connections store login:";display: block;border-bottom: 1px #494949 solid;font-size: 2em;font-weight: 600;}
+
+.customer-account-create .page-title {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 767px){
 	.cart .data-table tr, .cart .data-table td {
 		border: none !important;
