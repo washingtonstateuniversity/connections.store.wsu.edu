@@ -1021,6 +1021,7 @@ position: relative;
 .filtering_block .currently li {
     border-bottom:1px solid;
     font-size: 2em;
+    line-height: 2em;
 }
 
 .filtering_block .currently .btn-remove{
@@ -1029,6 +1030,7 @@ position: relative;
     margin: 0px 0px;
     border: 1px solid #525252;
     padding: 3px 3px 4px 5px;
+    margin-top: 5px;
 }
 .filtering_block .currently .label{
 	font-weight:600;
