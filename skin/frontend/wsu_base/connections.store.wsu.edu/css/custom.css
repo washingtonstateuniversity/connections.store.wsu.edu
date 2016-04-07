@@ -1033,14 +1033,18 @@ position: relative;
 
 .inline-filter span, .inline-filter a:before{
 	background: #000;
-    color: #fff;
-    padding: 2px 6px;
-    margin-right: 3px;
+	color: #fff;
+	padding: 2px 6px;
+	margin-right: 3px;
+	font-size: 2em;
+	line-height: 1.5em;
+	display: inline-block;
+	vertical-align: middle;
 }
 .inline-filter span{}
 .inline-filter a:before{    display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
+    font-size: 2em;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -1097,6 +1101,7 @@ span.match_count {
     font-size: 18px;
     font-weight: 600;
     color: #181818;
+    vertical-align: middle;
 }
 
 .sorter {
