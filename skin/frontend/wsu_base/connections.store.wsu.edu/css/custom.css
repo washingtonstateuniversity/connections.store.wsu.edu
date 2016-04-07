@@ -1542,6 +1542,7 @@ span.size-option:hover{
 	background:none;
 	border:none;
 	padding:5px 20px 5px 0px;
+    margin-bottom: 0px;
 }
 .product-options-bottom .regular-price .price {
     color: #9D283B;
