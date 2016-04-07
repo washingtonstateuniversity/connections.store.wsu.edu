@@ -1491,7 +1491,7 @@ span.size-option:hover{
 
 
 /*--PRODUCT_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-.product-name{
+.catalog-product-view .product-name{
         display: none;
 }
 .product-view .box-tags .form-add button.button span{
