@@ -1787,7 +1787,7 @@ span.size-option:hover{
 
 /*--CHECKOUT_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .opc-wrapper-opc a span,.opc-wrapper-opc a {
-    color: #fff !important;
+    /*color: #fff !important;*/
 }
 .opc-wrapper-opc{
 overflow: visible !important;	
@@ -1806,10 +1806,17 @@ overflow: visible !important;
 	margin-bottom:0;
     padding:0;
 }
-.opc-wrapper-opc .login-trigger {
+/*.opc-wrapper-opc .login-trigger {
 	position: relative;
-	background-color: #747f8b;
+    background: #981e32 !important;
+    border-radius:5px;
+	
 }
+.opc-wrapper-opc .login-trigger:hover {
+    background-color: #747f8b !important;
+	
+}*/
+
 /*.opc-wrapper-opc .login-trigger:before
 {
     transform: skew(20deg);
@@ -1843,8 +1850,8 @@ overflow: visible !important;
 }
 
 .opc-wrapper-opc .login-trigger:hover span{cursor:pointer;
- color:#fff !important; background:#39b9c6 !important; }
- 
+ /*color:#fff !important; background:#39b9c6 !important;*/ }
+ .opc-wrapper-opc #opc-review-block{z-index:999999;}
  #main .opc-wrapper-opc .payment-block dt label{
 	 font-size: 100%;
  	width: calc(100% - 40px) !important;
