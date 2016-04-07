@@ -1103,6 +1103,8 @@ span.inline-filter {
 span.paged_label {
     font-size:10px;
     font-style: italic;
+    vertical-align: middle;
+    margin-left: 15px;
 }
 
 span.match_count {
