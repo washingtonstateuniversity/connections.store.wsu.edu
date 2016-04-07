@@ -996,6 +996,7 @@ position: relative;
 #narrow-by-list dd.open{
 	margin-bottom: 15px;
 	display: block;
+    padding-top: 15px;
 }
 .filters_applied{
 	font-size:10px;
@@ -1008,6 +1009,7 @@ position: relative;
     font-weight: 900;
     margin-bottom: 15px;
 	display: block;
+    font-size: 2em;
 }
 .filtering_block .actions a:hover{color: #121212; background:rgba(128,128,128,1.00)}
 .filtering_block .currently .block-subtitle{
@@ -1017,7 +1019,8 @@ position: relative;
 }
 
 .filtering_block .currently li {
-   border-bottom:1px solid
+    border-bottom:1px solid;
+    font-size: 2em;
 }
 
 .filtering_block .currently .btn-remove{
