@@ -303,6 +303,9 @@ li{
 .breadcrumbs {
 	margin-top: 9px;
 }
+.catalog-product-view .breadcrumbs {
+	margin-top: 20px;
+}
 .breadcrumbs .parent_links{
 	font-size:18px;font-weight:100
 }
@@ -1488,15 +1491,37 @@ span.size-option:hover{
 
 
 /*--PRODUCT_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+.product-name{
+        display: none;
+}
 .product-view .box-tags .form-add button.button span{
 	background:none;
 }
 .add-to-box .add-to-cart,.product-options,.product-options-bottom{
 	background:none;
 	border:none;
-	padding:5px 20px;
+	padding:5px 20px 5px 0px;
 }
-
+.product-options-bottom .regular-price .price {
+    color: #9D283B;
+    font-size: 4.1em;
+    font-weight: 900;
+    line-height: 1em;
+ }
+.product-options-bottom .regular-price .price:before {
+    /*content: "only :";*/
+    text-transform:uppercase;
+    position:absolute;
+    top: 10px;
+    left: 15px;
+    font-weight:400;
+    font-size: 0.35em;
+    color:#494949;
+    text-decoration: underline;
+}
+.short-description h2 {
+    font-size: 1.5em;
+}
 .swatch-link.has-image img, .swatch-link, .swatch-label{
 	border-radius: 100px;
 }
