@@ -1035,7 +1035,10 @@ position: relative;
 .filtering_block .currently .label{
 	font-weight:600;
 }
-
+span.inline-filter {
+    margin-left: 10px;
+    margin-right: 10px;
+}
 .inline-filter span, .inline-filter a:before{
 	background: #000;
 	color: #fff;
