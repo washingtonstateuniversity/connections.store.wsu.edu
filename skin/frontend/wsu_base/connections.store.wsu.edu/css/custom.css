@@ -163,6 +163,31 @@ ul.messages li[class$=-msg]:before{
 	content: "\f05d";
 }
 
+.validation-advice {
+    border-left: 1px #eb340a solid;
+    background: none;
+    padding-left: 0px;
+    vertical-align: bottom;
+    line-height: 13px;
+    min-height: 13px;
+    color: #888888;
+}
+.validation-advice:before{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 1.25em;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    content: "\f06a";
+    padding: 1px 3px;
+    line-height: 16px;
+    padding-right: 5px;
+    color:#eb340a;
+}
+
+
 /*--Content--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 
 
