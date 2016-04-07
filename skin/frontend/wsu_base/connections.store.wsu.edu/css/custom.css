@@ -1143,12 +1143,12 @@ ul.products-list ul.add-to-links:after {
 .products-grid li.item{
     position: relative;
     align-self: flex-start;
-    padding: 0;
     max-width: 220px;
 	min-width: 175px;
     width: auto;
     float: initial;
 	padding: 2px 5px 10px 5px;
+    margin-right: 15px;
 }
 
 .display-onhover{
@@ -1238,7 +1238,7 @@ ul.products-list ul.add-to-links:after {
 .products-grid .product-image{
 	margin:0px;
 	border-width:2px;
-	border-color:#6f6f6f;
+	border-color:#B5B5B5;
 	border-left-width: 7px;
 	display: block;
 }
@@ -1282,6 +1282,7 @@ ul.products-list ul.add-to-links:after {
 	font-size: 28px;
     font-weight: 500;
 	line-height: 28px;
+    letter-spacing: -0.05em;
 }
 .products-grid .price-box .old-price .price{
     color: #5a5a5a;
@@ -1299,7 +1300,7 @@ ul.products-list ul.add-to-links:after {
     border-width: 2px 0px 0px 2px;
     float: right;
     border-radius: 0px;
-    border-color: #5a5a5a;
+    border-color: #B5B5B5;
     margin-right: 2px;
     margin-bottom: 2px;
 }
@@ -1339,7 +1340,7 @@ ul.products-list ul.add-to-links:after {
     border-width: 2px 0px 0px 2px;
     float: right;
     border-radius: 0px;
-    border-color: #5a5a5a;
+    border-color: #B5B5B5;
     margin-bottom: 2px;
     border-style: solid;
 	
