@@ -42,7 +42,7 @@
             <action method="addBodyClass"><class>home</class></action>
         </reference>
 	  <reference name="content">
-		<block type="core/template" name="cms_index_index" template="hompages/default.phtml"/>
+		<!--<block type="core/template" name="cms_index_index" template="hompages/default.phtml"/>-->
 	  </reference>
 		<reference name="top.links">
 			<block type="checkout/links" name="checkout_cart_link_themed">
