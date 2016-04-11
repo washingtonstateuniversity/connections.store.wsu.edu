@@ -273,77 +273,7 @@
 						
 						
 		
-							<?php $cProduct = Mage::getModel('catalog/product')->load($_product->getId());?>
-							<?php if ($cProduct->getData('type_id') == "configurable") :?>
-								<?php $configAttributesArray = $_product->getTypeInstance(true)->getConfigurableAttributesAsArray($_product);
-								
-								//filter so only Size is left and select the values in the array
-								$configAttributesFilteredBySize = array_filter($configAttributesArray, function($v) { return $v['label'] == 'Size'; });
-								if( !empty($configAttributesFilteredBySize) ){
-								?>
 							
-								<div class="swatch-area available-size">
-									<?php 
-												
-									$configAttributesFilteredBySizeValues = $configAttributesFilteredBySize[key($configAttributesFilteredBySize)]['values'];
-									$super_id = $configAttributesFilteredBySize[key($configAttributesFilteredBySize)]['attribute_id'];
-									$_product_id = $_product->getId();
-									//var_dump($configAttributesFilteredBySize);
-									//get the configurable product its childproducts
-									$childProducts = Mage::getModel('catalog/product_type_configurable')->getUsedProducts(null,$_product);
-									?>
-									
-									<?php $_label = "";
-											$_value = "";
-											foreach($configAttributesFilteredBySizeValues as $configAttributeValue){
-												$label = $configAttributeValue['label'].trim(" ");
-												if( !empty($label) ){
-													$_label .= $label;
-													$value = $configAttributeValue['value_index'];
-													$_value = $value;
-													foreach($childProducts as $childProduct){
-														if($childProduct->getSize() == $value){
-															$label = $childProduct->getAttributeText('Size');
-															if( !empty($label.trim(" ")) ){
-																$_label .= $label;
-															}
-															
-														}break;
-													}
-													break;
-												}
-											}
-										?>
-										<span class="swatch-button" data-type="size" data-_type="size" data-_product_id="<?=$_product_id?>" data-superattribute="<?=$super_id?>" data-set_superAttr_id="<?=$_value?>">
-										<?=$_label?>
-										</span>
-										<div class="swatch-items">
-											<?php
-												$configAttributesFilteredBySizeValues = array_reverse($configAttributesFilteredBySizeValues);
-												foreach($configAttributesFilteredBySizeValues as $configAttributeValue){
-													$label = $configAttributeValue['label'];
-													if( !empty($label.trim(" ")) ){
-														
-														$value = $configAttributeValue['value_index'];
-														echo "<span class='size-option swatch-item ".($_label === $label ? "active" : "")."' data-_type='size' data-_product_id='".$_product_id."' data-superattribute_id='".$value."'  data-superid='".$super_id."'>" . $label . "</span>";
-														
-														//ok I'm not 100% on this being needed... for what and why.. double check
-														foreach($childProducts as $childProduct){
-															if($childProduct->getSize() == $value){
-																$label = $childProduct->getAttributeText('Size');
-																if( !empty($label.trim(" ")) ){
-																	echo "<span class='size-option swatch-item  ".($_label === $label ? "active" : "")."' data-_type='size' data-_product_id='".$_product_id."' data-superattribute_id='".$value."' data-superid='".$super_id."'>" . $lable . "</span>";
-																}
-															}
-														}
-													}
-												}
-											?>
-										</div>
-									</div>
-									<?php } ?>			
-							<?php endif; ?>
-						
 						
 						
 						<?php
