@@ -11,6 +11,14 @@
  * - Added class 'last' in table header last cells
  * - Rearranged layout of 'cart-collaterals'
  */
+ 
+ 
+ 
+ if(!isset($_COOKIE["last_cat"])) {
+    $ContinueShoppingUrl = $this->getContinueShoppingUrl();
+ }else{
+    $ContinueShoppingUrl = $_COOKIE["last_cat"];
+ }
 ?>
 <div class="cart">
     <div class="page-title title-buttons">
@@ -85,7 +93,7 @@
             </table>
 			<div id="cart_function_area">
 				<?php if($this->getContinueShoppingUrl()): ?>
-					<button type="button" title="<?php echo $this->__('Continue Shopping') ?>" class="button btn-continue btn-inline" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><span><?php echo $this->__('Continue Shopping') ?></span></button>
+					<button type="button" title="<?php echo $this->__('Continue Shopping') ?>" class="button btn-continue btn-inline" onclick="setLocation('<?=$ContinueShoppingUrl;?>')"><span><?php echo $this->__('Continue Shopping') ?></span></button>
 				<?php endif; ?>
 					<button type="submit" name="update_cart_action" value="update_qty" title="<?php echo $this->__('Update Shopping Cart'); ?>" class="button btn-update btn-inline"><span><?php echo $this->__('Update Shopping Cart'); ?></span></button>
 	
