@@ -9,8 +9,9 @@
 <?php
 	$_productCollection=$this->getLoadedProductCollection();
 	$_collectionSize = $_productCollection->count();
-
-    setcookie("last_cat", Mage::helper('core/url')->getCurrentUrl(), time()+3600, "/", ".connections.store.wsu.edu");
+    $isSecure = Mage::app()->getFrontController()->getRequest()->isSecure();
+    $cookieUrl = trim(implode("",explode( ($isSecure?"https":"http") . "://",Mage::getBaseUrl())),'/');
+    setcookie("last_cat", Mage::helper('core/url')->getCurrentUrl(), time()+3600, "/", $cookieUrl);
  
 ?>
 
