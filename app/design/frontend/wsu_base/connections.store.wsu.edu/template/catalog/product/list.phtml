@@ -6,13 +6,12 @@
  */
 ?>
 
-<?php
+<?php                
 	$_productCollection=$this->getLoadedProductCollection();
 	$_collectionSize = $_productCollection->count();
     $isSecure = Mage::app()->getFrontController()->getRequest()->isSecure();
-    $cookieUrl = trim(implode("",explode( ($isSecure?"https":"http") . "://",Mage::getBaseUrl())),'/');
-    setcookie("last_cat", Mage::helper('core/url')->getCurrentUrl(), time()+3600);
-    //Mage::app()->setCurrentStore((int)Mage::app()->getStore($_SERVER['MAGE_RUN_CODE'])->getId());
+    $cookieUrl = rtrim(implode("",explode( ($isSecure?"https":"http") . "://",Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB))),'/');
+    setcookie("last_cat", Mage::helper('core/url')->getCurrentUrl(), time()+3600,'/',$cookieUrl);
    $store = Mage::app()->getDefaultStoreView();
    // Gets the current store's id
    $this->_storeId = $store->getStoreId();
