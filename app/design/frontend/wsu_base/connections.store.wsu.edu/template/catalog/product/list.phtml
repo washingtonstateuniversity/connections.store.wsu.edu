@@ -208,8 +208,7 @@
                 
                 $productUrl = $product->getProductUrl();
                 $productUrl = parse_url($productUrl);
-                $productUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).$productUrl["path"];
-                echo "<!--URL::".$productUrl."-->"
+                $productUrl = rtrim ( Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB), "/" ).$productUrl["path"];
 			?>
 		
 			<li class="item">
@@ -222,7 +221,7 @@
 					<?php 
 						$imgLable = $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true); 
 					?>
-					<a href="<?=$product->getProductUrl()?>" title="click for details about:
+					<a href="<?=$productUrl?>" title="click for details about:
 <?=$imgLable?>" class="product-image">
 						<img src="<?php echo $helpImg->getImg($_product, $imgWidth, $imgHeight, 'small_image'); ?>" alt="<?=$imgLable?>" />
 						<?php
@@ -412,7 +411,7 @@
 					?>
 					
 					<h2 class="product-name">
-					<a href="<?php echo $_product->getProductUrl() ?>" title="click for details about:
+					<a href="<?=$productUrl?>" title="click for details about:
 <?php echo $this->stripTags($_product->getName(), null, true) ?>">
 						<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
 					</a>
