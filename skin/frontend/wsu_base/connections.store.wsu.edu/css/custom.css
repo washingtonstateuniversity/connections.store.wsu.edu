@@ -362,7 +362,16 @@ main footer{
 	padding-top: 31.085%;
 	width: 100%;
 	display: inline-block;
-	background:url('/media/store-media/connections.store.wsu.edu/skin/clc-logo.svg') 0% 0% / contain no-repeat rgba(255, 255, 255, 0);
+	    background-image: url("/media/store-media/connections.store.wsu.edu/skin/clc-logo.svg");
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: contain;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgba(255, 255, 255, 0);
 }
 .alumni{
 	max-width: 40%;

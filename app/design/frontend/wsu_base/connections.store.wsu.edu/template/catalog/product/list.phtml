@@ -116,7 +116,6 @@
 			<?php 
                 
 				$productType=$_product->getTypeID();
-
 				$product=Mage::getModel('catalog/product')->load($_product->getId());
                 
 				$eventStart = $product->getEventstartdate();
@@ -193,12 +192,7 @@
 								}
 							}
 						?>
-						
-						
-						
-						
-						
-		
+
 							<?php $cProduct = Mage::getModel('catalog/product')->load($_product->getId());?>
 							<?php if ($cProduct->getData('type_id') == "configurable") :?>
 								<?php $configAttributesArray = $_product->getTypeInstance(true)->getConfigurableAttributesAsArray($_product);
