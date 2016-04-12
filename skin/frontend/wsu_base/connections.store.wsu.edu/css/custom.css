@@ -2080,6 +2080,26 @@ overflow: visible !important;
 .opc-wrapper-opc #opc-review-block{
     z-index: 100001 !important;
 }
+.opc-index-index .md-modal-header .close {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    text-decoration: none;
+    top: 10px;
+    /* z-index: 1000; */
+    background: none !important;
+    display: block;
+    height: 1em;
+    width: 1em;
+    text-indent: 0;
+    border: 2px #323232 solid !important;
+    border: none;
+    line-height: 0.9em;
+    font-size: 2em;
+}
+
+
+
 
 /*--WISHLIST_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 #wishlist-view-form .buttons-set.buttons-set2{
