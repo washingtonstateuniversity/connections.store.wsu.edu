@@ -202,8 +202,7 @@
                 
 				$productType=$_product->getTypeID();
                 
-				$product=Mage::getModel('catalog/product')->load($_product->getId());
-                $product->setStoreId($this->_storeId);
+				$product=Mage::getModel('catalog/product')->setStoreId($this->_storeId)->load($_product->getId());
 				$eventStart = $product->getEventstartdate();
 			?>
 		
@@ -217,7 +216,7 @@
 					<?php 
 						$imgLable = $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true); 
 					?>
-					<a href="<?=$_product->getProductUrl()?>" title="click for details about:
+					<a href="<?=$product->getProductUrl()?>" title="click for details about:
 <?=$imgLable?>" class="product-image">
 						<img src="<?php echo $helpImg->getImg($_product, $imgWidth, $imgHeight, 'small_image'); ?>" alt="<?=$imgLable?>" />
 						<?php
