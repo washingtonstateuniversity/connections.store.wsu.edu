@@ -202,9 +202,14 @@
                 
 				$productType=$_product->getTypeID();
 
-				$product=Mage::getModel('catalog/product')->setStoreId($this->_storeId)->load($_product->getId());
+				$product=Mage::getModel('catalog/product')->load($_product->getId());
                 
 				$eventStart = $product->getEventstartdate();
+                
+                $productUrl = $product->getProductUrl();
+                $productUrl = parse_url($productUrl);
+                $productUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).$productUrl["path"];
+                echo "<!--URL::".$productUrl."-->"
 			?>
 		
 			<li class="item">
