@@ -11,8 +11,12 @@
 	$_collectionSize = $_productCollection->count();
     $isSecure = Mage::app()->getFrontController()->getRequest()->isSecure();
     $cookieUrl = trim(implode("",explode( ($isSecure?"https":"http") . "://",Mage::getBaseUrl())),'/');
-    setcookie("last_cat", Mage::helper('core/url')->getCurrentUrl(), time()+3600, "/", $cookieUrl);
- 
+    setcookie("last_cat", Mage::helper('core/url')->getCurrentUrl(), time()+3600);
+    //Mage::app()->setCurrentStore((int)Mage::app()->getStore($_SERVER['MAGE_RUN_CODE'])->getId());
+   $store = Mage::app()->getDefaultStoreView();
+   // Gets the current store's id
+   $this->_storeId = $store->getStoreId();
+   
 ?>
 
 <?php if ($_collectionSize && $tmpHtml = $this->getChildHtml('block_category_above_collection')): ?>
@@ -195,6 +199,7 @@
 	<ul class="flex-row justify-between products-grid category-products-grid itemgrid itemgrid-adaptive itemgrid-<?php echo $columnCount; ?>col<?php if($gridClasses) echo $gridClasses; ?>">
 		<?php foreach ($_productCollection as $_product): ?>
 			<?php 
+                $_product->setStoreId($this->_storeId);
 				$productType=$_product->getTypeID();
 				$product=Mage::getModel('catalog/product')->load($_product->getId());
 				$eventStart = $product->getEventstartdate();
