@@ -607,7 +607,6 @@ main footer{
 }
 
 
-
 .checkout-types .btn-proceed-checkout.button{ 
 position: relative;
     /* border: none; */
@@ -615,7 +614,7 @@ position: relative;
     line-height: 43px;
     /* border-radius: 0px; */
     /* background: none; */
-    background-color: #747f8b;
+    background-color: #1C6117;
     color: #FFFFFF;
     display: inline-block;
     margin-right: 80px;
@@ -2030,6 +2029,55 @@ overflow: visible !important;
 	content: "\f14a"; 
  }
  .button.btn-checkout.opc-btn-checkout span{color:#fff;}
+
+.opc-index-index .opc-wrapper-opc .btn-checkout span,
+.opc-index-index .opc-wrapper-opc .btn-checkout span span {
+    background: #1C6117 !important;
+}
+.opc-index-index .opc-wrapper-opc .btn-checkout span span {
+    background: #1C6117 !important;
+}
+
+.opc-index-index .review-menu-block a.review-total, 
+.opc-index-index .opc-wrapper-opc .btn-checkout span, 
+.opc-index-index .opc-wrapper-opc .login-trigger 
+{
+    border:2px #8E8E8E solid;
+    border-radius: 6px;
+    cursor:pointer;
+}
+
+
+.opc-index-index .review-menu-block a.review-total span,
+.opc-index-index .opc-wrapper-opc .btn-checkout span span, 
+.opc-index-index .opc-wrapper-opc .login-trigger span,
+.opc-index-index .review-menu-block a.review-total:hover span,
+.opc-index-index .opc-wrapper-opc .btn-checkout:hover span span, 
+.opc-index-index .opc-wrapper-opc .login-trigger:hover span
+{
+    background-color: transparent !important;
+    border:none;
+}
+
+.opc-index-index .opc-wrapper-opc .login-trigger span:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 2em;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    transform: translate(0,0);
+    text-shadow: 2px 1px 1px rgba(30,30,30,.4);
+    z-index: 1;
+
+    position: absolute;
+    top: -5px;
+    left: -35px;
+    content: "\f090"
+}
+
 
 /*--WISHLIST_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 #wishlist-view-form .buttons-set.buttons-set2{

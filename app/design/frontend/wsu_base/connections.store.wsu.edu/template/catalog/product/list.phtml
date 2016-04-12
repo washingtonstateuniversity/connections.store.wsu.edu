@@ -12,10 +12,9 @@
     $isSecure = Mage::app()->getFrontController()->getRequest()->isSecure();
     $cookieUrl = rtrim(implode("",explode( ($isSecure?"https":"http") . "://",Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB))),'/');
     setcookie("last_cat", Mage::helper('core/url')->getCurrentUrl(), time()+3600,'/',$cookieUrl);
-   $store = Mage::app()->getDefaultStoreView();
-   // Gets the current store's id
-   $this->_storeId = $store->getStoreId();
-   echo "<!-- STOREID ".$this->_storeId."-->";
+    $store = Mage::app()->getDefaultStoreView();
+    // Gets the current store's id
+    $this->_storeId = $store->getStoreId();
 ?>
 
 <?php if ($_collectionSize && $tmpHtml = $this->getChildHtml('block_category_above_collection')): ?>
@@ -56,91 +55,8 @@
 	<?php if (!$hideToolbar): ?>
 		<?php echo $this->getToolbarHtml(); ?>
 	<?php endif; ?>
-	<?php if($this->getMode()!='grid'): //List mode ?>
-<!-- Lists -->
-	<?php
-		//Get list configuration array
-		$lc = $theme->getCfgGroup('category_list');
-		
-		//List classes
-		$listClasses = '';
-		if ($lc['hover_effect']) {
-			$listClasses = ' hover-effect';
-		}
+	<?php if($this->getMode()!='grid'): //List mode but we are not doing lists in this theme ?>
 
-	?>
-
-	<?php $_iterator = 0; ?>
-	<ul class="products-list<?php if($listClasses) echo $listClasses; ?>" id="products-list">
-	<?php foreach ($_productCollection as $_product): ?>
-			<?php 
-				$productType=$_product->getTypeID();
-				$product=Mage::getModel('catalog/product')->load($_product->getId());
-				$eventStart = $product->getEventstartdate();
-			?>
-	
-		<li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
-			<?php if ($tmpHtml = $this->getChildHtml('block_category_above_product')): ?>
-				<div class="block_category_above_product std"><?php echo $tmpHtml; ?></div>
-			<?php endif; ?>
-			<?php //Product Image ?>
-			<div class="product-image-wrapper grid12-4 mobile-grid-half">
-				<?php 
-					$imgLable = $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true); 
-				?>
-				<a href="<?=$_product->getProductUrl()?>" title="<?=$imgLable?>" class="product-image" style="max-width:<?php echo $imgWidth; ?>px;">
-					<img src="<?php echo $helpImg->getImg($_product, $imgWidth, $imgHeight, 'small_image'); ?>" alt="<?=$imgLable?>" />
-					<?php
-						if ($theme->getCfg('category/alt_image')) { 
-							echo $theme->getAltImgHtml($_product, $imgWidth, $imgHeight);
-						}
-						echo $helpLabels->getLabels($_product); //Product labels
-					?>
-				</a>
-			</div> <!-- end: product-image-wrapper -->
-			<div class="right-column grid12-3 mobile-grid-half">
-				<?php echo $this->getPriceHtml($_product, true) ?>
-				<?php if($_product->isSaleable()): ?>
-					<p><button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button bare btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
-				<?php else: ?>
-					<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
-				<?php endif; ?>
-				
-				<?php
-				if ($lc['addtolinks_simple']) {
-					echo $helpTemplate->getCategoryAddtoLinks($_product, $this->getAddToCompareUrl($_product), 'addto-gaps-right');
-				} else {
-					if($productType != 'event' && $_compareUrl=$this->getAddToCompareUrl($_product)){ 
-						?> <!-- <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li> --> <?php
-					} 
-					echo $helpTemplate->getCategoryAddtoLinksComplex($_product, $this->getAddToCompareUrl($_product), 'addto-gaps-right');
-				}
-				?>
-			</div>
-			<?php //Product description ?>
-			<div class="product-shop grid12-5 mobile-grid-half">
-				<div class="product-shop-inner">
-					<?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
-					<h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></a></h2>
-					<?php if($_product->getRatingSummary()): ?>
-						<?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
-					<?php endif; ?>
-					
-					<div class="desc std">
-						<?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
-						<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('Learn More') ?></a>
-					</div>
-				</div>
-			</div>
-				
-			
-			<?php if ($tmpHtml = $this->getChildHtml('block_category_below_product')): ?>
-				<div class="block_category_below_product std"><?php echo $tmpHtml; ?></div>
-			<?php endif; ?>
-		</li>
-	<?php endforeach; ?>
-	</ul>
-	<script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
 
 	<?php else: //Grid mode ?>
 <!-- Grinds -->
