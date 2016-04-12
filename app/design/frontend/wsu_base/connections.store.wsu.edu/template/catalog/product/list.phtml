@@ -199,9 +199,10 @@
 	<ul class="flex-row justify-between products-grid category-products-grid itemgrid itemgrid-adaptive itemgrid-<?php echo $columnCount; ?>col<?php if($gridClasses) echo $gridClasses; ?>">
 		<?php foreach ($_productCollection as $_product): ?>
 			<?php 
-                $_product->setStoreId($this->_storeId);
+                
 				$productType=$_product->getTypeID();
 				$product=Mage::getModel('catalog/product')->load($_product->getId());
+                $product->setStoreId($this->_storeId);
 				$eventStart = $product->getEventstartdate();
 			?>
 		
