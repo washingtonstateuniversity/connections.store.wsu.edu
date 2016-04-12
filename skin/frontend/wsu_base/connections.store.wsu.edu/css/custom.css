@@ -2077,7 +2077,9 @@ overflow: visible !important;
     left: -35px;
     content: "\f090"
 }
-
+.opc-wrapper-opc #opc-review-block{
+    z-index: 100001 !important;
+}
 
 /*--WISHLIST_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 #wishlist-view-form .buttons-set.buttons-set2{
