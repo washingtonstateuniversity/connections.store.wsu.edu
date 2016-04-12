@@ -1,7 +1,5 @@
 <?php
-    $store = Mage::app()->getDefaultStoreView();
-    // Gets the current store's id
-    $this->_storeId = $store->getStoreId();
+    $this->_storeId = Mage::app()->getStore()->getId();
     ?>
 
 
