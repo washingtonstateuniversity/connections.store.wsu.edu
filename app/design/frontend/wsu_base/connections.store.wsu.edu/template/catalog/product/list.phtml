@@ -201,8 +201,9 @@
 			<?php 
                 
 				$productType=$_product->getTypeID();
-				$product=Mage::getModel('catalog/product')->setStoreId($this->_storeId)->load($_product->getId());
-
+                
+				$product=Mage::getModel('catalog/product')->load($_product->getId());
+                $product->setStoreId($this->_storeId);
 				$eventStart = $product->getEventstartdate();
 			?>
 		
