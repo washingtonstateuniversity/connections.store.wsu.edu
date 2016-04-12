@@ -16,7 +16,7 @@
    $store = Mage::app()->getDefaultStoreView();
    // Gets the current store's id
    $this->_storeId = $store->getStoreId();
-   
+   echo "<!-- STOREID ".$this->_storeId."-->";
 ?>
 
 <?php if ($_collectionSize && $tmpHtml = $this->getChildHtml('block_category_above_collection')): ?>
