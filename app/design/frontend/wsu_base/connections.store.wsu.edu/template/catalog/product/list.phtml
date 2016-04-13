@@ -193,8 +193,8 @@
 							}
 						?>
 
-							<?php $cProduct = Mage::getModel('catalog/product')->load($_product->getId());?>
-							<?php if ($cProduct->getData('type_id') == "configurable") :?>
+
+							<?php if ($_product->getData('type_id') == "configurable") :?>
 								<?php $configAttributesArray = $_product->getTypeInstance(true)->getConfigurableAttributesAsArray($_product);
 								
 								//filter so only Size is left and select the values in the array
