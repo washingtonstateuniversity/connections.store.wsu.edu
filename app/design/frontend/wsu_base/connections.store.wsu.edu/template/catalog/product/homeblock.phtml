@@ -19,8 +19,8 @@
                 $productUrl = parse_url($productUrl);
                 $productUrl = rtrim ( Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB), "/" ).$productUrl["path"];
 			?>
-        <a href="<?=$productUrl?>" title="<?php echo $this->escapeHtml($_product->getName()) ?>" style="color:#ececec;font-size: 2em;margin-right: 1em;max-width: 15em;line-height: 1.3em;">
-        <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135) ?>" alt="<?php echo $this->escapeHtml($_product->getName()) ?>" style="width: 4.6em;height: 4.6em;float:left;margin-right:5px;background:#ececec;"/>
+        <a href="<?=$productUrl?>" title="<?php echo $this->escapeHtml($_product->getName()) ?>" class="homeblock_link">
+        <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135) ?>" alt="<?php echo $this->escapeHtml($_product->getName()) ?>" class="homeblock_img"/>
         <?php echo $this->escapeHtml($_product->getName()) ?>
         </a>
     <?php endforeach; ?>
