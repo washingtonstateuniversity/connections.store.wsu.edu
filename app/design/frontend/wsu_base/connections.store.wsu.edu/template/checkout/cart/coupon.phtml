@@ -24,6 +24,31 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+
+
+<form id="alumni_discount-coupon-form" action="<?php echo $this->getFormActionUrl() ?>" method="post">
+    <div class="discount">
+        <h2><span><?php echo $this->__('Alumni Save 10%!!') ?></span></h2>
+        <div class="discount-form">
+            <p><?php echo $this->__('All card-carrying WSU alumni can save at the Connections Store.  * discount excludes wine, cheese and sale items.') ?></p>
+            <input type="hidden" name="remove" id="alumni_remove-coupone" value="0" />
+            <div class="input-box">
+                <input class="input-text" id="alumni_coupon_code"  value="<?php echo $this->escapeHtml($this->getCouponCode()) ?>" />
+                
+             <input type="hidden" name="coupon_code" id="alumni_real" value="0" />   
+
+            </div>
+            <div class="buttons-set">
+                <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Apply Discount')) ?>" class="button" onclick="alumni_discountForm.submit(false)" value="<?php echo Mage::helper('core')->quoteEscape($this->__('Apply Discount')) ?>"><span><span><?php echo $this->__('Submit Alumni Number') ?></span></span></button>
+                <?php if(strlen($this->getCouponCode())): ?>
+                    &nbsp; <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Remove Discount')) ?>" class="button" onclick="alumni_discountForm.submit(true)" value="<?php echo Mage::helper('core')->quoteEscape($this->__('Remove Discount')) ?>"><span><span><?php echo $this->__('Remove Alumni Number') ?></span></span></button>
+                <?php endif;?>
+            </div>
+        </div>
+    </div>
+</form>
+
+
 <form id="discount-coupon-form" action="<?php echo $this->getFormActionUrl() ?>" method="post">
     <div class="discount">
         <h2><span><?php echo $this->__('Discount Codes') ?></span></h2>
@@ -43,6 +68,20 @@
     </div>
 </form>
 <script type="text/javascript">
+(function($){
+    $(document).ready(function(){
+        $("#alumni_coupon_code").on("keyup",function(){
+            var code = $(this).val();
+            if(code.length>0){
+                $("#alumni_real").val("alumni102948274sjs1");
+                $("#discount-coupon-form").fadeOut();
+            }else{
+                $("#alumni_real").val("");
+                $("#discount-coupon-form").fadeIn();
+            }
+        });
+    });
+ }(jQuery));
 //<![CDATA[
 var discountForm = new VarienForm('discount-coupon-form');
 discountForm.submit = function (isRemove) {
@@ -52,6 +91,17 @@ discountForm.submit = function (isRemove) {
     } else {
         $('coupon_code').addClassName('required-entry');
         $('remove-coupone').value = "0";
+    }
+    return VarienForm.prototype.submit.bind(discountForm)();
+}
+var alumni_discountForm = new VarienForm('alumni_discount-coupon-form');
+alumni_discountForm.submit = function (isRemove) {
+    if (isRemove) {
+        $('alumni_coupon_code').removeClassName('required-entry');
+        $('alumni_remove-coupone').value = "1";
+    } else {
+        $('alumni_coupon_code').addClassName('required-entry');
+        $('alumni_remove-coupone').value = "0";
     }
     return VarienForm.prototype.submit.bind(discountForm)();
 }
