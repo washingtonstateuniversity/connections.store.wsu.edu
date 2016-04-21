@@ -1,9 +1,9 @@
-<form id="alumni_discount-coupon-form" action="<?php echo $this->getFormActionUrl() ?>" method="post" style="max-width: 31%;">
-    <div class="discount" style="max-width: 31%;">
+<form id="alumni_discount-coupon-form" action="<?php echo $this->getFormActionUrl() ?>" method="post" style="max-width: 69%;">
+    <div class="discount" >
         <h2><span><?php echo $this->__('Alumni Save 10%!!') ?></span></h2>
         <div class="discount-form">
-            <img src="/media/store-media/connections.store.wsu.edu/skin/alumni-cards.png" style="float:right;max-width:150px; width:auto;" />
-            <p><?php echo $this->__('All card-carrying WSU alumni can save at the Connections Store.  ') ?></p>
+            
+            <p><img src="/media/store-media/connections.store.wsu.edu/skin/alumni-cards.png" style="float:right;max-width:150px; width:auto;" /><?php echo $this->__('All card-carrying WSU alumni can save at the Connections Store.  ') ?></p>
             <input type="hidden" name="remove" id="alumni_remove-coupone" value="0" />
             <div class="input-box">
                 <input class="input-text" id="alumni_coupon_code"  value="<?php echo $this->escapeHtml($this->getCouponCode()) ?>" />
@@ -17,7 +17,7 @@
                     &nbsp; <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Remove Discount')) ?>" class="button" onclick="alumni_discountForm.submit(true)" value="<?php echo Mage::helper('core')->quoteEscape($this->__('Remove Discount')) ?>"><span><span><?php echo $this->__('Remove  Number') ?></span></span></button>
                 <?php endif;?>
             </div>
-            <p><?php echo $this->__('All card-carrying WSU alumni can save at the Connections Store.  * discount excludes wine, cheese and sale items.') ?></p>
+            <p style="font-size: 0.8em;"><?php echo $this->__('* discount excludes wine, cheese and sale items.') ?></p>
         </div>
     </div>
 </form>
