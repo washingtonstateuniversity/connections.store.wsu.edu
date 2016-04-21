@@ -1,7 +1,9 @@
 (function( window, $, WSU ){ 
 
 	$(document).ready(function(){
-			
+		$(".spine-sitenav .parent a span").on("click",function(){
+            $(this).closest("a").trigger("click");
+        });
 		$('.more-views a').lightbox({
 			gallery: {
 				enabled: true,
