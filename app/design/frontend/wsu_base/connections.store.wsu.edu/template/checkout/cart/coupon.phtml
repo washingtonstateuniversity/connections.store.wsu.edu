@@ -6,7 +6,7 @@
             <p style="    padding-bottom: 0px;"><img src="/media/store-media/connections.store.wsu.edu/skin/alumni-cards.png" style="float:right;max-width:150px; width:auto;" /><?php echo $this->__('All card-carrying WSU alumni can save at the Connections Store.  ') ?></p>
             <input type="hidden" name="remove" id="alumni_remove-coupone" value="0" />
             <div class="input-box">
-                <input class="input-text" id="alumni_coupon_code"  value="" />
+                <input type="number" class="input-text" id="alumni_coupon_code"  value="" />
                 
              <input type="hidden" name="coupon_code" id="alumni_real" value="<?php echo $this->escapeHtml($this->getCouponCode()) ?>" />   
 
