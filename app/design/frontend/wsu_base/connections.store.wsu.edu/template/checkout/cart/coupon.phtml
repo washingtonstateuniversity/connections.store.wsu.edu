@@ -44,6 +44,14 @@
 <script type="text/javascript">
 (function($){
     $(document).ready(function(){
+        
+        var mess = $(".success-msg span").text();
+        if(mess.indexOf("alumni102948274sjs1")>0){
+               $(".success-msg span").text('Your Alumni discount was applied.')
+        }
+        
+        
+        
         $("#alumni_coupon_code").on("keyup",function(){
             var code = $(this).val();
             if(code.length>0){
