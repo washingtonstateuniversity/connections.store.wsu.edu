@@ -6,15 +6,17 @@
             <p><img src="/media/store-media/connections.store.wsu.edu/skin/alumni-cards.png" style="float:right;max-width:150px; width:auto;" /><?php echo $this->__('All card-carrying WSU alumni can save at the Connections Store.  ') ?></p>
             <input type="hidden" name="remove" id="alumni_remove-coupone" value="0" />
             <div class="input-box">
-                <input class="input-text" id="alumni_coupon_code"  value="<?php echo $this->escapeHtml($this->getCouponCode()) ?>" />
+                <input class="input-text" id="alumni_coupon_code"  value="" />
                 
-             <input type="hidden" name="coupon_code" id="alumni_real" value="0" />   
+             <input type="hidden" name="coupon_code" id="alumni_real" value="<?php echo $this->escapeHtml($this->getCouponCode()) ?>" />   
 
             </div>
             <div class="buttons-set">
-                <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Apply Discount')) ?>" class="button" onclick="alumni_discountForm.submit(false)" value="<?php echo Mage::helper('core')->quoteEscape($this->__('Apply Discount')) ?>"><span><span><?php echo $this->__('Submit Number') ?></span></span></button>
+                
                 <?php if(strlen($this->getCouponCode())): ?>
                     &nbsp; <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Remove Discount')) ?>" class="button" onclick="alumni_discountForm.submit(true)" value="<?php echo Mage::helper('core')->quoteEscape($this->__('Remove Discount')) ?>"><span><span><?php echo $this->__('Remove  Number') ?></span></span></button>
+                 <?php else:?>  
+                 <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Apply Discount')) ?>" class="button" onclick="alumni_discountForm.submit(false)" value="<?php echo Mage::helper('core')->quoteEscape($this->__('Apply Discount')) ?>"><span><span><?php echo $this->__('Submit Number') ?></span></span></button> 
                 <?php endif;?>
             </div>
             <p style="font-size: 0.8em;"><?php echo $this->__('* discount excludes wine, cheese and sale items.') ?></p>
