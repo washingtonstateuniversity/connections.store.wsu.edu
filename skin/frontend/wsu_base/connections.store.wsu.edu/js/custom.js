@@ -99,7 +99,14 @@
 		});
 		
 		
-		
+		if($("#shopping-cart-totals-table").length){
+            $("#shopping-cart-totals-table td").each(function(){
+                 var text = $(this).text();
+                 if(text.indexOf("Alumni Discount")>0){
+                     $(this).closest("tr").remove();
+                 }
+             });
+        }
 		
 		
 		$('.inline-config-ok').on('click', function(e){
