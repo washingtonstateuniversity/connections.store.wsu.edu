@@ -6,7 +6,11 @@
         });
         $("a:not([href*='#'])").on("click",function(){
             $(".fadeInRight").addClass("reverse");
+            $(".fadeInLeft").addClass("reverse");
+            $(".fadeInUp").addClass("reverse");
+            $(".fadeInDown").addClass("reverse");
             $(".fadeIn").addClass("reverse");
+            $(".catalog-category-view").addClass("reverse");
         });
         
         
