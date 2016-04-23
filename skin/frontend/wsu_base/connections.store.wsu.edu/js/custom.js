@@ -4,6 +4,15 @@
 		$(".spine-sitenav .parent a span").on("click",function(){
             $(this).closest("a").trigger("click");
         });
+        $("a:not([href*='#'])").on("click",function(){
+            $(".fadeInRight").addClass("reverse");
+            $(".fadeIn").addClass("reverse");
+        });
+        
+        
+        reverse
+        
+        
 		$('.more-views a').lightbox({
 			gallery: {
 				enabled: true,
