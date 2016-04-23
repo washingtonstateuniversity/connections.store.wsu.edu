@@ -4,17 +4,16 @@
 		$(".spine-sitenav .parent a span").on("click",function(){
             $(this).closest("a").trigger("click");
         });
-        $("a:not([href*='#'])").on("click",function(){
+
+        $(window).on('popstate', function(e){
             $(".fadeInRight").addClass("reverse");
             $(".fadeInLeft").addClass("reverse");
             $(".fadeInUp").addClass("reverse");
             $(".fadeInDown").addClass("reverse");
             $(".fadeIn").addClass("reverse");
             $(".catalog-category-view").addClass("reverse");
-        });
-        
-        
-        reverse
+         });
+
         
         
 		$('.more-views a').lightbox({
