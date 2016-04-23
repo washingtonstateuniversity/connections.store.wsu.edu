@@ -5,7 +5,7 @@
             $(this).closest("a").trigger("click");
         });
 
-        $(window).on('popstate', function(e){
+        $(window).on("beforeunload", function() {
             $(".fadeInRight").addClass("reverse");
             $(".fadeInLeft").addClass("reverse");
             $(".fadeInUp").addClass("reverse");
