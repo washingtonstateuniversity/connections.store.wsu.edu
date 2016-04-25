@@ -43,7 +43,7 @@
 					//jObj.remove();
 					$('body').css({overflow:"auto"});
 				}
-			},
+			}
 		});
 		$.each($('.swatch-button'),function(idx,item){
 			var tar =$(item);
