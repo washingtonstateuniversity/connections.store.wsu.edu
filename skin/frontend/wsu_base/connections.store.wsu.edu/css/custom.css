@@ -1948,10 +1948,10 @@ span.size-option:hover{
 .opc-wrapper-opc{
 overflow: visible !important;	
 }
-[class*="-block"] {
+.opc-wrapper-opc [class*="-block"] {
     background-color: #eff0f1;
 }
- .opc-wrapper-opc [class*="-block"] h3 {
+.opc-wrapper-opc [class*="-block"] h3 {
     background-color: #981E32;
     /* margin: 5px; */
     padding: 20px 10px 10px 10px;
@@ -2046,6 +2046,18 @@ overflow: visible !important;
 .opc-index-index .opc-wrapper-opc .btn-checkout span span {
     background: #1C6117 !important;
 }
+
+.opc-index-index .opc-wrapper-opc .btn-checkout:disabled{
+    cursor:default;
+}
+.opc-index-index .opc-wrapper-opc .btn-checkout:disabled  span,
+.opc-index-index .opc-wrapper-opc .btn-checkout:disabled  span span {
+    background: #646464 !important;
+}
+.opc-index-index .opc-wrapper-opc .btn-checkout:disabled  span span {
+    background: #646464 !important;
+}
+
 
 .opc-index-index .review-menu-block a.review-total, 
 .opc-index-index .opc-wrapper-opc .btn-checkout span, 
