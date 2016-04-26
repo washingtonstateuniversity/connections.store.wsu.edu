@@ -28,12 +28,12 @@
 				<action method="makeCompareLink"></action>
 			</block>
 		</reference>
-		    <reference name="root">
+		    <!--<reference name="root">
 				<action method="unsetChild"><name>breadcrumbs</name></action>
 				<reference name="content">
 					<action method="insert"><child>breadcrumbs</child></action>
 				</reference>
-			</reference>
+			</reference>-->
 	</default>
 <!-- HOME PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 	<cms_index_index>
