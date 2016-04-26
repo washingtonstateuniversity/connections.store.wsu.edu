@@ -1643,7 +1643,7 @@ span.size-option:hover{
 .sharing-links{ display: none;}
 .catalog-product-view .add-to-links{float:none; list-style:none; display:block;}
 .product-view .product-shop .add-to-links{ text-align: left; }
-.catalog-product-view .add-to-links li{ background:none; padding: 0px; margin-left: 0px !important; margin-right: 12px; }
+.catalog-product-view .add-to-links li{ background:none; padding: 0px; margin-left: 0px !important; margin-right: 12px;    display: inline; }
 .catalog-product-view .add-to-links li .button{
     /*background:#E4E4E4;*/
     }
