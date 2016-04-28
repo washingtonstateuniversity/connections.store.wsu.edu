@@ -17,17 +17,10 @@
     $this->_storeId = $store->getStoreId();
 ?>
 
-<?php if ($_collectionSize && $tmpHtml = $this->getChildHtml('block_category_above_collection')): ?>
-	<div class="block_category_above_collection std"><?php echo $tmpHtml; ?></div>
-<?php endif; ?>
 
-<?php if(!$_collectionSize): ?><?php
-	 if ($tmpHtml = $this->getChildHtml('block_category_above_empty_collection')) {
-		?><div class="block_category_above_empty_collection std"><?php echo $tmpHtml; ?></div><?php
-	 } else {
-		?><p class="note-msg empty-catalog"><?php echo $this->__('There are no products matching the selection.') ?></p><?php
-	 }
-?><?php else: ?>
+<?php if(!$_collectionSize): ?>
+<p class="note-msg empty-catalog"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php else: ?>
 
 <?php
 	$_helper = $this->helper('catalog/output');
@@ -63,55 +56,9 @@
 	<?php
 		//Get grid configuration array
 		$gc = $theme->getCfgGroup('category_grid');
-		
-		//Get number of columns (from parameter or from theme config)
-		$columnCount = 3;
-		if ($this->getGridColumnCount()) {
-			$columnCount = $this->getGridColumnCount();
-		} else {
-			$columnCount = $gc['column_count'];
-		}
-
-		//Grid classes
-		$gridClasses = '';
-		if ($gc['display_name'] == 2 && $gc['display_name_single_line'] == true) {
-			$gridClasses .= ' single-line-name';
-		}
-		if ($gc['centered']) {
-			$gridClasses .= ' centered';
-		}
-		if ($gc['hover_effect']) {
-			$gridClasses .= ' hover-effect';
-		}
-		if ($gc['equal_height']) {
-			$gridClasses .= ' equal-height';
-		}
-
-		//Size of grid elements
-		if ($gc['elements_size']) {
-			$gridClasses .= ' size-' . $gc['elements_size'];
-		} else {
-			//Calculate size based on number of columns
-			if ($columnCount >= 6) {
-				$gridClasses .= ' size-xs';
-			} elseif ($columnCount >= 4) {
-				$gridClasses .= ' size-s';
-			}
-		}
-
-		//Container "actions" at the bottom of the grid item stores button and add-to links
-		//If at least one of those elements was set as "Display on hover" but no element was set as "Display":
-		//apply appropriate classes to the container.
-		$actionsClasses = '';
-		if ($gc['display_addtocart'] == 1 || ($gc['display_addtolinks'] == 1 && !$gc['addtolinks_simple'])) {
-			$actionsClasses = ' display-onhover';
-		}
-		if ($gc['display_addtocart'] == 2 || ($gc['display_addtolinks'] == 2 && !$gc['addtolinks_simple'])) {
-			$actionsClasses = '';
-		}
 	?>
 	
-	<ul class="flex-row justify-between products-grid category-products-grid itemgrid itemgrid-adaptive itemgrid-<?php echo $columnCount; ?>col<?php if($gridClasses) echo $gridClasses; ?>">
+	<ul class="flex-row justify-between products-grid category-products-grid ">
 		<?php foreach ($_productCollection as $_product): ?>
 			<?php 
                 
@@ -126,12 +73,8 @@
 			?>
 		
 			<li class="item">
-				<?php if ($tmpHtml = $this->getChildHtml('block_category_above_product')): ?>
-					<div class="block_category_above_product std"><?php echo $tmpHtml; ?></div>
-				<?php endif; ?>
 
-				    
-				<div class="product-image-wrapper" style="max-width:220<?php //echo $imgWidth; ?>px;">
+				<div class="product-image-wrapper" style="max-width:220px;">
 					<?php 
 						$imgLable = $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true); 
 					?>
@@ -145,58 +88,7 @@
 							echo "<span class='promo_lables'>" . $helpLabels->getLabels($_product) . '</span>'; //Product labels 
 						?>
 					</a>
-					<div class="actions clearer<?php echo $actionsClasses; ?>">
-						<?php 
-						
-						if($_product->getRatingSummary()) {
-							if ($gc['display_rating'] == 1){ //Display on hover 
-								?><div class="display-onhover"><?php echo $this->getReviewsSummaryHtml($_product, 'short') ?></div><?php
-							}elseif ($gc['display_rating'] == 2){ //Always display 
-								echo $this->getReviewsSummaryHtml($_product, 'short');
-							}
-						}
-						
-						?>
-						
-						
-						<?php //Cart button ?>
-						
-						
-						<?php //Add-to links
-							if ($gc['display_addtolinks'] != 0 && !$gc['addtolinks_simple'])  {
-								echo $helpTemplate->getCategoryAddtoLinks($_product, $this->getAddToCompareUrl($_product), 'addto-gaps-right addto-texticons');
-							}
-						?>
-						
-						<?php
-						//If at least one element was set as "Display on hover" but no element was set as "Display":
-							//aggregate classes from those elements and apply them to the "actions" container.
-							$actionsClasses = '';
-							if ($gc['display_addtocart'] == 1 || ($gc['display_addtolinks'] == 1 && !$gc['addtolinks_simple'])) {
-								$actionsClasses = ' display-onhover';
-							}
-							if ($gc['display_addtocart'] == 2 || ($gc['display_addtolinks'] == 2 && !$gc['addtolinks_simple']))  {
-								$actionsClasses = '';
-							}
-							 //Add-to links
-							if ($gc['display_addtolinks'] != 0 && $gc['addtolinks_simple']) {
-								
-								/*if($productType != 'event' && $_compareUrl=$this->getAddToCompareUrl($_product)) { 
-									?><!--<li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li> --><?php 
-								} */
-								
-								if ($gc['display_addtolinks'] == 1) { //Display on hover
-									echo $helpTemplate->getCategoryAddtoLinksComplex_2($_product, $this->getAddToCompareUrl($_product), 'addto-links-icons addto-onimage display-onhover');
-								} else { //Always display
-									echo $helpTemplate->getCategoryAddtoLinksComplex_2($_product, $this->getAddToCompareUrl($_product), 'addto-links-icons addto-onimage');
-								}
-							}
-						?>
-
-
-							
-						
-						
+					<div class="actions">
 						
 						<?php
 							// Provides extra blocks on which to hang some features for products in the list
@@ -224,31 +116,12 @@
 								<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
 							<?php endif; ?>
 						<?php endif; ?>
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
+
 					</div> <!-- end: actions -->
 				</div> <!-- end: product-image-wrapper -->
-				<div class="price_and_action <?=($gc['display_price'] == 1 ? "price_visible" : "")?>">
+				<div class="price_and_action">
 					<?php
-						
-						if ($gc['display_price'] == 1) { echo '<div class="display-onhover">'; }
 						echo $this->getPriceHtml($_product, true);
-						if ($gc['display_price'] == 1){ echo '</div>'; }
 					?>
 					
 					<h2 class="product-name">
@@ -258,11 +131,7 @@
 					</a>
 				</h2>
 				</div>
-				
 
-				<?php if ($tmpHtml = $this->getChildHtml('block_category_below_product')): ?>
-					<div class="block_category_below_product std"><?php echo $tmpHtml; ?></div>
-				<?php endif; ?>
 			</li>
 		<?php endforeach; ?>
         <!-- keep flexbox in check on wrap -->
@@ -285,8 +154,4 @@
 		</div>
 	<?php endif; ?>
 </div>
-<?php endif; ?>
-
-<?php if ($_collectionSize && $tmpHtml = $this->getChildHtml('block_category_below_collection')): ?>
-	<div class="block_category_below_collection std"><?php echo $tmpHtml; ?></div>
 <?php endif; ?>
