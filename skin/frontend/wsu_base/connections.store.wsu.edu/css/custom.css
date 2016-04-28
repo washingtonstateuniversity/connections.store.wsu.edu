@@ -1138,6 +1138,8 @@ span.paged_label {
     font-style: italic;
     vertical-align: middle;
     margin-left: 15px;
+    text-shadow: 0px 0px 1px #fff;
+    font-weight: 700;
 }
 
 span.match_count {
