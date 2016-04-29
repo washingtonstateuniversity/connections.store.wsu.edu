@@ -71,29 +71,27 @@
             //to which we have it cued in the base css
             $effects = 'pg-animate pg-'.$animate_type.' pg-'.$delay.' pg-'.$duration;
         }
-        
+        $baseurl = rtrim ( Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB), "/" );
         
 	?>
 	
 	<ul class="<?=$_layout["category-products-grid"]["type"]?> <?=$_layout["category-products-grid"]["spacing"]?> effects <?=$effects?>  products-grid category-products-grid itemgrid itemgrid-adaptive itemgrid-3col centered hover-effect equal-height">
 		<?php foreach ($_productCollection as $_product): ?>
 			<?php 
+                //echo "<h1>".$_product->getProductUrl()."</h1>";
+				//$productType=$_product->getTypeID();
+				//$product=Mage::getModel('catalog/product')->load($_product->getId());
                 
-				$productType=$_product->getTypeID();
-				$product=Mage::getModel('catalog/product')->load($_product->getId());
-                
-				$eventStart = $product->getEventstartdate();
-                
-                $productUrl = $product->getProductUrl();
+                $productUrl = $_product->getProductUrl();//$product->getProductUrl();
                 $productUrl = parse_url($productUrl);
-                $productUrl = rtrim ( Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB), "/" ).$productUrl["path"];
+                $productUrl = $baseurl.$productUrl["path"];
 			?>
 		
 			<li class="item  <?=$_layout["products-grid-item"]["type"]?>">
 
 				<div class="product-image-wrapper <?=$_layout["products-grid-item-image"]["order"]?>" style="max-width:220px;">
 					<?php 
-						$imgLable = $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true); 
+						$imgLable = $this->getImageLabel($_product, 'small_image');//$this->stripTags($this->getImageLabel($_product, 'small_image'), null, true); 
 					?>
 					<a href="<?=$productUrl?>" title="click for details about:
 <?=$imgLable?>" class="product-image">
