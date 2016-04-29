@@ -14,7 +14,20 @@
             $(".catalog-category-view").addClass("reverse");
          });
 
-        
+        var icons = {
+          header: "ui-icon-circle-arrow-e",
+          activeHeader: "ui-icon-circle-arrow-s"
+        };
+
+        $( ".accordion" ).each(function(){//idx, val){
+            $(this).accordion({
+      			collapsible: true,
+                icons: icons,
+                heightStyle: "content",
+                header: "h3",
+                active: false
+    		});
+        });
         
 		$('.more-views a').lightbox({
 			gallery: {
