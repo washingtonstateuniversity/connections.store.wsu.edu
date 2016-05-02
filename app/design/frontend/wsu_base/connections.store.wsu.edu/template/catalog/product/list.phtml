@@ -27,33 +27,30 @@
 	$theme = $this->helper('wsu_themecontrol');
 	$helpLabels = $this->helper('wsu_themecontrol/labels');
 	$helpTemplate = $this->helper('wsu_themecontrol/template');
-	$helpImg = $this->helper('wsu_wsu/image');
+	//$helpImg = $this->helper('wsu_wsu/image');
 	
     $_layout =  $this->helper('wsu_themecontrol/layout')->getLayoutOptions($this);
 	
 	//Default image size
-	$imgWidth = 295;
-	$imgHeight = 295;
+	//$imgWidth = 295;
+	//$imgHeight = 295;
 	
 	//Aspect ratio settings
-	if ($theme->getCfg('category/aspect_ratio')) {
+	/*if ($theme->getCfg('category/aspect_ratio')) {
 		$imgHeight = 0; //Height will be computed automatically (based on width) to keep the aspect ratio
-	}
+	}*/
 	//Hide toolbar
 	$hideToolbar = false;
-	if ($this->getHideToolbar()) {
+	/*if ($this->getHideToolbar()) {
 		$hideToolbar = true;
-	}
+	}*/
 ?>
 
 <div class="category-products">
 	<?php if (!$hideToolbar): ?>
 		<?php echo $this->getToolbarHtml(); ?>
 	<?php endif; ?>
-	<?php if($this->getMode()!='grid'): //List mode but we are not doing lists in this theme ?>
-
-
-	<?php else: //Grid mode ?>
+	<?php if($this->getMode()=='grid'): //no List mode in this theme ?>
 <!-- Grinds -->
 	<?php
 		//Get grid configuration array
@@ -85,6 +82,7 @@
                 $productUrl = $_product->getProductUrl();//$product->getProductUrl();
                 $productUrl = parse_url($productUrl);
                 $productUrl = $baseurl.$productUrl["path"];
+                $image = $this->helper('catalog/image')->init($_product, 'small_image')->resize(295);//$helpImg->getImg($_product, $imgWidth, $imgHeight, 'small_image')
 			?>
 		
 			<li class="item  <?=$_layout["products-grid-item"]["type"]?>">
@@ -93,13 +91,12 @@
 					<?php 
 						$imgLable = $this->getImageLabel($_product, 'small_image');//$this->stripTags($this->getImageLabel($_product, 'small_image'), null, true); 
 					?>
-					<a href="<?=$productUrl?>" title="click for details about:
-<?=$imgLable?>" class="product-image">
-						<img src="<?php echo $helpImg->getImg($_product, $imgWidth, $imgHeight, 'small_image'); ?>" alt="<?=$imgLable?>" />
+					<a href="<?=$productUrl?>" title="click for details about: <?=$imgLable?>" class="product-image">
+						<img src="<?php echo $image; ?>" alt="<?=$imgLable?>" />
 						<?php
-							if ($theme->getCfg('category/alt_image')) {
+							/*if ($theme->getCfg('category/alt_image')) {
 								echo $theme->getAltImgHtml($_product, $imgWidth, $imgHeight);
-							}
+							}*/
 							echo "<span class='promo_lables'>" . $helpLabels->getLabels($_product) . '</span>'; //Product labels 
 						?>
 					</a>
