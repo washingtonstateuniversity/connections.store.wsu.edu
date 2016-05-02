@@ -83,6 +83,7 @@
                 $productUrl = parse_url($productUrl);
                 $productUrl = $baseurl.$productUrl["path"];
                 $image = $this->helper('catalog/image')->init($_product, 'small_image')->resize(295);//$helpImg->getImg($_product, $imgWidth, $imgHeight, 'small_image')
+                $name = $_product->getName();
 			?>
 		
 			<li class="item  <?=$_layout["products-grid-item"]["type"]?>">
@@ -121,12 +122,9 @@
 							}*/
 						?>	
 						<?php if ($gc['display_addtocart'] != 0): ?>
-							<?php if ($_product->isSaleable()): ?>
-							
+
 							<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="inline-config-ok button bare btn-cart" data-baseurl="<?=MAGE::helper('checkout/cart')->getAddUrl($_product)?>"><span><?php echo $this->__('Add to Cart') ?></span></button>
-							<?php else: ?>
-								<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
-							<?php endif; ?>
+
 						<?php endif; ?>
 
 					</div> <!-- end: actions -->
@@ -137,9 +135,8 @@
 					?>
 					
 					<h2 class="product-name <?=$_layout["products-grid-item-name"]["order"]?>">
-					<a href="<?=$productUrl?>" title="click for details about:
-<?php echo $this->stripTags($_product->getName(), null, true) ?>">
-						<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
+					<a href="<?=$productUrl?>" title="click for details about: <?php echo $name;//this->stripTags($_product->getName(), null, true) ?>">
+						<?php echo $name;//$_helper->productAttribute($_product, $_product->getName(), 'name') ?>
 					</a>
 				</h2>
 				</div>
