@@ -12,6 +12,13 @@ $padding_flanks			= $theme->getCfgLayout('product_view/padding_flanks');
 $padding_ends			= $theme->getCfgLayout('product_view/padding_ends');
 
 ?>
+
+<?php
+//$_layout =  $this->helper('wsu_themecontrol/layout')->getLayoutOptions($this);
+?>
+
+
+
 <div class="designer_hr"></div>
 <?php $_product = $this->getProduct(); ?>
 <script type="text/javascript">
@@ -35,7 +42,9 @@ $padding_ends			= $theme->getCfgLayout('product_view/padding_ends');
 				<?php echo $this->getChildChildHtml('containerPrice', '', true, true) ?>
 			<?php endif;?>
 			<?php echo $this->getTierPriceHtml() ?>
-			<?php if ($_product->getShortDescription()):?>
+			<?php 
+            $short = $_product->getShortDescription();
+            if ($short):?>
                 <div class="short-description">
                     <h2><?php echo $this->__('Quick Overview') ?></h2>
                     <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
@@ -46,7 +55,7 @@ $padding_ends			= $theme->getCfgLayout('product_view/padding_ends');
                 <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
             <?php endif; ?>
 
-            <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+            <?php //echo $this->getReviewsSummaryHtml($_product, false, true)?>
 			-->
             <?php echo $this->getChildHtml('alert_urls') ?>
             <?php echo $this->getChildHtml('product_type_data') ?>
@@ -149,6 +158,21 @@ $padding_ends			= $theme->getCfgLayout('product_view/padding_ends');
     </div>
 
     <div class="product-collateral">
+            <?php 
+            $full = $_product->getDescription();
+            if ($full && $full != $short):?>
+                <?php
+                    $description_class="";
+                    //$description_class.=$_layout["description_area"]["order"]." ";
+                    ?>
+                <div class="description <?=$description_class?>">
+                    <h2><?php echo $this->__('Full Overview') ?></h2>
+                    <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'description') ?></div>
+                </div>
+            <?php endif;?>
+    
+    
+    
         <?php echo $this->getChildHtml('info_tabs') ?>
         <?php echo $this->getChildHtml('product_additional_data') ?>
     </div>
