@@ -1,9 +1,9 @@
 (function( window, $, WSU ){ 
 
 	$(document).ready(function(){
-		$(".spine-sitenav .parent a span").on("click",function(){
+		/*$(".spine-sitenav .parent a span").on("click",function(){
             $(this).closest("a").trigger("click");
-        });
+        });*/
 
         $(window).on("beforeunload", function() {
             $(".fadeInRight").addClass("reverse");
