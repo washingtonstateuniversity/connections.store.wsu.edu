@@ -82,7 +82,19 @@ $padding_ends			= $theme->getCfgLayout('product_view/padding_ends');
                 <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
 				</div>
             <?php endif;?>
-
+<?php 
+            $full = $_product->getDescription();
+            if ($full && $full != $short):?>
+                <?php
+                    $description_class="";
+                    //$description_class.=$_layout["description_area"]["order"]." ";
+                    ?>
+                <div class="description <?=$description_class?>">
+                    <hr style="height:1px;margin-bottom:0px">
+                    <h2 style=" font-size: 1.4em;"><?php echo $this->__('Full Overview') ?></h2>
+                    <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'description') ?></div>
+                </div>
+            <?php endif;?>
         </div>
 
         <div class="product-img-box column one">
@@ -158,18 +170,7 @@ $padding_ends			= $theme->getCfgLayout('product_view/padding_ends');
     </div>
 
     <div class="product-collateral">
-            <?php 
-            $full = $_product->getDescription();
-            if ($full && $full != $short):?>
-                <?php
-                    $description_class="";
-                    //$description_class.=$_layout["description_area"]["order"]." ";
-                    ?>
-                <div class="description <?=$description_class?>">
-                    <h2><?php echo $this->__('Full Overview') ?></h2>
-                    <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'description') ?></div>
-                </div>
-            <?php endif;?>
+            
     
     
     
