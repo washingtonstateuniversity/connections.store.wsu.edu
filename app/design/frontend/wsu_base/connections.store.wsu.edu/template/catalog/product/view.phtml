@@ -43,7 +43,7 @@ $padding_ends			= $theme->getCfgLayout('product_view/padding_ends');
 			<?php endif;?>
 			<?php echo $this->getTierPriceHtml() ?>
 			<?php 
-            $short = $_product->getShortDescription();
+            $short = trim($_product->getShortDescription());
             if ($short):?>
                 <div class="short-description">
                     <h2><?php echo $this->__('Quick Overview') ?></h2>
@@ -83,7 +83,7 @@ $padding_ends			= $theme->getCfgLayout('product_view/padding_ends');
 				</div>
             <?php endif;?>
 <?php 
-            $full = $_product->getDescription();
+            $full = trim($_product->getDescription());
             if ($full && $full != $short):?>
                 <?php
                     $description_class="";
