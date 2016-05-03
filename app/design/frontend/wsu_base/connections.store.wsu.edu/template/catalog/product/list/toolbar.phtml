@@ -8,7 +8,7 @@
         $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
     }
 ?>
-<div class="cat_list_header_top">
+<div class="cat_list_header_top flex-row wrap">
 	<?=$this->getChildHtml('breadcrumbs') ?>
 	<div class="sorting_area ">
 		<h4 class="sorting_button <?=$this->getCurrentDirection();?>">
