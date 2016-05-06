@@ -68,7 +68,7 @@
             //to which we have it cued in the base css
             $effects = 'pg-animate pg-'.$animate_type.' pg-'.$delay.' pg-'.$duration;
         }
-        //$baseurl = rtrim ( Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB), "/" );
+        $baseurl = rtrim ( Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB), "/" );
         
 	?>
 	
@@ -80,8 +80,8 @@
 				//$product=Mage::getModel('catalog/product')->load($_product->getId());
                 
                 $productUrl = $_product->getProductUrl();//$product->getProductUrl();
-                //$productUrl = parse_url($productUrl);
-                //$productUrl = $baseurl.$productUrl["path"];
+                $productUrl = parse_url($productUrl);
+                $productUrl = $baseurl.$productUrl["path"];
                 $image = $this->helper('catalog/image')->init($_product, 'small_image')->resize(295);//$helpImg->getImg($_product, $imgWidth, $imgHeight, 'small_image')
                 $name = $_product->getName();
 			?>
