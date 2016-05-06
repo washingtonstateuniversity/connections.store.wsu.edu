@@ -159,7 +159,7 @@
 
 	<?php if (!$hideToolbar): ?>
 		<div class="toolbar-bottom">
-			<?php echo $this->getToolbarBlock()->setTemplate('catalog/product/list/toolbar_bottom.phtml')->toHtml();?>
+			<?=$this->getChildHtml('toolbar_bottom')?>
 		</div>
 	<?php endif; ?>
 </div>
