@@ -2123,7 +2123,9 @@ overflow: visible !important;
     font-size: 2em;
 }
 
-
+#product_comparison .product-image img{
+    height: auto;
+}
 
 
 /*--WISHLIST_VIEW--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
