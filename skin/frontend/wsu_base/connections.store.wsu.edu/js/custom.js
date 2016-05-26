@@ -5,6 +5,14 @@
             $(this).closest("a").trigger("click");
         });*/
 
+        $("#configurable_swatch_color li a").each(function(){
+            var color = $(this).attr("name");
+            $(".more-views li a[title='"+color+"']").closest("li").remove();
+        });
+
+
+
+
         $(window).on("beforeunload", function() {
             $(".fadeInRight").addClass("reverse");
             $(".fadeInLeft").addClass("reverse");
