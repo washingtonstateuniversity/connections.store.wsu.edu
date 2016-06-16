@@ -1,0 +1,35 @@
+<?php
+    $store = Mage::app()->getDefaultStoreView();
+    // Gets the current store's id
+    $this->_storeId = $store->getStoreId();
+    $products_skus = $this->getData('products_skus');
+$productSkus = explode(',',$products_skus);
+$_products=Mage::getModel('catalog/product')->getCollection()
+       ->addAttributeToFilter('sku', array('in' => $productSkus))
+       ->addAttributeToSelect('*');
+  $baseurl = rtrim ( Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB), "/" );  
+    
+    
+    
+    ?>
+
+
+<?php if ($_products->getSize()): ?>
+    <?php $i=0; foreach ($_products->getItems() as $_product): ?>
+            <?php 
+            $productType=$_product->getTypeID();
+            $product=Mage::getModel('catalog/product')->load($_product->getId());
+            
+            $eventStart = $product->getEventstartdate();
+            
+            $productUrl = $product->getProductUrl();
+            $productUrl = parse_url($productUrl);
+            $productUrl = $baseurl.$productUrl["path"];
+            $prodctName = $this->escapeHtml($_product->getName());
+			?>
+        <a href="<?=$productUrl?>" title="<?=$prodctName;?>" class="rich_promo homeblock_link">
+        <img src="<?=$this->helper('catalog/image')->init($_product, 'small_image')->resize(135) ?>" alt="<?=$prodctName;?>" class="homeblock_img"/>
+        <?=$prodctName;?>
+        </a>
+    <?php endforeach; ?>
+<?php endif; ?>
