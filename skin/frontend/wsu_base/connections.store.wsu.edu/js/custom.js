@@ -158,7 +158,10 @@
 			window.location = url + "?qty=1" + data;
 		});
 		
-		
+            $(".spine-sitenav .parent a span").on("click",function(){
+                $(this).closest("a").trigger("click");
+            });
+
 			//$('.more-views a').lightbox( "option", "resizeToBestPossibleSize", false );
 	});
 
