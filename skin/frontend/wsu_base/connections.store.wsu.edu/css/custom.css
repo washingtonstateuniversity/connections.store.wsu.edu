@@ -1961,6 +1961,7 @@ overflow: visible !important;
     padding: 20px 10px 10px 10px;
     border-bottom: 1px solid #fff !important;
     color: #fff !important;
+    width: 100%;
 }
 .opc-wrapper-opc form {
 	margin-bottom:0;
