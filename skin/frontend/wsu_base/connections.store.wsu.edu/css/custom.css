@@ -1963,10 +1963,35 @@ overflow: visible !important;
     color: #fff !important;
     width: 100%;
 }
+
+.opc-wrapper-opc .discount-block .apply-coupon {
+    float: left;
+}
+.opc-wrapper-opc .discount-block .apply-coupon span span{
+    float: left;
+    padding: 5px 10px;
+}
+.opc-wrapper-opc .discount-block .button {
+    min-width: unset;
+}
+.opc-wrapper-opc .buttons-set .button span, .opc-wrapper-opc .discount-block .buttons-set .button span {
+    height: auto;
+    min-height:25px;
+}
+
+.opc-wrapper-opc [class*="-block"] {
+    background-color: #eff0f1;
+}
+
 .opc-wrapper-opc form {
 	margin-bottom:0;
     padding:0;
 }
+
+
+
+
+
 /*.opc-wrapper-opc .login-trigger {
 	position: relative;
     background: #981e32 !important;
