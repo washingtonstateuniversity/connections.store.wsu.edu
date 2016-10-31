@@ -44,7 +44,7 @@ $predone_billing = $this->escapeHtml($this->getAddress()->getStreet(1));
                     </div>
                 </li>
 				<?php endif; ?>
-        		<?php $_streetValidationClass = $helper->getAttributeValidationClass('street') . " validate-for-pobox "; ?>
+        		<?php $_streetValidationClass = $helper->getAttributeValidationClass('street') . " validate-pobox "; ?>
                 <li class="wide">
                     <label for="billing:street1" class="required"><em>*</em><?=$this->__('Address') ?></label>
                     <div class="input-box">
@@ -107,7 +107,7 @@ $predone_billing = $this->escapeHtml($this->getAddress()->getStreet(1));
                     <div class="field">
                         <label for="billing:telephone" class="required"><em>*</em><?=$this->__('Telephone') ?></label>
                         <div class="input-box">
-                            <input type="text" name="billing[telephone]" value="<?=$this->escapeHtml($this->getAddress()->getTelephone()) ?>" title="<?=$this->__('Telephone') ?>" class="input-text validate-phoneLax <?=$helper->getAttributeValidationClass('telephone') ?>" id="billing:telephone" />
+                            <input type="text" name="billing[telephone]" value="<?=$this->escapeHtml($this->getAddress()->getTelephone()) ?>" title="<?=$this->__('Telephone') ?>" class="input-text validate-phoneStrict <?=$helper->getAttributeValidationClass('telephone') ?>" id="billing:telephone" />
                         </div>
                     </div>
                     <div class="field">

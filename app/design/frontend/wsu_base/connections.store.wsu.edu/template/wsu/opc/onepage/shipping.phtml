@@ -4,7 +4,6 @@
 ?>
 
 
-
     <?php if(""!==$predone_billing): ?>
         <a id="shipping_click_to_save" class="to_save saved hide"></a>
     <?php endif;?>
@@ -34,7 +33,7 @@
                         </div>
                     </li>
             
-        		<?php $_streetValidationClass = $helper->getAttributeValidationClass('street') . " validate-for-pobox "; ?>
+        		<?php $_streetValidationClass = $helper->getAttributeValidationClass('street') . " validate-pobox "; ?>
                     <li class="wide">
                         <label for="shipping:street1" class="required"><em>*</em><?=$this->__('Address') ?></label>
                         <div class="input-box">
@@ -97,7 +96,7 @@
                         <div class="field">
                             <label for="shipping:telephone" class="required"><em>*</em><?=$this->__('Telephone') ?></label>
                             <div class="input-box">
-                                <input type="text" name="shipping[telephone]" value="<?=$this->escapeHtml($this->getAddress()->getTelephone()) ?>" title="<?=$this->__('Telephone') ?>" class="input-text <?=$helper->getAttributeValidationClass('telephone') ?>" id="shipping:telephone" />
+                                <input type="text" name="shipping[telephone]" value="<?=$this->escapeHtml($this->getAddress()->getTelephone()) ?>" title="<?=$this->__('Telephone') ?>" class="input-text <?=$helper->getAttributeValidationClass('telephone') ?> validate-phoneStrict" id="shipping:telephone" />
                             </div>
                         </div>
                         <div class="field">
