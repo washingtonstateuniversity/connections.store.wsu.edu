@@ -1362,7 +1362,7 @@ ul.products-list ul.add-to-links:after {
 .catalog-category-view .button.btn-cart:before{
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesome;
-	font-size: 58px;
+	font-size: 40px;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -1376,6 +1376,11 @@ ul.products-list ul.add-to-links:after {
 .catalog-category-view .button.btn-cart:hover:before{
 	color:#941e3d;
 }
+
+
+.spine-search-tab{display:none;}
+
+
 
 .itemgrid-adaptive.itemgrid-4col .item:nth-child(6n+1),
 .itemgrid-adaptive.itemgrid-4col .item:nth-child(5n+1),
