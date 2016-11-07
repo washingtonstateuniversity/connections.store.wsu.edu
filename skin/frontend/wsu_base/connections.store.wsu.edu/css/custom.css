@@ -379,16 +379,23 @@ main footer{
 	max-width: 40%;
 	margin-left: 15px;
 }
-.alumni a{}
-.alumni .message{
-    line-height: 1em;
+.alumni a {
+    position: relative;
+    display: block;
+}
+.alumni .message {
+    line-height: 1rem;
     display: inline-block;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-weight: 700;
-    text-transform: uppercase;
-    text-align: right;
-    float: left;
-    margin-top: .6em;
+    /* text-transform: uppercase; */
+    text-align: center;
+    /* float: left; */
+    margin-top: .6rem;
+    position: absolute;
+    left: 44%;
+    width: 79%;
+    font-weight: 900;
 }
 .alumni img{
 	display: inline-block;
@@ -397,15 +404,26 @@ main footer{
     /* font-size: 0.7em; */
     float: left;
 }
-.alumni .disclaimer{
-
-    display: inline-block;
-    font-size: 0.5em;
-    max-width: 46%;
-    float: left;
-    margin-top: 1.6em;
-	    line-height: 0.9em;	
+.alumni .disclaimer {
+    display: block;
+    font-size: 0.6rem;
+    /* max-width: 46%; */
+    /* float: left; */
+    margin-top: 0.6rem;
+    line-height: 0.6rem;
+    font-weight: 100;
+    margin-left: 25%;
 }
+.alumni .member-preferred {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: .8rem;
+    border-bottom: 2px solid #870e0e;
+    display: block;
+    margin-left: 50%;
+    line-height: 0.8rem;
+}
+
 #site-global-footer{
 	background: url(/media/store-media/connections.store.wsu.edu/skin/footer-bk.jpg);
 }
