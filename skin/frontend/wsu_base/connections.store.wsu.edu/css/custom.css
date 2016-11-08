@@ -424,6 +424,16 @@ text-transform: uppercase;
     margin-top: 0.4em;
     line-height: 1em;
 }
+
+@media only screen and (max-width: 475px){
+    .footer-cell{
+        width:100%;
+    }
+    .footer-cell.two.alumni.scalebase { font-size:3.5px !important; }
+    .footer-area{ margin-bottom: 15px; }
+}
+
+
 .member-preferred span {
     border-bottom: 2px solid #870e0e;
 }
