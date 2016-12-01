@@ -2,6 +2,7 @@
 /**
  * Template for Mage_Page_Block_Html
  */
+ob_start();
 $lang=$this->getLang();
 $store = Mage::app()->getStore();
 $name = $store->getFrontendName();
@@ -31,6 +32,7 @@ $layout = $this->helper('wsu_themecontrol/layout')
 					'padding_ends'
 				 )
 			);
+ob_end_clean(); 
 ?><!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js no-svg lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="<?=$lang ?>"> <![endif]-->
 <!--[if IE 7]><html class="no-js no-svg lt-ie10 lt-ie9 lt-ie8" lang="<?=$lang ?>"> <![endif]-->
