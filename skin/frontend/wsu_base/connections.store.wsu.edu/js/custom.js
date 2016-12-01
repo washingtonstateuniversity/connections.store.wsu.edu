@@ -1,5 +1,5 @@
 (function( window, $, WSU ){ 
-
+document.getElementsByTagName("html")[0].setAttribute('data-useragent', navigator.userAgent);
 	$(document).ready(function(){
 		/*$(".spine-sitenav .parent a span").on("click",function(){
             $(this).closest("a").trigger("click");
