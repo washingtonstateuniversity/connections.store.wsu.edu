@@ -1,4 +1,4 @@
-// JavaScript Document(function($,window,WSU_THEME) {
+(function($,window,WSU_THEME) {
 	$.extend( WSU_THEME, {
 		state:{
 			debug:false
