@@ -40,7 +40,7 @@ document.getElementsByTagName("html")[0].setAttribute('data-useragent', navigato
 		$('.more-views a').lightbox({
 			gallery: {
 				enabled: true,
-				loop: true,
+				loop: true
 			},
 			dialog:{
 				resizeToBestPossibleSize: false,
