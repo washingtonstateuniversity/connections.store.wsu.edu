@@ -30,7 +30,9 @@ body{
     margin-top: 55px;
 }
 
-
+.opc-wrapper-opc.defaulted_css.design_package_wsu_base.design_theme_connections-store-wsu-edu .shipping-block {
+    padding: 0;
+}
 .opc-wrapper-opc .opc-data-table tfoot tr.last{
 display:table-row !important;
 }

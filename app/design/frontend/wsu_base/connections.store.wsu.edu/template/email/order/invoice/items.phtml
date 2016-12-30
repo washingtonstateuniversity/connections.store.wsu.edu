@@ -1,0 +1,91 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php $_invoice = $this->getInvoice() ?>
+<?php $_order   = $this->getOrder() ?>
+<?php if ($_invoice && $_order): ?>
+<table cellspacing="0" cellpadding="0" border="0" width="650" style="border:1px solid #EAEAEA;">
+    <thead>
+        <tr>
+            <th align="left" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px"><?php echo $this->__('Item') ?></th>
+            <th align="left" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px"><?php echo $this->__('Sku') ?></th>
+            <th align="center" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px"><?php echo $this->__('Qty') ?></th>
+            <th align="right" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px"><?php echo $this->__('Subtotal') ?></th>
+        </tr>
+    </thead>
+
+    <?php $i=0; foreach ($_invoice->getAllItems() as $_item): ?>
+    <?php if($_item->getOrderItem()->getParentItem()) continue; else $i++; ?>
+    <tbody<?php echo $i%2 ? ' bgcolor="#F6F6F6"' : '' ?>>
+        <?php echo $this->getItemHtml($_item) ?>
+    </tbody>
+    
+
+        <?php $_ordered_item = $_item->getOrderItem() ?>
+      
+       
+    <?php if ($_ordered_item->getGiftMessageId() ): 
+           $_giftMessage = $this->helper('giftmessage/message')->getGiftMessage($_ordered_item->getGiftMessageId()) ?>
+           <tbody<?php echo $i%2 ? ' bgcolor="#F6F6F6"' : '' ?>>
+<tr>
+    <td colspan="4" style=" border-bottom:2px solid #CCCCCC; padding:3px 9px;">
+        <strong style="color:#444444; font-size:11px;"><?php echo $this->__('Gift Message') ?></strong><br />
+        <?php echo $this->__('From:'); ?> <?php echo $this->escapeHtml($_giftMessage->getSender()) ?> <?php echo $this->__('To:'); ?> <?php echo $this->escapeHtml($_giftMessage->getRecipient()) ?><br />
+        <strong><?php echo $this->__('Message:'); ?></strong> <?php echo $this->escapeHtml($_giftMessage->getMessage()) ?>
+    </td>
+</tr></tbody>
+<?php endif; ?>
+           
+
+    <?php endforeach; ?>
+<table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 25px; border:1px solid #bebcb7; background:#f8f7f5;">
+ <thead>
+ <tr>
+ <th align="left" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px"><strong><?php echo $this->__('Gift Message for entier Order') ?></strong></th>
+ </tr>
+ </thead>
+
+ <tbody>
+ <?php if($_order->getGiftMessageId() && $_giftMessage = $this->helper('giftmessage/message')->getGiftMessage($_order->getGiftMessageId())): ?>
+ <tr>
+ <td colspan="4" align="left" style="padding:3px 9px">
+ <strong><?php echo $this->__('From:'); ?></strong> <?php echo $this->htmlEscape($_giftMessage->getSender()) ?>
+ <br /><strong><?php echo $this->__('To:'); ?></strong> <?php echo $this->htmlEscape($_giftMessage->getRecipient()) ?>
+ <br /><strong><?php echo $this->__('Message:'); ?></strong><br /> <?php echo $this->htmlEscape($_giftMessage->getMessage()) ?>
+ </td>
+ </tr>
+ <?php endif; ?>
+ </tbody>
+</table>
+<?php if(Mage::getStoreConfig('sales/gift_messages/allow_items')): ?><?php endif; ?>
+    <tfoot>
+        <?php echo $this->getChildHtml('invoice_totals')?>
+    </tfoot>
+</table>
+
+
+
+<?php endif; ?>
